@@ -60,10 +60,10 @@
 				String ConvertedDate = ConvertD2String( pageContext.getAttribute("ConvertedHireDate") );
 			%>
 			<tr>
-				<td>${emp.empno}</td>
+				<td><a href="/emp/item/${emp.empno}">${emp.empno}</a></td>
 				<td>${emp.ename}</td>
 				<td>${emp.job}</td>
-				<td>${emp.mgr}</td>
+				<td><a href="/emp/item/${emp.mgr}">${emp.mgr}</a></td>
 				<td><%= ConvertedDate %></td>
 				<td>${emp.sal}</td>
 				<td>${emp.comm}</td>

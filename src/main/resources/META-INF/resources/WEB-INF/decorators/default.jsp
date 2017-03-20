@@ -35,7 +35,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">Mosaic</a>
+			<a class="navbar-brand" href="/">April Project</a>
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav">
@@ -44,7 +44,7 @@
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Employee<span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="/dept/page/1">Dept</a></li>
-						<li><a href="/emp/list">Emp</a></li>
+						<li><a href="/emp/page/1">Emp</a></li>
 						<li><a href="/emp/salgrade">Salgrade</a></li>
 					</ul>
 				</li>

@@ -1,3 +1,6 @@
+<%@page import="java.util.Date"%>
+<%@page import="java.util.Arrays"%>
+<%@page import="java.text.DecimalFormat"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -18,28 +21,63 @@
 </head>
 <body>
 <!-- Region for Defines -->
-<c:set var="dept" 	value="${page.Depts}"/>
+<c:set var="emp" 	value="${page.emps}"/>
 <c:set var="paging" 	value="${page.paging}"/>
-<!-- End of region -->
+<!-- End of region --> 
 
 <!-- Region for Title -->
-<h1>Dept Page List pageNo = ${paging.pageNo}</h1>
+<h1>Emp Page List pageNo = ${paging.pageNo}</h1>
 <!-- End of region -->
+ 
+	<%!
+		public String ConvertD2String( Object obj ) {
+			Date date = (Date)obj;
+			String Year = Int2Str( date.getYear()  , 2);
+			String Month = Int2Str( date.getMonth() + 1  , 2);
+			String Day = Int2Str( date.getDay() , 2);
+			String value =  Year + "/" + Month + "/" + Day;
+			return value;
+		}
+	
+		public String Int2Str(int num, int digits) {
+		    assert digits > 0 : "Invalid number of digits";
+	
+		    // create variable length array of zeros
+		    char[] zeros = new char[digits];
+		    Arrays.fill(zeros, '0');
+		    // format number as String
+		    DecimalFormat df = new DecimalFormat(String.valueOf(zeros));
+	
+		    return df.format(num);
+		}
+	%>
 
 <!-- Region for DataTable -->
 	<table class="table table-hover">
 		<tr>
-			<td>Entry</td>
+			<td>EmpNo</td>
+			<td>EName</td>
+			<td>Job</td>
+			<td>Mgr</td>
+			<td>HireDate</td>
+			<td>Sal</td>
+			<td>Comm</td>
 			<td>DeptNo</td>
-			<td>DName</td>
-			<td>Location</td>
 		</tr>
-		<c:forEach var="d" items="${dept}" varStatus="status">
+		<c:forEach var="emp" items="${emp}" varStatus="status">
+			<c:set var="ConvertedHireDate" value="${emp.hiredate}"/>
+			<%
+				String ConvertedDate = ConvertD2String( pageContext.getAttribute("ConvertedHireDate") );
+			%>
 			<tr>
-					<td>${status.index}</td>
-					<td><a href="/dept/item/${d.deptno}">${d.deptno}</a></td>
-					<td>${d.dname}</td>
-					<td>${d.loc}</td>
+				<td><a href="/emp/item/${emp.empno}">${emp.empno}</a></td>
+				<td>${emp.ename}</td>
+				<td>${emp.job}</td>
+				<td><a href="/emp/item/${emp.mgr}">${emp.mgr}</a></td>
+				<td><%= ConvertedDate %></td>
+				<td>${emp.sal}</td>
+				<td>${emp.comm}</td>
+				<td><a href="/dept/item/${emp.deptno}">${emp.deptno}</a></td>
 			</tr>
 		</c:forEach>
 	</table>

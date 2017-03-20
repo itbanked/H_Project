@@ -12,10 +12,10 @@
 </head>
 <body>
 
+<h1>This is Emp List Page</h1>
 
-
-<c:forEach var="dept" items="${list}">
-	${dept.deptno} ${dept.dname} ${dept.loc}<br>
+<c:forEach var="emp" items="${page.emps}">
+	${emp.empno} ${emp.ename} ${emp.hiredate}<br>
 </c:forEach>
 
 
