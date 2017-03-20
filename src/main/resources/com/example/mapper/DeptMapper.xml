@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.DeptMapper">
+
+<resultMap type="com.example.domain.Dept" id="DeptWithEmp">
+	<id 	property="deptno"	column="dept_deptno"/>
+	<result property="dname"	column="dept_dname"/>
+	<result property="loc"		column="dept_loc"/>
+	<association property="emps" javaType="com.example.domain.Emp">
+		<id 	property="empno" 	column="emp_empno"/>
+		<result property="ename" 	column="emp_ename"/>
+		<result property="job" 		column="emp_job"/>
+		<result property="mgr" 		column="emp_mgr"/>
+		<result property="hiredate" column="emp_hiredate"/>
+		<result property="sal" 		column="emp_sal"/>
+		<result property="comm" 	column="emp_comm"/>
+		<result property="deptno" 	column="emp_deptno"/>
+	</association>
+</resultMap>
+
+<select id="selectAllWithEmp" resultMap="DeptWithEmp">
+	select	d.deptno 	as dept_deptno,
+			d.dname 	as dept_dname,
+			d.loc		as dept_loc,
+			e.empno		as emp_empno,
+			e.ename		as emp_ename,
+			e.job		as emp_job,
+			e.mgr		as emp_mgr,
+			e.hiredate	as emp_hiredate,
+			e.sal		as emp_sal,
+			e.comm		as emp_comm,
+			e.deptno	as emp_deptno
+	  from dept d left outer join emp e
+	    on e.deptno = d.deptno
+</select>
+
+
+<select id="selectByCodeWithEmp" resultMap="DeptWithEmp">
+	select	d.deptno 	as dept_deptno,
+			d.dname 	as dept_dname,
+			d.loc		as dept_loc,
+			e.empno		as emp_empno,
+			e.ename		as emp_ename,
+			e.job		as emp_job,
+			e.mgr		as emp_mgr,
+			e.hiredate	as emp_hiredate,
+			e.sal		as emp_sal,
+			e.comm		as emp_comm,
+			e.deptno	as emp_deptno
+	  from dept d left outer join emp e
+	    on e.deptno = d.deptno
+	 where d.deptno = #{code} 
+</select>
+
+<insert id="insert">
+	insert into dept
+	(
+		deptno,
+		dname,
+		loc,
+	)
+	values
+	(
+		#{deptno},
+		#{dname},
+		#{loc},
+	)
+</insert>
+
+<update id="updateByCode">
+
+
+</update>
+
+</mapper>
