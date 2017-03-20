@@ -91,11 +91,11 @@
  
  <!-- Region for Page Buttons -->
  <div class="text-center">
-	<a href="/country/page/${paging.firstPage - 1}">Prev</a>
+	<a href="/emp/page/${paging.firstPage - 1}">Prev</a>
 	<c:forEach var="i" begin="${paging.firstPage}" end="${paging.lastPage}">
-		<a href="/country/page/${i}">${i}</a>
+		<a href="/emp/page/${i}">${i}</a>
 	</c:forEach>
-	<a href="/country/page/${paging.lastPage + 1}">Next</a>
+	<a href="/emp/page/${paging.lastPage + 1}">Next</a>
 </div>
 <!-- End of region -->
 
