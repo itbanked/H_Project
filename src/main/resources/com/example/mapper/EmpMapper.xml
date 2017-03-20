@@ -11,7 +11,7 @@
 	<result property="sal" 		column="emp_sal"/>
 	<result property="comm" 	column="emp_comm"/>
 	<result property="deptno" 	column="emp_deptno"/>
-	<association property="dept" javaType="com.example.domain.Dept">
+	<association property="dept"  javaType="com.example.domain.Dept">
 		<id 	property="deptno"	column="dept_deptno"/>
 		<result property="dname"	column="dept_dname"/>
 		<result property="loc"		column="dept_loc"/>

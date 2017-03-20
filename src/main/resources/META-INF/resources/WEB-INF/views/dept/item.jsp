@@ -11,17 +11,17 @@
 <title>item.jsp</title>
 </head>
 <body>
-${error}<br>
-
-${dept.deptno} ${dept.dname} ${dept.loc}<br>
-<hr>
-<hr>
-<ol>
-<c:forEach var="emp" items="${dept.emps}">
-	<li>${emp.empno}, ${emp.ename}, ${emp.deptno}</li>
-</c:forEach>
-</ol>
-${dept}
+	${error}<br>
+	
+	${dept.deptno} ${dept.dname} ${dept.loc}<br>
+	<hr>
+	<hr>
+	<ol>
+	<c:forEach var="emp" items="${dept.emps}">
+		<li>${emp.empno}, ${emp.ename}, ${emp.deptno}</li>
+	</c:forEach>
+	</ol>
+	${dept}
 
 </body>
 </html>
