@@ -25,6 +25,6 @@
 
 </head>
 <body>
-<c:redirect url="/country/page/1"/>
+<c:redirect url="/city/page/1"/>
 </body>
 </html>

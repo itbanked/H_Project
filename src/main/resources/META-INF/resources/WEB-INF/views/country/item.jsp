@@ -27,8 +27,8 @@ ${error}<br>
 		</tr>
 		<c:forEach var="city" items="${country.citys}">
 			<tr>
-				<td>${city.id}</td>
-				<td>${city.name}</td>
+				<td><a href="/city/item/${city.id}">${city.id}</a></td>
+				<td><a href="/city/item/${city.id}">${city.name}</a></td>
 				<td>${city.district}</td>
 				<td>${city.population}</td>
 			</tr>
