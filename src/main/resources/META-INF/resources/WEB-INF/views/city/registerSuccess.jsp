@@ -21,5 +21,6 @@
 
 	<h1>Register Success!</h1>
 	
+	City : ${city}
 </body>
 </html>
