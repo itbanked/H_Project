@@ -8,8 +8,10 @@
 <head>
 <meta charset="UTF-8">
 <title>memberform.jsp</title>
+<!-- 2. bootstrap -->
+<link rel="stylesheet" href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css">
 
-<link rel="stylesheet" href="/css/AuthForm.css">
+<link rel="stylesheet" href="css/AuthForm.css">
 
 <!-- Code Assist -->
 <c:if test="false">
@@ -19,10 +21,41 @@
 
 </head>
 <body>
-	<H1>Test</H1>
+	<H1 class="Title">April Project</H1>
+	
+	<%
+		if (request.getParameter("error") != null) {
+			out.println("<script>"); 
+			out.println("alert('ID 또는 비밀번호가 올바르지 않습니다.');"); 
+			out.println("</script>"); 
+		}	
+	%>
 
 	<div class="LoginBox">
-		asdasd
+		<div class="WarningBox">
+			<h2>로그인을 해주세요!</h2>
+			<div class="SystemMessage">
+				<span class="Message"></span>
+			</div>
+		</div>
+		<hr>
+		<div class="Face">
+			<div class="Circle">	
+				<div class="UpperPadding"></div>
+				<div class="PplHead"></div>
+				<div class="UpperPadding"></div>
+				<div class="PplBody"></div>
+			</div>
+		</div>
+		<hr>
+			<form action="/Auth" method="post">
+				<input class="InputBox" name="id"><br>
+				<input class="InputBox" name="pw" type="password"><br>
+				<input class="btn Action" type="submit" value="login">
+			</form>
+		<div class="InfoBox">
+			
+		</div>
 	</div>
 
 </body>
