@@ -69,9 +69,10 @@ public class LoginServlet extends HttpServlet {
 			if ( Match.equals(PasswordEncoded) ) {
 				// 인증성공
 				HttpSession session = req.getSession();
-				session.setAttribute("login", true);
+				session.setAttribute("logged", true);
 				session.setAttribute("ID", id);
 				if ( IsAdmin(id) ) {
+					session.setAttribute("IsAdmin", true);
 					resp.sendRedirect("/country/page/1");
 				}
 				else {
