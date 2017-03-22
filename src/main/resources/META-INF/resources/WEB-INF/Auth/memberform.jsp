@@ -21,8 +21,6 @@
 
 </head>
 <body>
-	<H1 class="Title">April Project</H1>
-	
 	<%
 		if (request.getParameter("error") != null) {
 			out.println("<script>"); 
