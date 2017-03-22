@@ -1,4 +1,4 @@
-package com.example.admin;
+package com.example;
 
 import java.io.IOException;
 import java.util.Enumeration;
@@ -15,7 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.example.mapper.MemberMapper;
 
 @WebServlet("/Admin")
-public class AdminController extends HttpServlet {
+public class NoPermission extends HttpServlet {
 
 	@Autowired
 	MemberMapper memberMapper;

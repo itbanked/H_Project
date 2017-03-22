@@ -1,7 +1,6 @@
-package com.example.admin;
+package com.example.PageController;
 
 import java.io.IOException;
-import java.util.Enumeration;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,24 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
-import com.example.mapper.MemberMapper;
-
-@WebServlet("/Admin")
-public class AdminController extends HttpServlet {
-
-	@Autowired
-	MemberMapper memberMapper;
-	
-	void printParam(HttpServletRequest req) {
-		Enumeration<String> names = req.getParameterNames();
-		while(names.hasMoreElements()) {
-			String name = names.nextElement();
-			System.out.println(name + " = " + req.getParameter(name));
-		}
-		System.out.println(req.getParameterMap());
-	}
+@WebServlet("/NoPermission")
+public class NoPermission extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -35,7 +18,7 @@ public class AdminController extends HttpServlet {
 		System.out.println("doGet().....");
 		System.out.println("############");
 		
-		RequestDispatcher disp = req.getRequestDispatcher("/WEB-INF/Admin/Main.jsp");
+		RequestDispatcher disp = req.getRequestDispatcher("/WEB-INF/Auth/NoPermission.jsp");
 		disp.forward(req, resp);
 	}
 	

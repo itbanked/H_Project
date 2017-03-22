@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -17,7 +18,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-@WebFilter("/admin/*")
+@WebFilter("/Admin/*")
 public class AdminFilter implements Filter {
 
 	static Log log = LogFactory.getLog(AdminFilter.class);
@@ -42,9 +43,15 @@ public class AdminFilter implements Filter {
 		HttpSession session = req.getSession();
 		
 		Boolean logged = (Boolean) session.getAttribute("logged");
+		Boolean IsAdmin = (Boolean) session.getAttribute("IsAdmin");
 		
 		if ( logged != null && logged ) {
-			chain.doFilter(request, response);
+			if ( IsAdmin != null && IsAdmin ) {
+				chain.doFilter(request, response);
+			}
+			else {
+				resp.sendRedirect("/NoPermission");
+			}
 		}
 		else {
 			resp.sendRedirect("/Auth");
