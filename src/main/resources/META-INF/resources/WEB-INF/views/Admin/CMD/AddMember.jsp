@@ -23,13 +23,43 @@
 
 	<h1>Control Member Database : Member Register</h1>
 	
-	<form:form action="/Admin/CMD/AddMember" method="post" modelAttribute="Member">
+	<form:form action="/Admin/CMD/Add" method="post" modelAttribute="memberForm">
 		<!-- Name -->
 		<div>
 			<label for="membersrl" class="Define-Values">membersrl : </label>
 			<form:input path="membersrl" class="Define-Input-Box"/>
 			<form:errors path="membersrl" class="Define-Error-Region"/>
 		</div>
+		<!-- userid -->
+		<div>
+			<label for="userid" class="Define-Values">userid : </label>
+			<form:input path="userid" class="Define-Input-Box"/>
+			<form:errors path="userid" class="Define-Error-Region"/>
+		</div>
+		<!-- email -->
+		<div>
+			<label for="email" class="Define-Values">email : </label>
+			<form:input path="email" class="Define-Input-Box"/>
+			<form:errors path="email" class="Define-Error-Region"/>
+		</div>
+		<!-- username -->
+		<div>
+			<label for="username" class="Define-Values">username : </label>
+			<form:input path="username" class="Define-Input-Box"/>
+			<form:errors path="username" class="Define-Error-Region"/>
+		</div>
+		<!-- password -->
+		<div>
+			<label for="password" class="Define-Values">password : </label>
+			<form:input path="password" class="Define-Input-Box"/>
+			<form:errors path="password" class="Define-Error-Region"/>
+		</div>
+		<!-- isadmin -->
+		<div>
+			<label for="isadmin" class="Define-Values">isadmin : </label>
+			<form:radiobutton path="isadmin" value="Y" label="True"/>
+			<form:radiobutton path="isadmin" value="N" label="False"/>
+		</div> 
 		<input type="submit" value="Register Member">
 	</form:form>
 

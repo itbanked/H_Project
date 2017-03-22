@@ -47,7 +47,7 @@
 		</c:forEach> 
 	</table>
 	
-	<a class="btn btn-info" href="/Admin/CMD/AddMember">AddMember</a>
+	<a class="btn btn-info" href="/Admin/CMD/Add">AddMember</a>
 
 </body>
 </html>

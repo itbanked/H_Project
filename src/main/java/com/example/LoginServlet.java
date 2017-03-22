@@ -89,7 +89,7 @@ public class LoginServlet extends HttpServlet {
 		}
 	}	
 	
-	public String ConvertMD5(String str){
+	public static String ConvertMD5(String str){
 		String MD5 = ""; 
 		try{
 			MessageDigest md = MessageDigest.getInstance("MD5"); 

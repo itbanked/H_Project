@@ -35,40 +35,38 @@ public class MemberRegisterController {
 	@Autowired
 	MemberRegisterService memberRegisterService;
 	
-	@GetMapping("/AddMember")
+	@GetMapping("/Add")
 	public String registerForm(MemberForm memberForm) {
 		log.info("registerForm()");
 		return "Admin/CMD/AddMember";
 	}
 	
-	@PostMapping("/AddMember")
+	@PostMapping("/Add")
 	public String register(@Valid MemberForm memberForm, BindingResult errors) {
 		log.info("AddMember(" + memberForm + ")");
 		
 		System.out.println(memberForm);
 		
-		/*
 		// Validate
 		if ( errors.hasErrors() ) {
 			System.out.println(errors);
-			return "city/registerForm";
+			return "Admin/CMD/AddMember";
 		}
 		
 		// Register
 		memberRegisterService.register(memberForm, errors);
 		if ( errors.hasErrors() ) {
 			System.out.println(errors);
-			return "city/registerForm";
+			return "Admin/CMD/AddMember";
 		}
-		
-		*/
-		return "redirect:/Admin/CMD/registerSuccess/" + memberForm.getMembersrl(); 
+
+		return "redirect:/Admin/CMD/AddMemberSuccess/" + memberForm.getMembersrl(); 
 	}
 	
-	@GetMapping("Admin/CMD/registerSuccess/{id}")
+	@GetMapping("/AddMemberSuccess/{id}")
 	public String registerSuccess(@PathVariable BigDecimal id, Model model) {
 		Member member = memberSearchService.getMemberByMemberSrl(id);
-		model.addAttribute("Member", member);
-		return "Admin/CMD/registerSuccess";
+		model.addAttribute("member", member);
+		return "Admin/CMD/AddMemberSuccess";
 	}
 }
