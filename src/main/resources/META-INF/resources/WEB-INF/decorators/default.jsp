@@ -59,7 +59,14 @@
 				<li><a href="#">Q & A</a></li>
 				<li><a href="#">Documentation</a></li>
 			</ul>
+				
 			<ul class="nav navbar-nav navbar-right">
+				<%
+					HttpSession CurrentSession = request.getSession();
+					if ( CurrentSession.getAttribute("IsAdmin") != null ) {
+						out.println("<li><a href='/Admin'><span class='glyphicon glyphicon-cog'></span> Admin</a></li>"); 
+					}
+				%>
 				<li><a href="/Logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
 			</ul>
 		</div>

@@ -25,7 +25,7 @@
 	
 	<Script>
 		alert("권한이 없습니다!");
-		location.href='/';
+		window.history.back();
 	</Script>
 
 </body>
