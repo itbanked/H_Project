@@ -15,7 +15,15 @@ public class Sal {
 	private int saldate;
 	private BigDecimal membersrl;
 	
-	
+	private Member member;
+
+	public Member getMember() {
+		return member;
+	}
+
+	public void setMember(Member member) {
+		this.member = member;
+	}
 
 	public Sal() {
 		// TODO Auto-generated constructor stub
