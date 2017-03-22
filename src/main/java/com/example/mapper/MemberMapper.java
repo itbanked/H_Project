@@ -27,7 +27,7 @@ public interface MemberMapper {
 	})
 	List<Member> selectPage(Pagination page);
 
-	@Select("select * from member where id=#{id}")
+	@Select("select * from member where userid=#{userid}")
 	Member selectById(String id);
 	
 	@Select("select * from member where membersrl=#{membersrl}")
