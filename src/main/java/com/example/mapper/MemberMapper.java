@@ -1,5 +1,6 @@
 package com.example.mapper;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
@@ -26,8 +27,11 @@ public interface MemberMapper {
 	})
 	List<Member> selectPage(Pagination page);
 
-	@Select("select * from member where userid=#{id}")
+	@Select("select * from member where id=#{id}")
 	Member selectById(String id);
+	
+	@Select("select * from member where membersrl=#{membersrl}")
+	Member selectByMembersrl(BigDecimal membersrl);
 
 	int insert(Member member);
 
