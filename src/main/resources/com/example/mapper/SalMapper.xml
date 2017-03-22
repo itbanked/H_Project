@@ -84,7 +84,8 @@
 		overtime_sal,
 		comm,
 		aid_sal,
-		saldate
+		saldate,
+		membersrl
 	)
 	values
 	(
@@ -93,7 +94,8 @@
 		#{overtimeSal},
 		#{comm},
 		#{aidSal},
-		#{saldate}
+		#{saldate},
+		#{membersrl}
 	)
 </insert>
 
@@ -103,7 +105,8 @@
 	       overtime_sal		= #{overtimeSal},
 	       comm				= #{comm},
 	       aid_sal			= #{aidSal},
-	       saldate			= #{saldate}
+	       saldate			= #{saldate},
+	       membersrl		= #{membersrl}
 	 where salno = #{salno}
 </update>
 </mapper>

@@ -103,11 +103,9 @@ public class SalMapperTests {
 	
 	@Test
 	public void test05_updateBySalno() {
-		Sal sal = new Sal();
-		sal.setComm(new BigDecimal(101));
-//		sal.setBasicSal(new BigDecimal(2000));
-		sal.setMembersrl(new BigDecimal(1));
-		sal.setSalno(26);
+		Sal sal = salMapper.selectBySalno(29);
+		sal.setComm(new BigDecimal(300));
+		sal.setOvertimeSal(new BigDecimal(40));
 		
 		Member member = memberMapper.selectByMembersrl(sal.getMembersrl());
 		
@@ -123,7 +121,7 @@ public class SalMapperTests {
 	
 	@Test
 	public void test06_deleteBySalno() {
-		int salno = 27;
+		int salno = 30;
 		int rtn = salMapper.deleteBySalno(salno);
 		System.out.println("rtn = " + rtn);
 	}
