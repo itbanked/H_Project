@@ -21,100 +21,16 @@
 </head>
 <body>
 
-	<h1>Country Register Service</h1>
+	<h1>Control Member Database : Member Register</h1>
 	
-	<form:form action="/country/register" method="post" modelAttribute="countryForm">
+	<form:form action="/Admin/CMD/AddMember" method="post" modelAttribute="Member">
 		<!-- Name -->
 		<div>
-			<label for="name" class="Define-Values">Name : </label>
-			<form:input path="name" class="Define-Input-Box"/>
-			<form:errors path="name" class="Define-Error-Region"/>
+			<label for="membersrl" class="Define-Values">membersrl : </label>
+			<form:input path="membersrl" class="Define-Input-Box"/>
+			<form:errors path="membersrl" class="Define-Error-Region"/>
 		</div>
-		<!-- Country Code -->
-		<div>
-			<label for="code">Country Code : </label>
-			<form:input path="code"/>
-			<form:errors path="code"/>
-		</div>
-		<!-- continent -->
-		<div>
-			<label for="continent">Continent : </label>
-			<form:input path="continent"/>
-			<form:errors path="continent"/>
-		</div>
-		<!-- region -->
-		<div>
-			<label for="region">Region : </label>
-			<form:input path="region"/>
-			<form:errors path="region"/>
-		</div>
-		<!-- surfaceArea -->
-		<div>
-			<label for="surfaceArea">Surface Area : </label>
-			<form:input path="surfaceArea"/>
-			<form:errors path="surfaceArea"/>
-		</div>
-		<!-- indepYear -->
-		<div>
-			<label for="indepYear">IndepYear : </label>
-			<form:input path="indepYear"/>
-			<form:errors path="indepYear"/>
-		</div>
-		<!-- population -->
-		<div>
-			<label for="population">Population : </label>
-			<form:input path="population"/>
-			<form:errors path="population"/>
-		</div>
-		<!-- lifeExpectancy -->
-		<div>
-			<label for="lifeExpectancy">Life Expectancy : </label>
-			<form:input path="lifeExpectancy"/>
-			<form:errors path="lifeExpectancy"/>
-		</div>
-		<!-- gnp -->
-		<div>
-			<label for="gnp">GNP : </label>
-			<form:input path="gnp"/>
-			<form:errors path="gnp"/>
-		</div>
-		<!-- gnpOld -->
-		<div>
-			<label for="code">GNP - Old : </label>
-			<form:input path="gnpOld"/>
-			<form:errors path="gnpOld"/>
-		</div>
-		<!-- localName -->
-		<div>
-			<label for="localName">LocalNamee : </label>
-			<form:input path="localName"/>
-			<form:errors path="localName"/>
-		</div>
-		<!-- Government Form -->
-		<div>
-			<label for="governmentForm">Government Form : </label>
-			<form:input path="governmentForm"/>
-			<form:errors path="governmentForm"/>
-		</div>
-		<!-- headOfState-->
-		<div>
-			<label for="headOfState">Head Of State : </label>
-			<form:input path="headOfState"/>
-			<form:errors path="headOfState"/>
-		</div>
-		<!-- Capital -->
-		<div>
-			<label for="capital">Capital : </label>
-			<form:input path="capital"/>
-			<form:errors path="capital"/>
-		</div>
-		<!-- Country Code[2] -->
-		<div>
-			<label for="code2">Country Code[2] : </label>
-			<form:input path="code2"/>
-			<form:errors path="code2"/>
-		</div>
-		<input type="submit" value="Register Country">
+		<input type="submit" value="Register Member">
 	</form:form>
 
 </body>
