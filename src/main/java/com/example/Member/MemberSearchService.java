@@ -1,5 +1,6 @@
 package com.example.Member;
 
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -45,6 +46,12 @@ public class MemberSearchService {
 	
 	public Member getMemberById(String id) {
 		Member member = memberMapper.selectById(id);
+		
+		return member;
+	}
+	
+	public Member getMemberByMemberSrl(BigDecimal id) {
+		Member member = memberMapper.selectByMembersrl(id);
 		
 		return member;
 	}

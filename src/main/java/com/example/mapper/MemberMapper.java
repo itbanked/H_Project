@@ -3,6 +3,7 @@ package com.example.mapper;
 import java.math.BigDecimal;
 import java.util.List;
 
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
@@ -33,6 +34,11 @@ public interface MemberMapper {
 	@Select("select * from member where membersrl=#{membersrl}")
 	Member selectByMembersrl(BigDecimal membersrl);
 
+	@Insert({
+		"insert into ",
+		"member ( membersrl, 	userid, 	email, 		username, 		password, 		isadmin  ) ",
+		"values ( #{membersrl},	#{userid},	#{email},	#{username},	#{password},	#{isadmin})"				
+	})
 	int insert(Member member);
 
 }

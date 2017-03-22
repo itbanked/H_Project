@@ -91,7 +91,7 @@ public class SalMapperTests {
 		sal.setSaldate(10);
 		
 		Member member = memberMapper.selectByMembersrl(sal.getMembersrl());
-		
+		System.out.println(member);
 		if (member == null) {
 			System.out.println("error = 해당 Member_srl이 없습니다");
 			return;
@@ -105,7 +105,6 @@ public class SalMapperTests {
 	public void test05_updateBySalno() {
 		Sal sal = new Sal();
 		sal.setComm(new BigDecimal(101));
-//		sal.setBasicSal(new BigDecimal(2000));
 		sal.setMembersrl(new BigDecimal(1));
 		sal.setSalno(26);
 		
