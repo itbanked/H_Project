@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.DnltimeMapper">
+
+<resultMap type="com.example.domain.Dnltime" id="dnltimeWithDnl">
+	<id property="dnlno" column="dnlno"/>
+	<result	property="attend" column="attend"/>
+	<result property="leave" column="leave"/>
+	<result property="reason" column="reason"/>
+	<result property="membersrl" column="membersrl"/>
+	<association property="dnl" javaType="com.example.domain.Dnl">
+		<id property="dnlCode" column="dnl_code"/>
+		<result property="dnlType" column="dnl_type"/>
+	</association>
+</resultMap>
+
+<select id="selectAllWithDnl" resultMap="dnltimeWithDnl">
+	select 
+		dt.dnlno,
+		dt.attend,
+		dt.leave,
+		dt.reason,
+		dt.membersrl,
+		d.dnl_code,
+		d.dnl_type
+ from dnl d join dnltime dt 
+  on d.dnl_code = dt.dnl_code
+  order by dt.dnlno
+</select>
+
+<select id="selectPageWithDnltime" resultMap="dnltimeWithDnl">
+	select 
+		dt.dnlno,
+		dt.attend,
+		dt.leave,
+		dt.reason,
+		dt.membersrl,
+		d.dnl_code,
+		d.dnl_type
+ from dnl d join dnltime dt 
+  on d.dnl_code = dt.dnl_code
+ offset #{firstItem} -1 rows
+  fetch next #{itemsPerPage} rows only
+</select>
+
+<select id="selectByDnlnoWithDnl" resultMap="dnltimeWithDnl">
+	select 
+		dt.dnlno,
+		dt.attend,
+		dt.leave,
+		dt.reason,
+		dt.membersrl,
+		d.dnl_code,
+		d.dnl_type
+ from dnl d join dnltime dt 
+  on d.dnl_code = dt.dnl_code
+ where dnlno = #{dnlno}
+</select>
+
+<insert id="insert">
+	<selectKey keyProperty="dnlno" keyColumn="dnlno" resultType="int" order="BEFORE">
+		select dnl_dnlno_seq.nextval from dual
+	</selectKey>
+		insert into dnltime
+	(
+		dnlno,
+		attend,
+		leave,
+		reason,
+		dnl_code,
+		membersrl
+	)   
+	  values
+	  (
+		#{dnlno},
+		#{attend},
+		#{leave},
+		#{reason},
+		#{dnlCode},
+		#{membersrl}	  
+	  )
+</insert>
+</mapper>
