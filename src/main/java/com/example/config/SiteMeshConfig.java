@@ -21,7 +21,7 @@ public class SiteMeshConfig {
 				builder.addDecoratorPath("/emp/*", "/WEB-INF/decorators/default.jsp");
 				builder.addDecoratorPath("/Admin*", "/WEB-INF/decorators/default.jsp");
 				builder.addDecoratorPath("/Auth*", "/WEB-INF/decorators/default.jsp");
-//				builder.addDecoratorPath("/xxx/*", "/WEB-INF/decorators/default.jsp");
+				builder.addDecoratorPath("/sal*", "/WEB-INF/decorators/default.jsp");
 			}
 		});
 //		filter.addUrlPatterns("/*");
