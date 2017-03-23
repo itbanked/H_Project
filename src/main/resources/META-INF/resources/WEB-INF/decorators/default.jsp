@@ -26,49 +26,66 @@
 <sitemesh:write property="head"/>
 </head>
 <body>
-<nav class="navbar navbar-default">
+
+	<%
+		HttpSession CurrentSession = request.getSession();
+	%>
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/">April Project</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Home</a></li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Employee<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="/dept/page/1">Dept</a></li>
+							<li><a href="/emp/page/1">Emp</a></li>
+							<li><a href="/emp/salgrade">Salgrade</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">World<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="/country/page/1">Country</a></li>
+							<li><a href="/city/page/1">City</a></li>
+							<li><a href="/language/page/1">Language</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Q & A</a></li>
+					<li><a href="#">Documentation</a></li>
+				</ul>
+					
+				<ul class="nav navbar-nav navbar-right">
+				<%
+						if ( CurrentSession.getAttribute("IsAdmin") != null ) {
+							out.println("<li><a href='/Admin'><span class='glyphicon glyphicon-cog'></span> Admin</a></li>"); 
+						}
+	
+						if ( CurrentSession.getAttribute("logged") != null ) {
+							out.println("<li><a href='/Logout'><span class='glyphicon glyphicon-log-out'></span> Logout</a></li>"); 
+						}
+						else {
+							out.println("<li><a href='/Auth'><span class='glyphicon glyphicon-log-in'></span> Login</a></li>"); 
+						}
+					%>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	
 	<div class="container">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse"
-				data-target="#myNavbar">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="#">Mosaic</a>
-		</div>
-		<div class="collapse navbar-collapse" id="myNavbar">
-			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">Home</a></li>
-				<li class="dropdown">
-					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Employee<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="/dept/page/1">Dept</a></li>
-						<li><a href="/emp/list">Emp</a></li>
-						<li><a href="/emp/salgrade">Salgrade</a></li>
-					</ul>
-				</li>
-				<li class="dropdown">
-					<a class="dropdown-toggle" data-toggle="dropdown" href="#">World<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="/country/page/1">Country</a></li>
-						<li><a href="/city/page/1">City</a></li>
-						<li><a href="/language/page/1">Language</a></li>
-					</ul>
-				</li>
-				<li><a href="#">Q & A</a></li>
-				<li><a href="#">Documentation</a></li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
-				<li><a href="#"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
-			</ul>
-		</div>
+		<sitemesh:write property="body"/>
 	</div>
-</nav>
-
-<sitemesh:write property="body"/>
-
+	
 
 
 </body>

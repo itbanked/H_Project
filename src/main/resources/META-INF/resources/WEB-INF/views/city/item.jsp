@@ -7,15 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>template.jsp</title>
-<!-- 1. animate -->
-<link rel="stylesheet" href="/webjars/animate.css/3.5.2/animate.min.css">
-<!-- 2. bootstrap -->
-<link rel="stylesheet" href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css">
-<!-- 3. jquery -->
-<script type="text/javascript" src="/webjars/jquery/1.11.1/jquery.min.js"></script>
-<!-- 4. bootstrap.js -->
-<script type="text/javascript" src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+<title>item.jsp</title>
 
 <!-- Code Assist -->
 <c:if test="false">
@@ -25,6 +17,40 @@
 
 </head>
 <body>
+
+	<H1>
+		${city.name} [${city.countryCode}] : ${city.population}<br>
+	</H1>
+	
+	<table class="table">
+		<tr>
+			<td>Name</td>
+			<td>CountryCode</td>
+			<td>District</td>
+			<td>Population</td>
+		</tr>
+		<tr>
+			<td>${city.name}</td>
+			<td>${city.countryCode}</td>
+			<td>${city.district}</td>
+			<td>${city.population}</td>
+		</tr>
+	</table>
+	
+	<hr>
+	
+	<table class="table">
+		<tr>
+			<td>Code</td>
+			<td>Name</td>
+			<td>Population</td>
+		</tr>
+		<tr>
+			<td>${city.country.code}</td>
+			<td><a href="/country/item/${city.country.code}">${city.country.name}</a></td>
+			<td>${city.country.population}</td>
+		</tr>
+	</table>
 
 </body>
 </html>

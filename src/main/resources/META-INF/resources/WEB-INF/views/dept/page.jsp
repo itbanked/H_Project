@@ -29,17 +29,15 @@
 <!-- Region for DataTable -->
 	<table class="table table-hover">
 		<tr>
-			<td>Entry</td>
 			<td>DeptNo</td>
 			<td>DName</td>
 			<td>Location</td>
 		</tr>
 		<c:forEach var="d" items="${dept}" varStatus="status">
 			<tr>
-					<td>${status.index}</td>
-					<td><a href="/dept/item/${d.deptno}">${d.deptno}</a></td>
-					<td>${d.dname}</td>
-					<td>${d.loc}</td>
+				<td><a href="/dept/item/${d.deptno}">${d.deptno}</a></td>
+				<td>${d.dname}</td>
+				<td>${d.loc}</td>
 			</tr>
 		</c:forEach>
 	</table>
@@ -53,11 +51,11 @@
  
  <!-- Region for Page Buttons -->
  <div class="text-center">
-	<a href="/country/page/${paging.firstPage - 1}">Prev</a>
+	<a href="/dept/page/${paging.firstPage - 1}">Prev</a>
 	<c:forEach var="i" begin="${paging.firstPage}" end="${paging.lastPage}">
-		<a href="/country/page/${i}">${i}</a>
+		<a href="/dept/page/${i}">${i}</a>
 	</c:forEach>
-	<a href="/country/page/${paging.lastPage + 1}">Next</a>
+	<a href="/dept/page/${paging.lastPage + 1}">Next</a>
 </div>
 <!-- End of region -->
 

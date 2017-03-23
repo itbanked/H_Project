@@ -15,9 +15,9 @@ public class CountryRegisterService {
 	
 	public void register( Country country, BindingResult errors ) {
 
-		Country confitm = countryMapper.selectByCode( country.getCode() );
+		Country confirm = countryMapper.selectByCode( country.getCode() );
 		
-		if ( confitm != null ) {
+		if ( confirm != null ) {
 			errors.reject("Invalid Country Code", "유효한 국가 코드가 아닙니다.");
 		}
 		
