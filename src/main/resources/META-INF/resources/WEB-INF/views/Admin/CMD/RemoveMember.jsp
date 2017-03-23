@@ -21,9 +21,9 @@
 </head>
 <body>
 
-	<h1>Control Member Database : Member Modify</h1>
+	<h1>Control Member Database : Member Remove</h1>
 	
-	<form:form action="/Admin/CMD/Mod" method="post" modelAttribute="memberForm">
+	<form:form action="/Admin/CMD/Rem" method="post" modelAttribute="memberForm">
 		<!-- userid -->
 		<div>
 			<label for="userid" class="Define-Values">userid : </label>
@@ -33,20 +33,14 @@
 		<!-- email -->
 		<div>
 			<label for="email" class="Define-Values">email : </label>
-			<form:input path="email" class="Define-Input-Box"/>
+			<form:input path="email" class="Define-Input-Box"  readonly="true"/>
 			<form:errors path="email" class="Define-Error-Region"/>
 		</div>
 		<!-- username -->
 		<div>
 			<label for="username" class="Define-Values">username : </label>
-			<form:input path="username" class="Define-Input-Box"/>
+			<form:input path="username" class="Define-Input-Box"  readonly="true"/>
 			<form:errors path="username" class="Define-Error-Region"/>
-		</div>
-		<!-- password -->
-		<div>
-			<label for="password" class="Define-Values">password<BR>(수정이 필요한경우만) : </label>
-			<form:input path="password" class="Define-Input-Box"/>
-			<form:errors path="password" class="Define-Error-Region"/>
 		</div>
 		<!-- isadmin -->
 		<div>
@@ -54,7 +48,7 @@
 			<form:radiobutton path="isadmin" value="Y" label="True"/>
 			<form:radiobutton path="isadmin" value="N" label="False" checked="checked"/>
 		</div> 
-		<input type="submit" value="Modify Member">
+		<input type="submit" value="Remove Member">
 	</form:form>
 
 </body>
