@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>RegisterForm.jsp</title>
+<title>ModifyForm.jsp</title>
 
 <!-- Code Assist -->
 <c:if test="false">
@@ -19,14 +19,12 @@
 </head>
 <body>
 
-	<h1>Register Success!</h1>
+	<h1>Modify Success!</h1>
 	
 	Member : ${member}
 	
 	<script>
-		
-		setTimeout("location.href='/Admin/CMD/'",5000);
-	
+		setTimeout("location.href='/Admin/CMD/'", 3000);
 	</script>
 </body>
 </html>

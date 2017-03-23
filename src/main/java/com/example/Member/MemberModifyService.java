@@ -1,35 +1,40 @@
 package com.example.Member;
 
-import java.math.BigDecimal;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
+
 import com.example.domain.Member;
 import com.example.mapper.MemberMapper;
 
-
 @Service
-public class MemberRegisterService {
-	
+public class MemberModifyService {
+
 	@Autowired
 	MemberMapper memberMapper;
 	
-	public void register( Member member, BindingResult errors ) {
+	public void Modify( Member member, BindingResult errors ) {
 		
 		Member validate = memberMapper.selectByMembersrl( member.getMembersrl() );
 		
-		if ( validate != null ) {
-			errors.reject("Member already exists", "해당 시리얼에 회원이 이미 존재합니다..");
+		if ( validate == null ) {
+			errors.reject("Member not exists", "해당 시리얼에 회원이 존재하지 않습니다..");
 		}
 		
 		if ( !errors.hasErrors() ) {
-			//Encrypt Password
-			member.setPassword( ConvertMD5( member.getPassword() ) );
+			//if password is not null, it'll change password.
+			if ( member.getPassword() != null ) {
+				//Encrypt Password
+				member.setPassword( ConvertMD5( member.getPassword() ) );
+			}
+			else {
+				member.setPassword( validate.getPassword() );
+			}
 			
-			memberMapper.insert(member);
+			memberMapper.update(member);
 		}
 	}
 	
@@ -52,6 +57,4 @@ public class MemberRegisterService {
 		return MD5;
 		
 	}
-	
-
 }

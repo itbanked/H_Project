@@ -23,11 +23,11 @@
 
 	<h1>Control Member Database : Member Register</h1>
 	
-	<form:form action="/Admin/CMD/Add" method="post" modelAttribute="memberForm">
+	<form:form action="/Admin/CMD/Mod" method="post" modelAttribute="memberForm">
 		<!-- userid -->
 		<div>
 			<label for="userid" class="Define-Values">userid : </label>
-			<form:input path="userid" class="Define-Input-Box"/>
+			<form:input path="userid" class="Define-Input-Box" readonly="true"/>
 			<form:errors path="userid" class="Define-Error-Region"/>
 		</div>
 		<!-- email -->
@@ -44,7 +44,7 @@
 		</div>
 		<!-- password -->
 		<div>
-			<label for="password" class="Define-Values">password : </label>
+			<label for="password" class="Define-Values">password<BR>(수정이 필요한경우만) : </label>
 			<form:input path="password" class="Define-Input-Box"/>
 			<form:errors path="password" class="Define-Error-Region"/>
 		</div>
@@ -54,7 +54,7 @@
 			<form:radiobutton path="isadmin" value="Y" label="True"/>
 			<form:radiobutton path="isadmin" value="N" label="False" checked="checked"/>
 		</div> 
-		<input type="submit" value="Register Member">
+		<input type="submit" value="Modify Member">
 	</form:form>
 
 </body>

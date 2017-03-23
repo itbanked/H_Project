@@ -9,6 +9,15 @@ import javax.validation.constraints.Size;
 import com.example.domain.Member;
 
 public class MemberForm extends Member {
+	
+	public void SetMember( Member member ) {
+		super.setIsadmin(member.getIsadmin());
+		super.setEmail(member.getEmail());
+		super.setMembersrl(member.getMembersrl());
+		super.setPassword(member.getPassword());
+		super.setUserid(member.getUserid());
+		super.setUsername(member.getUsername());
+	}
 
 	@NotNull
 	@Digits(integer=10, fraction=2)
