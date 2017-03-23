@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>template.jsp</title>
+<title>index.jsp</title>
 <!-- 1. animate -->
 <link rel="stylesheet" href="/webjars/animate.css/3.5.2/animate.min.css">
 <!-- 2. bootstrap -->
@@ -25,6 +25,11 @@
 
 </head>
 <body>
+<<<<<<< HEAD
+<c:redirect url="/city/page/1"/>
+<%-- <c:redirect url="http://www.google.com"/> --%>
+=======
 <c:redirect url="/Auth"/>
+>>>>>>> 0bee14335826c9383d6e78fa44e8d22c90891f8a
 </body>
 </html>

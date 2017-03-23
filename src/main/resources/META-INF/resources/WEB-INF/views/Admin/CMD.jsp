@@ -42,7 +42,7 @@
 				<td>${Member.password}</td>
 				<td>${Member.isadmin}</td>
 				<td><a class="btn btn-success" href="/Admin/CMD/Mod/${Member.membersrl}">Modify</a></td>
-				<td><a class="btn btn-danger" href="/Admin/CMD/DeleteMember/${Member.membersrl}">Delete</a></td>
+				<td><a class="btn btn-danger" href="/Admin/CMD/Rem/${Member.membersrl}">Delete</a></td>
 			</tr>
 		</c:forEach> 
 	</table>
