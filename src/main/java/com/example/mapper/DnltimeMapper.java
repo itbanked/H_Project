@@ -15,7 +15,7 @@ public interface DnltimeMapper {
 	@Select("select count(*) from dnltime")
 	int selectTotalCount();
 
-	@Select("select * from dnltime")
+	@Select("select * from dnltime order by dnlno")
 	List<Dnltime> selectAll();
 	List<Dnltime> selectAllWithDnl();
 	
@@ -29,7 +29,7 @@ public interface DnltimeMapper {
 	List<Dnltime> selectPage(Pagination paging);
 	List<Dnltime> selectPageWithDnltime(Pagination paging);
 	
-	@Select("select * from dnltime where dnlno=#{dnlno}")
+	@Select("select * from dnltime where dnlno=#{dnlno} order by dnlno")
 	Dnltime selectByDnlno(int dnlno);
 	Dnltime selectByDnlnoWithDnl(int dnlno);
 	

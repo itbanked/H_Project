@@ -39,6 +39,7 @@
 		d.dnl_type
  from dnl d join dnltime dt 
   on d.dnl_code = dt.dnl_code
+   order by dt.dnlno
  offset #{firstItem} -1 rows
   fetch next #{itemsPerPage} rows only
 </select>
@@ -55,6 +56,7 @@
  from dnl d join dnltime dt 
   on d.dnl_code = dt.dnl_code
  where dnlno = #{dnlno}
+ order by dt.dnlno
 </select>
 
 <insert id="insert">
