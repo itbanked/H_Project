@@ -55,7 +55,7 @@ public interface MemberMapper {
 	int update(Member member);
 	
 	@Delete("delete from member where membersrl = #{membersrl}")
-	int delete(BigDecimal membersrl);
+	int delete(Member member);
 
 	@Select("select MemberSrl_Seq.nextval from dual")
 	BigDecimal GetNextMembersrl();
