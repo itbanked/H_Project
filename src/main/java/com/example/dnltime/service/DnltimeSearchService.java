@@ -49,7 +49,7 @@ public class DnltimeSearchService {
 		List<Dnltime> list = null;
 		
 		if(withDnl)
-			list = dnltimeMapper.selectPageWithDnltime(paging);
+			list = dnltimeMapper.selectPageWithDnl(paging);
 		else
 			list = dnltimeMapper.selectPage(paging);
 		

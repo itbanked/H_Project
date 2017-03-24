@@ -27,7 +27,7 @@ public interface DnltimeMapper {
 		" fetch next #{itemsPerPage} rows only"
 	})
 	List<Dnltime> selectPage(Pagination paging);
-	List<Dnltime> selectPageWithDnltime(Pagination paging);
+	List<Dnltime> selectPageWithDnl(Pagination paging);
 	
 	@Select("select * from dnltime where dnlno=#{dnlno} order by dnlno")
 	Dnltime selectByDnlno(int dnlno);

@@ -65,7 +65,7 @@ public class DnltimeMapperTests {
 		paging.setTotalItem(dnltimeMapper.selectTotalCount());
 		paging.setPageNo(2);
 		
-		List<Dnltime> list = dnltimeMapper.selectPageWithDnltime(paging);
+		List<Dnltime> list = dnltimeMapper.selectPageWithDnl(paging);
 		
 		for(Dnltime d : list)
 			System.out.println(d);
