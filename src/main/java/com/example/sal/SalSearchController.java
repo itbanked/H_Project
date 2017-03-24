@@ -30,6 +30,7 @@ public class SalSearchController {
 		
 		List<Sal> list = salSearchService.getListAll();
 		model.addAttribute("sals", list);
+//		request.setAttribute("sals", list);  Model model -> HttpServletRequset request
 		
 		return "sal/list";
 	}
@@ -40,7 +41,6 @@ public class SalSearchController {
 		
 		Map<String, Object> page = salSearchService.getPage(pageNo);
 		model.addAttribute("page", page);
-		System.out.println(page);
 		
 		return "sal/page";
 	}
