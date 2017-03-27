@@ -18,10 +18,6 @@
 		h1,#tableDiv, th{
 			text-align: center;
 		}
-		#tableDiv{
-			width:80%;
-			margin: 0 auto;
-		}
 		td{
 			font-weight: bold;
 		}
@@ -37,16 +33,16 @@
 				<th>출근시간</th>
 				<th>퇴근시간</th>
 				<th>근태사유</th>
+				<th>로그인id</th>
 			</tr>
-	<c:forEach var="d" items="${dnltime}">
 			<tr>
-				<td class="success">${d.dnlno}</td>
-				<td class="warning"><fmt:formatDate type="date" value="${d.attend}"/></td>
-				<td class="warning"><fmt:formatDate type="time" value="${d.attend}"/></td>
-				<td class="warning"><fmt:formatDate type="time" value="${d.leave}"/></td>
-				<td class="success">${d.reason}</td>
+				<td class="success">${dnltime.dnlno}</td>
+				<td class="warning"><fmt:formatDate type="date" value="${dnltime.attend}"/></td>
+				<td class="warning"><fmt:formatDate type="time" value="${dnltime.attend}"/></td>
+				<td class="warning"><fmt:formatDate type="time" value="${dnltime.leave}"/></td>
+				<td class="warning">${dnltime.reason}</td>
+				<td class="warning">${dnltime.membersrl}</td>
 			</tr>
-		</c:forEach>
 	</table>
 </div>
 

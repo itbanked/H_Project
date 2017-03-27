@@ -60,7 +60,6 @@
  from dnl d right outer join dnltime dt 
   on d.dnl_code = dt.dnl_code
  where dnlno = #{dnlno}
- order by dt.dnlno
 </select>
 
 <insert id="insert">

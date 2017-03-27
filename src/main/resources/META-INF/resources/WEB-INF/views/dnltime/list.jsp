@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>template.jsp</title>
+<title>list.jsp</title>
 
 <!-- Code Assist -->
 <c:if test="false">
@@ -33,6 +33,7 @@
 				<th>출근시간</th>
 				<th>퇴근시간</th>
 				<th>근태사유</th>
+				<th>로그인id</th>
 			</tr>
 	<c:forEach var="d" items="${dnltime}">
 			<tr>
@@ -40,7 +41,8 @@
 				<td class="warning"><fmt:formatDate type="date" value="${d.attend}"/></td>
 				<td class="warning"><fmt:formatDate type="time" value="${d.attend}"/></td>
 				<td class="warning"><fmt:formatDate type="time" value="${d.leave}"/></td>
-				<td class="success">${d.reason}</td>
+				<td class="warning">${d.reason}</td>
+				<td class="warning">${d.membersrl}</td>
 			</tr>
 		</c:forEach>
 	</table>
