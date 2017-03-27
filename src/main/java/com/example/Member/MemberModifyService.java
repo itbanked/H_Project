@@ -26,7 +26,7 @@ public class MemberModifyService {
 		
 		if ( !errors.hasErrors() ) {
 			//if password is not null, it'll change password.
-			if ( member.getPassword() != null ) {
+			if ( !member.getPassword().equals("") ) {
 				//Encrypt Password
 				member.setPassword( ConvertMD5( member.getPassword() ) );
 			}
