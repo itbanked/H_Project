@@ -26,16 +26,27 @@ create table dnltime(
 	leave		date	not null,
 	reason		varchar2(15 char),
 	dnl_code	number(3)  constraint fk_dnlcode references dnl(dnl_code) on delete set null,
-	empno		number(4)  constraint fk_empno references emp(empno) on delete set null
+	membersrl   number(10) constraint fk_membersrl1 references member(membersrl) on delete set null
 );
 
-insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , '은행', 02 , 7369);
+insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , '은행업무', 02 , 1);
+insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 00 , 1);
+insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 00 , 1);
+insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 00 , 1);
+insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 04 , 1);
+insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 05 , 1);
+insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 06 , 1);
+insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 07 , 1);
+insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 05 , 1);
+insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 04 , 1);
+insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 03 , 1);
+insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 01 , 1);
 
 commit;
 
 select * from dnl;
 select * from dnltime;
 
-select * from dnltime d join emp e on(d.empno = e.empno);
+-- select * from dnltime d join emp e on(d.empno = e.empno);
 
 -- select * from dnltime d left outer join (select * from emp e left outer join dept d on(d.deptno= e.deptno)) e on (d.empno = e.empno);

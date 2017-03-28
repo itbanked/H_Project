@@ -3,56 +3,61 @@
 <mapper namespace="com.example.mapper.DnltimeMapper">
 
 <resultMap type="com.example.domain.Dnltime" id="dnltimeWithDnl">
-	<id property="dnlno" column="dnlno"/>
-	<result	property="attend" column="attend"/>
-	<result property="leave" column="leave"/>
-	<result property="reason" column="reason"/>
-	<result property="membersrl" column="membersrl"/>
+	<id property="dnlno" column="dt_dnlno"/>
+	<result	property="attend" column="dt_attend"/>
+	<result property="leave" column="dt_leave"/>
+	<result property="reason" column="dt_reason"/>
+	<result property="dnlCode" column="dt_dnl_code"/>
+	<result property="membersrl" column="dt_membersrl"/>
 	<association property="dnl" javaType="com.example.domain.Dnl">
-		<id property="dnlCode" column="dnl_code"/>
-		<result property="dnlType" column="dnl_type"/>
+		<id property="dnlCode" column="d_dnl_code"/>
+		<result property="dnlType" column="d_dnl_type"/>
 	</association>
 </resultMap>
 
 <select id="selectAllWithDnl" resultMap="dnltimeWithDnl">
 	select 
-		dt.dnlno,
-		dt.attend,
-		dt.leave,
-		dt.reason,
-		dt.membersrl,
-		d.dnl_code,
-		d.dnl_type
- from dnl d join dnltime dt 
+		d.dnl_code		as d_dnl_code,
+		d.dnl_type		as d_dnl_type,
+		dt.dnlno		as dt_dnlno,
+		dt.attend		as dt_attend,
+		dt.leave		as dt_leave,
+		dt.reason		as dt_reason,
+		dt.dnl_code		as dt_dnl_code,
+		dt.membersrl	as dt_membersrl
+ from dnl d right outer join dnltime dt 
   on d.dnl_code = dt.dnl_code
   order by dt.dnlno
 </select>
 
-<select id="selectPageWithDnltime" resultMap="dnltimeWithDnl">
+<select id="selectPageWithDnl" resultMap="dnltimeWithDnl">
 	select 
-		dt.dnlno,
-		dt.attend,
-		dt.leave,
-		dt.reason,
-		dt.membersrl,
-		d.dnl_code,
-		d.dnl_type
- from dnl d join dnltime dt 
+		d.dnl_code		as d_dnl_code,
+		d.dnl_type		as d_dnl_type,
+		dt.dnlno		as dt_dnlno,
+		dt.attend		as dt_attend,
+		dt.leave		as dt_leave,
+		dt.reason		as dt_reason,
+		dt.dnl_code		as dt_dnl_code,
+		dt.membersrl	as dt_membersrl
+ from dnl d right outer join dnltime dt 
   on d.dnl_code = dt.dnl_code
+   order by dt.dnlno
  offset #{firstItem} -1 rows
   fetch next #{itemsPerPage} rows only
 </select>
 
 <select id="selectByDnlnoWithDnl" resultMap="dnltimeWithDnl">
 	select 
-		dt.dnlno,
-		dt.attend,
-		dt.leave,
-		dt.reason,
-		dt.membersrl,
-		d.dnl_code,
-		d.dnl_type
- from dnl d join dnltime dt 
+		d.dnl_code		as d_dnl_code,
+		d.dnl_type		as d_dnl_type,
+		dt.dnlno		as dt_dnlno,
+		dt.attend		as dt_attend,
+		dt.leave		as dt_leave,
+		dt.reason		as dt_reason,
+		dt.dnl_code		as dt_dnl_code,
+		dt.membersrl	as dt_membersrl
+ from dnl d right outer join dnltime dt 
   on d.dnl_code = dt.dnl_code
  where dnlno = #{dnlno}
 </select>

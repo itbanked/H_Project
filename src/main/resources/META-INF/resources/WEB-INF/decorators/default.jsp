@@ -75,6 +75,9 @@
 						if ( CurrentSession.getAttribute("IsAdmin") != null ) {
 							out.println("<li><a href='/Admin'><span class='glyphicon glyphicon-cog'></span> Admin</a></li>"); 
 						}
+						else {
+							out.println("<li><a href='/User'><span class='glyphicon glyphicon-cog'></span> Settings</a></li>");
+						}
 	
 						if ( CurrentSession.getAttribute("logged") != null ) {
 							out.println("<li><a href='/Logout'><span class='glyphicon glyphicon-log-out'></span> Logout</a></li>"); 
