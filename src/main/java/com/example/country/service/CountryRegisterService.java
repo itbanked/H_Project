@@ -13,18 +13,14 @@ public class CountryRegisterService {
 	@Autowired
 	CountryMapper countryMapper;
 	
-	public void register( Country country, BindingResult errors ) {
-
-		Country confirm = countryMapper.selectByCode( country.getCode() );
+	public void register(Country country, BindingResult errors) {
 		
-		if ( confirm != null ) {
-			errors.reject("Invalid Country Code", "유효한 국가 코드가 아닙니다.");
-		}
+		Country confirm = countryMapper.selectByCode(country.getCode());
+		if (confirm != null)
+			errors.reject("InvalidCountryCode", "중복된 Country Code가 존재합니다.");
 		
-		if ( !errors.hasErrors() ) {
+		if (!errors.hasErrors())
 			countryMapper.insert(country);
-		}
 	}
-	
 
 }

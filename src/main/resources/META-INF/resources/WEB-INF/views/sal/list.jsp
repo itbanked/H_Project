@@ -31,8 +31,8 @@
 		text-transform: capitalize;
 	}
 	.headTR {
-		background-color: skyblue;
-		color: white;
+		background-color: black;
+		color: gold;
 	}
 </style>
 
