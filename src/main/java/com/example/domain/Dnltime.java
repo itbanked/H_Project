@@ -14,6 +14,15 @@ public class Dnltime {
 	private int dnlCode;
 	private int membersrl;
 	private Dnl dnl;
+	private Member member;
+
+	public Member getMember() {
+		return member;
+	}
+
+	public void setMember(Member member) {
+		this.member = member;
+	}
 
 	public Dnl getDnl() {
 		return dnl;

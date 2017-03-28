@@ -18,10 +18,6 @@
 		h1,#tableDiv, th{
 			text-align: center;
 		}
-		#tableDiv{
-			width:80%;
-			margin: 0 auto;
-		}
 		td{
 			font-weight: bold;
 		}
@@ -37,22 +33,19 @@
 			<th>출근시간</th>
 			<th>최근시간</th>
 			<th>근태사유</th>
-			<th>근태코드</th>
-			<th>로그인id</th>
 		</tr>
 		<c:forEach var="d" items="${page.dnltimeList}">
 		<tr>
-			<td class="success">${d.dnlno}</td>
+			<td class="success"><a href="/dnltime/item/${d.dnlno}">${d.dnlno}</a></td>
 				<td class="warning"><fmt:formatDate type="date" value="${d.attend}"/></td>
 				<td class="warning"><fmt:formatDate type="time" value="${d.attend}"/></td>
 				<td class="warning"><fmt:formatDate type="time" value="${d.leave}"/></td>
 			<td class="warning">${d.reason}</td>
-			<td class="warning">${d.dnlCode}</td>
-			<td class="warning">${d.membersrl}</td>
 		</tr>
 		</c:forEach>
 	</table>
 
+	
 	<div>
 		<ul class="pagination">
 				<li><a href="/dnltime/page/1">first</a></li>

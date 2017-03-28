@@ -30,17 +30,17 @@ create table dnltime(
 );
 
 insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , '은행업무', 02 , 1);
-insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 00 , 1);
-insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 00 , 1);
-insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 00 , 1);
-insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 04 , 1);
+insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , '병원진료', 00 , 1);
+insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 00 , 2);
+insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , '병원진료', 00 , 6);
+insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 04 , 6);
+insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 05 , 2);
+insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , '출장', 06 , 1);
+insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 07 , 24);
 insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 05 , 1);
-insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 06 , 1);
-insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 07 , 1);
-insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 05 , 1);
-insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 04 , 1);
-insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 03 , 1);
-insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 01 , 1);
+insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , '고객미팅', 04 , 25);
+insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 03 , 6);
+insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 01 , 2);
 
 commit;
 
@@ -50,3 +50,7 @@ select * from dnltime;
 -- select * from dnltime d join emp e on(d.empno = e.empno);
 
 -- select * from dnltime d left outer join (select * from emp e left outer join dept d on(d.deptno= e.deptno)) e on (d.empno = e.empno);
+
+-- select * from dnltime dt right outer join member m on dt.MEMBERSRL = m.MEMBERSRL;
+-- 
+-- select * from member;
