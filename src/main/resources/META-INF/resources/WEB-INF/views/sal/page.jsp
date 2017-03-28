@@ -31,11 +31,11 @@
 		text-transform: capitalize;
 	}
 	.headTR {
-		background-color: skyblue;
-		color: white;
+		background-color: black;
+		color: gold;
 	}
-	.btn-sm { 
-		background-color: pink;
+	.registerBox {
+		text-align: right;
 	}
 </style>
 
@@ -45,9 +45,10 @@
 <c:set var="paging" value="${page.paging}"/>
 
 <h1>Salary Page.No = ${paging.pageNo}</h1>
-
-<a href="/sal/register/${sal.salno}?pageNo=${pageNo}" class="btn btn-info">
+<div class="registerBox">
+<a href="/sal/register/${sal.salno}?pageNo=${pageNo}" class="btn btn-info btn-sm">
 <span class="glyphicon glyphicon-inbox"></span>Sal 등록</a>
+</div>
 
 <div class="text-center table-responsive">
 	<table class="table">
@@ -59,8 +60,7 @@
 			<td>aid Salary</td>
 			<td>salary Date</td>
 			<td>member_Srl</td>
-			<td></td>
-			<td></td>
+			<td colspan="2"></td>
 		</tr>
 	<c:forEach var="sal" items="${sals}">
 		<tr>
@@ -88,10 +88,10 @@
 
 <c:choose>
 <c:when test="${paging.firstGroup == true}">
-	<a href="/sal/page/${paging.firstPage}" class="btn btn-sm">&laquo;</a>
+	<a href="/sal/page/${paging.firstPage}" class="btn btn-sm btn-warning">&laquo;</a>
 </c:when>
 <c:when test="${paging.firstGroup == false}">
-	<a href="/sal/page/${paging.firstPage - 1}" class="btn btn-sm">&laquo;</a>
+	<a href="/sal/page/${paging.firstPage - 1}" class="btn btn-sm btn-warning">&laquo;</a>
 </c:when>
 </c:choose>
 <c:forEach var="i" begin="${paging.firstPage}" end="${paging.lastPage}">
@@ -100,10 +100,10 @@
 
 <c:choose>
 <c:when test="${paging.lastGroup == true}">
-	<a href="/sal/page/${paging.lastPage}"class="btn btn-sm">&raquo;</a>
+	<a href="/sal/page/${paging.lastPage}"class="btn btn-sm btn-warning">&raquo;</a>
 </c:when>
 <c:when test="${paging.lastGroup == false}">
-	<a href="/sal/page/${paging.lastPage + 1}"class="btn btn-sm">&raquo;</a>
+	<a href="/sal/page/${paging.lastPage + 1}"class="btn btn-sm btn-warning">&raquo;</a>
 </c:when>
 </c:choose>
 
