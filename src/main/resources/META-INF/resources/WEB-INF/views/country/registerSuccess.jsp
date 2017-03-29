@@ -14,14 +14,17 @@
 	<link rel="stylesheet" href="../code_assist/animate.css">
 	<link rel="stylesheet" href="../code_assist/bootstrap.css">
 </c:if>
-
+<style>
+	.danger {
+		font-weight: bold;
+	}
+</style>
 </head>
 <body>
 <h1>Country 등록 성공입니다.</h1>
 <div class="text-center table-responsive">
 	<table class="table table-bordered">
 		<tr class="danger">
-			<td>No.</td>
 			<td>code</td>
 			<td>name</td>
 			<td>continent</td>
@@ -40,22 +43,21 @@
 		</tr>
 	
 		<tr>
-			<td><b>${status.index + 1}</b></td>
 			<td>${country.code}</td> 
 			<td>${country.name}</td>
-			<td>${country.continent}</td>
-			<td>${country.region}</td>
-			<td>${country.surfaceArea}</td>
-			<td>${country.indepYear}</td>
-			<td>${country.population}</td>
-			<td>${country.lifeExpectancy}</td> 
-			<td>${country.gnp}</td> 
-			<td>${country.gnpOld}</td> 
-			<td>${country.localName}</td> 
-			<td>${country.governmentForm}</td> 
-			<td>${country.headOfState}</td> 
-			<td>${country.capital}</td> 
-			<td>${country.code2}</td>
+			<td>${country.continent == null? 'null' : country.continent}</td>
+			<td>${country.region == null? 'null' : country.region}</td>
+			<td>${country.surfaceArea == null? 'null' : country.surfaceArea}</td>
+			<td>${country.indepYear == null? 'null' : country.indepYear}</td>
+			<td>${country.population == null? 'null' : country.population}</td>
+			<td>${country.lifeExpectancy == null? 'null' : country.lifeExpectancy}</td> 
+			<td>${country.gnp == null? 'null' : country.gnp}</td> 
+			<td>${country.gnpOld == null? 'null' : country.gnpOld}</td> 
+			<td>${country.localName == null? 'null' : country.localName}</td> 
+			<td>${country.governmentForm == null? 'null' : country.governmentForm}</td> 
+			<td>${country.headOfState == null? 'null' : country.headOfState}</td> 
+			<td>${country.capital == null? 'null' : country.capital}</td> 
+			<td>${country.code2 == null? 'null' : country.code2}</td>
 		</tr>
 	</table>
 <a href="/country/page/${param.pageNo}">Country Page로</a>
