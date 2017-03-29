@@ -58,13 +58,12 @@ public class LoginServlet extends HttpServlet {
 		resp.setCharacterEncoding("UTF-8");
 		resp.setContentType("text/html; charset=UTF-8");
 		
-		if ( !IsAllowed(id) ) {
-			resp.sendRedirect("/NoPermission");
-		}
-		else {
-			
-			//ID 가 있는경우에만 인증처리
-			if ( IsExistingId(id) ) {
+		//ID 가 있는경우에만 인증처리
+		if ( IsExistingId(id) ) {
+			if ( !IsAllowed(id) ) {
+				resp.sendRedirect("/NoPermission");
+			}
+			else {
 				//id 에 저장된 암호화된 비밀번호를 가져온다.
 				String Match = GetPassword(id);
 				
@@ -89,9 +88,9 @@ public class LoginServlet extends HttpServlet {
 					resp.sendRedirect("/Auth?error");
 				}
 			}
-			else {
-				resp.sendRedirect("/Auth?error");
-			}
+		}
+		else {
+			resp.sendRedirect("/Auth?error");
 		}
 	}	
 	
