@@ -111,7 +111,7 @@ public class PlayersForm extends Players{
 		return super.getDateofjoin();
 	}
 
-	@DateTimeFormat(pattern="yyyy-MM-dd")
+	@DateTimeFormat(pattern="MM/dd/yyyy")
 	@Override
 	public void setDateofjoin(Date dateofjoin) {
 		// TODO Auto-generated method stub
