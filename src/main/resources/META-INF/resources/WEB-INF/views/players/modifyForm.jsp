@@ -14,7 +14,17 @@
 	<link rel="stylesheet" href="../code_assist/animate.css">
 	<link rel="stylesheet" href="../code_assist/bootstrap.css">
 </c:if>
-
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+	 $( function() {
+    	$( "#datepicker").datepicker({
+    		
+    	});
+  } );
+	
+</script>
 </head>
 <body>
 <div class="container">
@@ -53,7 +63,7 @@
 	</div>
 	<div class="form-group">
 		<label for="dateofjoin" class="control-label col-sm-2">Date of Join : </label>
-		<form:input path="dateofjoin" class="col-sm-3"/>
+		<form:input path="dateofjoin" id="datepicker" class="col-sm-3"/>
 		<form:errors path="dateofjoin" class="col-sm-3"/>
 	</div>
 	<div class="col-sm-offset-4">

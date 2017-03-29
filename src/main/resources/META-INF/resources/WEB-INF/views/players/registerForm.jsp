@@ -8,17 +8,27 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>template.jsp</title>
+<title>Member Regist.jsp</title>
 <!-- Code Assist -->
 <c:if test="false">
 	<link rel="stylesheet" href="../code_assist/animate.css">
 	<link rel="stylesheet" href="../code_assist/bootstrap.css">
 </c:if>
-
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+	 $( function() {
+    	$( "#datepicker").datepicker({
+    		
+    	});
+  } );
+	
+</script>
 </head>
 <body>
 <div class="container">
-<h1>Member Register</h1>
+<h1>Member Regist</h1>
 <form:form action="/players/register?pageNo=${param.pageNo}" method="post" modelAttribute="playersForm" class="animated bounceInLeft form-horizontal">
 	<div class="form-group">
 		<label for="idno" class="control-label col-sm-2">Idno : </label>
@@ -32,7 +42,7 @@
 	</div>
 	<div class="form-group">
 		<label for="backnumber" class="control-label col-sm-2">Backnumber : </label>
-		<form:input path="backnumber" class="col-sm-3"/>
+		<form:input type="number" path="backnumber" class="col-sm-3"/>
 		<form:errors path="backnumber" class="col-sm-3"/>
 	</div>
 	<div class="form-group">
@@ -52,7 +62,7 @@
 	</div>
 	<div class="form-group">
 		<label for="dateofjoin" class="control-label col-sm-2">Date of Join : </label>
-		<form:input path="dateofjoin" class="col-sm-3"/>
+		<form:input path="dateofjoin" id="datepicker" class="col-sm-3"/>
 		<form:errors path="dateofjoin" class="col-sm-3"/>
 	</div>
 	<div class="col-sm-offset-4">
