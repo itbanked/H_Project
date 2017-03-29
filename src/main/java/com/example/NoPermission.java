@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.example.mapper.MemberMapper;
 
-@WebServlet("/Admin")
+@WebServlet("/NoPermission")
 public class NoPermission extends HttpServlet {
 
 	@Autowired
@@ -35,7 +35,7 @@ public class NoPermission extends HttpServlet {
 		System.out.println("doGet().....");
 		System.out.println("############");
 		
-		RequestDispatcher disp = req.getRequestDispatcher("/WEB-INF/Admin/Main.jsp");
+		RequestDispatcher disp = req.getRequestDispatcher("/WEB-INF/Auth/NoPermission.jsp");
 		disp.forward(req, resp);
 	}
 	

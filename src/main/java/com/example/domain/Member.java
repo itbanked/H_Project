@@ -10,6 +10,7 @@ public class Member {
 	private String username;
 	private String password;
 	private String isadmin;
+	private String isallowed;
 
 	public Member() {
 		// TODO Auto-generated constructor stub
@@ -102,6 +103,21 @@ public class Member {
 	 */
 	public Member setIsadmin(final String value) {
 		isadmin = value;
+		return this;
+	}
+	
+	/**
+	 * @return the isadmin
+	 */
+	public String getIsallowed() {
+		return isallowed;
+	}
+
+	/**
+	 * @param value the isadmin to set
+	 */
+	public Member setIsallowed(final String value) {
+		isallowed = value;
 		return this;
 	}
 

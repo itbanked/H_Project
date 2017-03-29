@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>memberform.jsp</title>
+<title>You don't have permission</title>
 <!-- 2. bootstrap -->
 <link rel="stylesheet" href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css">
 

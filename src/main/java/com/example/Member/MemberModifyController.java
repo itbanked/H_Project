@@ -35,7 +35,7 @@ public class MemberModifyController {
 	MemberMapper memberMapper;
 	
 	@GetMapping("/Mod/{id}")
-	public String modifyForm(MemberForm memberForm, @PathVariable BigDecimal id) {
+	public String modifyForm(MemberForm memberForm, @PathVariable BigDecimal id, Model model) {
 		log.info("modifyForm()");
 
 		Member member = memberSearchService.getMemberByMemberSrl(id);
@@ -44,6 +44,8 @@ public class MemberModifyController {
 		memberForm.setMembersrl(id);
 		
 		System.out.println("Current Membersrl(ModifyForm) : " + memberForm.getMembersrl());
+
+		model.addAttribute("member", memberForm);
 		
 		return "Admin/CMD/ModifyMember";
 	}

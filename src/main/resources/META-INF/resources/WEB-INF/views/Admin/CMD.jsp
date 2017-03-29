@@ -30,6 +30,7 @@
 			<td>UserName</td>
 			<td>Password(Encrypted)</td>
 			<td>IsAdmin</td>
+			<td>IsAllowed</td>
 			<td class="ButtonTD">Modify</td>
 			<td class="ButtonTD">Delete</td>
 		</tr>
@@ -41,6 +42,7 @@
 				<td>${Member.username}</td>
 				<td>${Member.password}</td>
 				<td>${Member.isadmin}</td>
+				<td>${Member.isallowed}</td>
 				<td><a class="btn btn-success" href="/Admin/CMD/Mod/${Member.membersrl}">Modify</a></td>
 				<td><a class="btn btn-danger" href="/Admin/CMD/Rem/${Member.membersrl}">Delete</a></td>
 			</tr>

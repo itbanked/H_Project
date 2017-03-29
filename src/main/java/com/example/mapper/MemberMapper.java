@@ -38,8 +38,8 @@ public interface MemberMapper {
 
 	@Insert({
 		"insert into ",
-		"member ( membersrl, 	userid, 	email, 		username, 		password, 		isadmin  ) ",
-		"values ( #{membersrl},	#{userid},	#{email},	#{username},	#{password},	#{isadmin})"				
+		"member ( membersrl, 	userid, 	email, 		username, 		password, 		isadmin,	isallowed  ) ",
+		"values ( #{membersrl},	#{userid},	#{email},	#{username},	#{password},	#{isadmin}, #{isallowed} )"				
 	})
 	int insert(Member member);
 	
@@ -49,7 +49,8 @@ public interface MemberMapper {
 		"email = #{email},",
 		"username = #{username},",
 		"password = #{password},",
-		"isadmin = #{isadmin}",
+		"isadmin = #{isadmin},",
+		"isallowed = #{isallowed}",
 		"where membersrl = #{membersrl}"
 	})
 	int update(Member member);

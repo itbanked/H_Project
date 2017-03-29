@@ -47,6 +47,12 @@
 			<label for="isadmin" class="Define-Values">isadmin : </label>
 			<form:radiobutton path="isadmin" value="Y" label="True"/>
 			<form:radiobutton path="isadmin" value="N" label="False" checked="checked"/>
+		</div>  
+		<!-- isallowed -->
+		<div>
+			<label for="isallowed" class="Define-Values">isallowed : </label>
+			<form:radiobutton path="isallowed" value="Y" label="True"/>
+			<form:radiobutton path="isallowed" value="N" label="False" checked="checked"/>
 		</div> 
 		<input type="submit" value="Remove Member">
 	</form:form>
