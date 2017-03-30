@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>registerForm.jsp</title>
+<title>modifyForm.jsp</title>
 
 <!-- Code Assist -->
 <c:if test="false">
@@ -16,48 +16,16 @@
 	<link rel="stylesheet" href="../code_assist/bootstrap.css">
 </c:if>
 
-<style>
-	a:HOVER {
-		text-decoration: none;	
-	}
-	a {
-		color: white;
-	}
-	.btn-sm {
-		background-color: black;
-	}
-	.registerBox {
-		width: 180px;
-		height: 300px;
-		margin: 50px auto;
-	}
-	h1 { 
-		text-align: center;
-		margin: 50px auto;
-	}
-	.registerButton {
-		margin: 50px auto;
-		text-align: right;
-	}
-	.preButton {
-		width: 600px;
-		height: 10px;
-		margin: 0 auto;
-		text-align: right;
-	}
-</style>
-
 </head>
 <body>
-<h1>Country 등록</h1>
-<form:form action="/country/register?pageNo=${param.pageNo}" method="post" modelAttribute="countryForm">
+<h1>Country 수정</h1>
+<form:form action="/country/modify?pageNo=${param.pageNo}" method="post" modelAttribute="countryForm">
 	
 	<!-- code -->
 	<div>
 		<label for="code"><span class="glyphicon glyphicon-pencil"></span>
 		Country Code</label><br>
-		<form:input path="code"/>
-		<form:errors path="code"/>	
+		<form:input path="code" readonly="true"/>
 	</div>
 	<div>
 		<form:errors/>
@@ -82,7 +50,7 @@
 			<form:option value="Antarctica"/>
 			<form:option value="South America"/>
 		</form:select>
-		<form:errors path="continent"/>	
+		<form:errors path="continent"/>		
 	</div>
 	<!-- region -->
 	<div>
@@ -170,7 +138,7 @@
 	</div>
 	<!-- register Button -->
 	<div class="registerButton">
-		<input type="submit" value="Country 등록">	
+		<input type="submit" value="Country 수정">	
 	</div>
 	<div class="preButton">
 		<a class="btn btn-sm"href="/country/page/${param.pageNo}">
@@ -178,6 +146,7 @@
 	</div>
 
 </form:form>
+
 
 </body>
 </html>

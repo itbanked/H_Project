@@ -10,6 +10,24 @@ import com.example.domain.Country;
 
 public class CountryForm extends Country {
 	
+	public void setCountry(Country country) {
+			super.setCode(country.getCode());
+			super.setName(country.getName());
+			super.setContinent(country.getContinent());
+			super.setRegion(country.getRegion());
+			super.setSurfaceArea(country.getSurfaceArea());
+			super.setIndepYear(country.getIndepYear());
+			super.setPopulation(country.getPopulation());
+			super.setLifeExpectancy(country.getLifeExpectancy());
+			super.setGnp(country.getGnp());
+			super.setGnpOld(country.getGnpOld());
+			super.setLocalName(country.getLocalName());
+			super.setGovernmentForm(country.getGovernmentForm());
+			super.setHeadOfState(country.getHeadOfState());
+			super.setCapital(country.getCapital());
+			super.setCode2(country.getCode2());
+	}
+	
 	@NotNull
 	@Size(max=3)
 	@Override
