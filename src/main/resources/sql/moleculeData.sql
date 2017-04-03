@@ -1,10 +1,10 @@
-DROP TABLE molecules CASCADE CONSTRAINTS;
+DROP TABLE molecule CASCADE CONSTRAINTS;
 DROP TABLE mass CASCADE CONSTRAINTS;
 DROP TABLE acidity CASCADE CONSTRAINTS;
 DROP TABLE state CASCADE CONSTRAINTS;
 DROP TABLE warning CASCADE CONSTRAINTS;
 
-CREATE TABLE molecules (
+CREATE TABLE molecule (
 	name varchar2(35 char) NOT NULL,
 	chemical_formula varchar2(15 char) NOT NULL,
 	density number(9,4),
@@ -44,7 +44,7 @@ CREATE TABLE warning (
 	PRIMARY KEY (hazard_statements)
 );
 
-ALTER TABLE molecules ADD FOREIGN KEY (hazard_statements) REFERENCES warning(hazard_statements);
+ALTER TABLE molecule ADD FOREIGN KEY (hazard_statements) REFERENCES warning(hazard_statements);
 
 
 --
@@ -61,17 +61,17 @@ insert into warning values  ('NFPA704_0_1_0', 'requires considerable preheating.
 -- insert into molecules
 --
 
-insert into molecules values ('L-ascorbic acid', 'C6H8O6',    1.65,		191,	330,	4.1,	null,	        'nutrient');
-insert into molecules values ('acetone',         'C3H6O',	  0.7845,	-94.7,	null,	19.2,	'H319',	        'solvent');
-insert into molecules values ('alanine',         'C3H7NO2',   1.424,	258,	167.2,	24.08,	null,       	'nutrient');
-insert into molecules values ('dodecane',        'C12H26',	  0.7495,	-9.65,	null,	null,   'H304',     	'solvent');
-insert into molecules values ('citric acid',     'C6H8O7',	  1.665,	156,	1174.3,	3.13,   'H319',     	'nutrient');
-insert into molecules values ('d-glucose',       'C6H12O6',    1.54,    148,    909,     null,  'NFPA704_0_1_0','blood sugar');
-insert into molecules values ('sucrose',         'C12H22O11',  1.587,   null,   186,     null,  'NFPA704_0_1_0','table sugar');
-insert into molecules values ('starch',          'C6nH10nO5n',  1.5,    null,   null,     null,  null,          'energy store of plants');
-insert into molecules values ('acetylene',       'C2H2',        0.001,  -80.8,  null,     25,    null,          'welding');
-insert into molecules values ('p-benzoquinone',  'C6H4O2',      1.318,   115,   null,     null,'toxic',         'synthesis');
-insert into molecules values ('catechol',        'C6H6O2',      1.344,   105,    430,     9.48, 'NFPA704_3_1_0','pesticide');
+insert into molecule values ('L-ascorbic acid', 'C6H8O6',    1.65,		191,	330,	4.1,	null,	        'nutrient');
+insert into molecule values ('acetone',         'C3H6O',	  0.7845,	-94.7,	null,	19.2,	'H319',	        'solvent');
+insert into molecule values ('alanine',         'C3H7NO2',   1.424,	258,	167.2,	24.08,	null,       	'nutrient');
+insert into molecule values ('dodecane',        'C12H26',	  0.7495,	-9.65,	null,	null,   'H304',     	'solvent');
+insert into molecule values ('citric acid',     'C6H8O7',	  1.665,	156,	1174.3,	3.13,   'H319',     	'nutrient');
+insert into molecule values ('d-glucose',       'C6H12O6',    1.54,    148,    909,     null,  'NFPA704_0_1_0','blood sugar');
+insert into molecule values ('sucrose',         'C12H22O11',  1.587,   null,   186,     null,  'NFPA704_0_1_0','table sugar');
+insert into molecule values ('starch',          'C6nH10nO5n',  1.5,    null,   null,     null,  null,          'energy store of plants');
+insert into molecule values ('acetylene',       'C2H2',        0.001,  -80.8,  null,     25,    null,          'welding');
+insert into molecule values ('p-benzoquinone',  'C6H4O2',      1.318,   115,   null,     null,'toxic',         'synthesis');
+insert into molecule values ('catechol',        'C6H6O2',      1.344,   105,    430,     9.48, 'NFPA704_3_1_0','pesticide');
 
 --
 -- insert into mass
