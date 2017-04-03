@@ -19,6 +19,9 @@ import com.example.util.Pagination;
 public class DnltimeMapperTests {
 
 	@Autowired
+	MemberMapper memberMapper;
+	
+	@Autowired
 	DnltimeMapper dnltimeMapper;
 	
 	@Autowired
@@ -85,6 +88,12 @@ public class DnltimeMapperTests {
 		System.out.println("dnltime = " + dnltime);
 	}
 	
+	@Test
+	public void test03_selectByDnlnoWithMember(){
+		Dnltime dnltime = dnltimeMapper.selectByDnlnoWithMember(1);
+		
+		System.out.println("dnltime = " + dnltime);
+	}
 	@Test
 	public void test04_insert() throws ParseException{
 		SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss");

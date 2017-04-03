@@ -18,30 +18,32 @@
 		h1,#tableDiv, th{
 			text-align: center;
 		}
+
 		td{
 			font-weight: bold;
 		}
 	</style>
 </head>
 <body>
+
 	<h1>Dnltime List</h1>
 <div id="tableDiv" class="table-responsive">
 	<table class="table table-bordered table-striped container">
 			<tr class="success">
-				<th>근태번호</th>
-				<th>출근날짜</th>
-				<th>출근시간</th>
-				<th>퇴근시간</th>
-				<th>근태사유</th>
-				<th>로그인id</th>
+				<th>member_srl</th>
+				<th>user_ID</th>
+				<th>email</th>
+				<th>user_Name</th>
+				<th>password</th>
+				<th>is_admin</th>
 			</tr>
 			<tr>
-				<td class="success">${dnltime.dnlno}</td>
-				<td class="warning"><fmt:formatDate type="date" value="${dnltime.attend}"/></td>
-				<td class="warning"><fmt:formatDate type="time" value="${dnltime.attend}"/></td>
-				<td class="warning"><fmt:formatDate type="time" value="${dnltime.leave}"/></td>
-				<td class="warning">${dnltime.reason}</td>
-				<td class="warning">${dnltime.membersrl}</td>
+				<td class="warning">${dnltime.member.membersrl}</td>
+				<td class="warning">${dnltime.member.userid}</td>
+				<td class="warning">${dnltime.member.email}</td>
+				<td class="warning">${dnltime.member.username}</td>
+				<td class="warning">${dnltime.member.password}</td>
+				<td class="warning">${dnltime.member.isadmin}</td>
 			</tr>
 	</table>
 </div>

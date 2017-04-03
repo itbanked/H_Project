@@ -2,6 +2,9 @@ package com.example.domain;
 
 import java.math.BigDecimal;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 public class Member {
 
 	private BigDecimal membersrl;
@@ -15,7 +18,19 @@ public class Member {
 	public Member() {
 		// TODO Auto-generated constructor stub
 	}
+	@Override
+	public String toString() {
+		String str= null;
+		
+		ObjectMapper mapper = new ObjectMapper();
+		try {
+			str = mapper.writeValueAsString(this);
+		} catch (JsonProcessingException e) {
+			e.printStackTrace();
+		}
 
+		return str;
+	}
 	/**
 	 * @return the membersrl
 	 */

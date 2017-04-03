@@ -42,12 +42,22 @@ public class DnltimeSearchController {
 		model.addAttribute("page", page);
 		return "dnltime/page";
 	}
+
+//	@GetMapping("/item/{dnlno}")
+//	public String getItemByDnlno(@PathVariable int dnlno, Model model){
+//		log.info("getItem("+ dnlno + ")");
+//		
+//		Dnltime dnltime = dnltimeSearchService.getDnltimeByDnlno(dnlno, true);
+//		model.addAttribute("dnltime", dnltime);
+//		
+//		return "dnltime/item";
+//	}
 	
 	@GetMapping("/item/{dnlno}")
-	public String getItemByDnlno(@PathVariable int dnlno, Model model){
+	public String getItemByDnlnoWithMembersrl(@PathVariable int dnlno, Model model){
 		log.info("getItem("+ dnlno + ")");
 		
-		Dnltime dnltime = dnltimeSearchService.getDnltimeByDnlno(dnlno);
+		Dnltime dnltime = dnltimeSearchService.getDnltimeByDnlnoWithMembersrl(dnlno);
 		model.addAttribute("dnltime", dnltime);
 		
 		return "dnltime/item";

@@ -2,13 +2,12 @@
     pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>  
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>  
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>RegisterSuccess.jsp</title>
+<title>registerSuccess.jsp</title>
 
 <!-- Code Assist -->
 <c:if test="false">
@@ -21,6 +20,6 @@
 
 	<h1>Register Success!</h1>
 	
-	City : ${city}
+	Dnltime : ${dnltime}
 </body>
 </html>

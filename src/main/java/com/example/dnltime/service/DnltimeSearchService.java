@@ -64,12 +64,21 @@ public class DnltimeSearchService {
 		
 		return getDnltimeByDnlno(dnlno, false);
 	}
-public Dnltime getDnltimeByDnlno(int dnlno, boolean withDnl){
+	public Dnltime getDnltimeByDnlno(int dnlno, boolean withMember){
 		Dnltime dnltime = null;
-		if(withDnl)
+		if(withMember)
 			dnltime = dnltimeMapper.selectByDnlnoWithDnl(dnlno);
 		else
 			dnltime = dnltimeMapper.selectByDnlno(dnlno);
 		return dnltime;
 	}
+	
+	public Dnltime getDnltimeByDnlnoWithMembersrl(int dnlno){
+		log.info("getDnltimeByDnlnoWithMembersrl( " + dnlno + ")");
+		
+		Dnltime dnltime = dnltimeMapper.selectByDnlnoWithMember(dnlno);
+		
+		return dnltime;
+	}
+
 }
