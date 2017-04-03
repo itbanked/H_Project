@@ -122,4 +122,17 @@
 		#{membersrl}	  
 	  )
 </insert>
+
+<update id="updateByDnlno">
+	update dnltime
+	   set
+		dnlno 		= #{dnlno},
+		attend 		= #{attend},
+		leave		= #{leave},
+		reason		= #{reason},
+		dnl_code	= #{dnlCode},
+		membersrl	= #{membersrl}
+	 where dnlno = #{dnlno}
+</update>
+
 </mapper>

@@ -6,10 +6,19 @@ import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.example.domain.City;
 import com.example.domain.Dnltime;
 
 public class DnltimeForm extends Dnltime{
 
+	public void setDnltime(Dnltime dnltime) {
+		super.setAttend(dnltime.getAttend());
+		super.setLeave(dnltime.getLeave());
+		super.setReason(dnltime.getReason());
+		super.setMembersrl(dnltime.getMembersrl());
+		super.setDnlCode(dnltime.getDnlCode());
+	}
+	
 	@NotNull
 	@Override
 	public Date getAttend() {
