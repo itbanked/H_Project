@@ -1,5 +1,10 @@
 package com.example.dnltime.service;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
@@ -18,6 +23,14 @@ public class DnltimeRegisterService {
 	DnlMapper dnlmapper;
 	
 	public void register(Dnltime dnltime, BindingResult errors){
+	
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+		
+		Date today = new Date();
+		dnltime.setAttend(today);	
+		dnltime.setLeave(today);
+		dnltime.setDnlCode(00);
+		dnltime.setMembersrl(6);
 		
 		if(dnltime.getDnlCode() != 0 ){
 			Dnltime DnltimeCode = dnltimeMapper.selectByDnlno(dnltime.getDnlCode());

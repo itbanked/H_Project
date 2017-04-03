@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.ManchesterMapper">
+<resultMap type="com.example.domain.Manchester" id="manchesterWithPlayers">
+	<id		property="idno"		column="manchester_idno"/>
+	<result property="team" column="manchester_team"/>
+
+	<collection property="playerss" ofType="com.example.domain.Players" javaType="java.util.ArrayList">
+		<id 	property="memberno" 	column="players_memberno"/>
+		<result	property="idno"			column="players_idno"/>
+		<result property="backnumber" 	column="players_backnumber"/>
+		<result property="position" 	column="players_position"/>
+		<result property="name" 		column="players_name"/>
+		<result property="nationality"  column="players_nationality"/>
+		<result property="dateofjoin" 	column="players_dateofjoin"/>
+	</collection>
+
+</resultMap>
+
+<select id="selectAllWithPlayers" resultMap="manchesterWithPlayers">
+	select m.idno 			as manchester_idno,
+		   m.team 			as manchester_team,
+		   p.idno			as players_idno,
+		   p.memberno 		as players_memberno,
+		   p.backnumber 	as players_backnumber,
+		   p.position 		as players_position,
+		   p.name  			as players_name,
+		   p.nationality 	as players_nationality,
+		   p.dateofjoin 	as players_dateofjoin
+	from manchester m left outer join players p
+		on m.idno = p.idno
+		where m.idno = #{idno}
+	
+</select>
+
+<select id="selectPlayersByIdno" resultType="com.example.domain.Players">
+	select *
+	from players
+	where idno = #{idno}
+</select>
+
+<select id="selectByIdnoWithPlayers" resultMap="manchesterWithPlayers" parameterType="Integer">
+	select m.idno 			as manchester_idno,
+		   m.team 			as manchester_team,
+		   p.idno			as players_idno,
+		   p.memberno 		as players_memberno,
+		   p.backnumber 	as players_backnumber,
+		   p.position 		as players_position,
+		   p.name  			as players_name,
+		   p.nationality 	as players_nationality,
+		   p.dateofjoin 	as players_dateofjoin
+	from manchester m left outer join players p
+		on m.idno = p.idno 
+		where m.idno = #{idno}
+	
+</select>
+
+<insert id="insert">
+	<selectKey keyProperty="idno" keyColumn="idno" resultType="int" order="BEFORE">
+		select manchester_idno_seq.nextval from dual
+	</selectKey>
+	insert into manchester
+	(
+		idno,
+		team
+	)
+	values
+	(
+		#{idno},
+		#{team}
+	)
+</insert>
+<update id="updateByIdno">
+	update manchester
+	set   team = #{team}
+	where idno = #{idno}
+</update>
+</mapper>

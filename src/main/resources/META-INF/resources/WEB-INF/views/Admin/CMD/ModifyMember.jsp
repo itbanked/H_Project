@@ -1,3 +1,4 @@
+<%@page import="org.springframework.web.context.annotation.SessionScope"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -8,7 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>RegisterForm.jsp</title>
+<title>Modify Member</title>
 
 <link rel="stylesheet" href="/css/RegisterForm.css">
 
@@ -50,9 +51,15 @@
 		</div>
 		<!-- isadmin -->
 		<div>
-			<label for="isadmin" class="Define-Values">isadmin : </label>
-			<form:radiobutton path="isadmin" value="Y" label="True"/>
-			<form:radiobutton path="isadmin" value="N" label="False" checked="checked"/>
+			<label for="isadmin" class="Define-Values">isadmin :</label>
+			<form:radiobutton path="isadmin" value="Y" label="True" checked="${ member.isadmin eq 'Y' ? 'checked' : '' }" />
+			<form:radiobutton path="isadmin" value="N" label="False" checked="${ member.isadmin eq 'Y' ? '' : 'checked' }"/>
+		</div>   
+		<!-- isallowed -->
+		<div>
+			<label for="isallowed" class="Define-Values">isallowed :</label>
+			<form:radiobutton path="isallowed" value="Y" label="True" checked="${ member.isallowed eq 'Y' ? 'checked' : '' }"/>
+			<form:radiobutton path="isallowed" value="N" label="False" checked="${ member.isallowed eq 'Y' ? '' : 'checked' }"/>
 		</div> 
 		<input type="submit" value="Modify Member">
 	</form:form>

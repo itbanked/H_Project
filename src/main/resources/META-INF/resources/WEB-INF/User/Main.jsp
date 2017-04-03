@@ -15,12 +15,19 @@
 	<link rel="stylesheet" href="../code_assist/bootstrap.css">
 </c:if>
 
+<c:set var="working" scope="session" value="false"/>
+
 </head>
 <body>
 	<h1>회원 정보</h1>
 		
 	<ul>
 		<li><a href="/User/Mod">회원 정보 수정</a></li>
+		<li>
+			<a href="/User/TimeCheck">
+				<c:out value="${working eq false ? '출근': '퇴근'}"/> 시간 기록
+			</a>
+		</li>
 	</ul>
 	
 </body>

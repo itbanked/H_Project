@@ -60,28 +60,33 @@ public class LoginServlet extends HttpServlet {
 		
 		//ID 가 있는경우에만 인증처리
 		if ( IsExistingId(id) ) {
-			//id 에 저장된 암호화된 비밀번호를 가져온다.
-			String Match = GetPassword(id);
-			
-			//받아온 password 를 md5형식으로 인코딩
-			String PasswordEncoded = ConvertMD5(pw);
-			
-			if ( Match.equals(PasswordEncoded) ) {
-				// 인증성공
-				HttpSession session = req.getSession();
-				session.setAttribute("logged", true);
-				session.setAttribute("ID", id);
-				if ( IsAdmin(id) ) {
-					session.setAttribute("IsAdmin", true);
-					resp.sendRedirect("/country/page/1");
-				}
-				else {
-					resp.sendRedirect("/city/page/1");
-				}
-			} 
+			if ( !IsAllowed(id) ) {
+				resp.sendRedirect("/NoPermission");
+			}
 			else {
-				// 인증실패
-				resp.sendRedirect("/Auth?error");
+				//id 에 저장된 암호화된 비밀번호를 가져온다.
+				String Match = GetPassword(id);
+				
+				//받아온 password 를 md5형식으로 인코딩
+				String PasswordEncoded = ConvertMD5(pw);
+				
+				if ( Match.equals(PasswordEncoded) ) {
+					// 인증성공
+					HttpSession session = req.getSession();
+					session.setAttribute("logged", true);
+					session.setAttribute("ID", id);
+					if ( IsAdmin(id) ) {
+						session.setAttribute("IsAdmin", true);
+						resp.sendRedirect("/country/page/1");
+					}
+					else {
+						resp.sendRedirect("/city/page/1");
+					}
+				} 
+				else {
+					// 인증실패
+					resp.sendRedirect("/Auth?error");
+				}
 			}
 		}
 		else {
@@ -119,6 +124,14 @@ public class LoginServlet extends HttpServlet {
 	public Boolean IsAdmin(String id) {
 		Member member = memberMapper.selectById(id);
 		if ( member.getIsadmin().equals("Y") ) {
+			return true;
+		}
+		return false;
+	}
+	
+	public Boolean IsAllowed(String id) {
+		Member member = memberMapper.selectById(id);
+		if ( member.getIsallowed().equals("Y") ) {
 			return true;
 		}
 		return false;

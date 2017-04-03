@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>RegisterForm.jsp</title>
+<title>RegisterSuccess.jsp</title>
 
 <!-- Code Assist -->
 <c:if test="false">

@@ -12,6 +12,7 @@ public class MemberForm extends Member {
 	
 	public void SetMember( Member member ) {
 		super.setIsadmin(member.getIsadmin());
+		super.setIsallowed(member.getIsallowed());
 		super.setEmail(member.getEmail());
 		super.setMembersrl(member.getMembersrl());
 		super.setPassword(member.getPassword());
@@ -96,6 +97,19 @@ public class MemberForm extends Member {
 	public Member setIsadmin(String value) {
 		// TODO Auto-generated method stub
 		return super.setIsadmin(value);
+	}
+	
+	@Size(max=1)
+	@Override
+	public String getIsallowed() {
+		// TODO Auto-generated method stub
+		return super.getIsallowed();
+	}
+
+	@Override
+	public Member setIsallowed(String value) {
+		// TODO Auto-generated method stub
+		return super.setIsallowed(value);
 	}
 
 }

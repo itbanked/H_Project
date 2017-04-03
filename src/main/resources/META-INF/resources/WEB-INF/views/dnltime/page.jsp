@@ -26,6 +26,7 @@
 <body>
 	<h1>Dnltime Page ${page.paging.pageNo}</h1>
 	<div id="tableDiv" class="table-responsive">
+	<a href="/dnltime/register" class="btn btn-primary">출근</a>
 	<table class="table table-striped table-bordered">
 		<tr class="success">
 			<th>근태번호</th>
@@ -36,11 +37,11 @@
 		</tr>
 		<c:forEach var="d" items="${page.dnltimeList}">
 		<tr>
-			<td class="success"><a href="/dnltime/item/${d.dnlno}">${d.dnlno}</a></td>
+				<td class="success"><a href="/dnltime/item/${d.dnlno}">${d.dnlno}</a></td>
 				<td class="warning"><fmt:formatDate type="date" value="${d.attend}"/></td>
 				<td class="warning"><fmt:formatDate type="time" value="${d.attend}"/></td>
 				<td class="warning"><fmt:formatDate type="time" value="${d.leave}"/></td>
-			<td class="warning">${d.reason}</td>
+				<td class="warning">${d.reason}</td>
 		</tr>
 		</c:forEach>
 	</table>

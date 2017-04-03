@@ -8,10 +8,26 @@ import javax.validation.constraints.Size;
 
 import com.example.domain.Country;
 
-import javassist.tools.framedump;
-
 public class CountryForm extends Country {
-
+	
+	public void setCountry(Country country) {
+			super.setCode(country.getCode());
+			super.setName(country.getName());
+			super.setContinent(country.getContinent());
+			super.setRegion(country.getRegion());
+			super.setSurfaceArea(country.getSurfaceArea());
+			super.setIndepYear(country.getIndepYear());
+			super.setPopulation(country.getPopulation());
+			super.setLifeExpectancy(country.getLifeExpectancy());
+			super.setGnp(country.getGnp());
+			super.setGnpOld(country.getGnpOld());
+			super.setLocalName(country.getLocalName());
+			super.setGovernmentForm(country.getGovernmentForm());
+			super.setHeadOfState(country.getHeadOfState());
+			super.setCapital(country.getCapital());
+			super.setCode2(country.getCode2());
+	}
+	
 	@NotNull
 	@Size(max=3)
 	@Override
@@ -22,12 +38,11 @@ public class CountryForm extends Country {
 
 	@Override
 	public void setCode(String code) {
-		if ( code.equals("") ) {
+		if (code.equals(""))
 			code = null;
-		}
 		super.setCode(code);
 	}
-
+	
 	@NotNull
 	@Size(max=52)
 	@Override
@@ -38,12 +53,11 @@ public class CountryForm extends Country {
 
 	@Override
 	public void setName(String name) {
-		if ( name.equals("") ) {
+		if (name.equals(""))
 			name = null;
-		}
 		super.setName(name);
 	}
-
+	
 	@Size(max=20)
 	@Override
 	public String getContinent() {
@@ -53,10 +67,11 @@ public class CountryForm extends Country {
 
 	@Override
 	public void setContinent(String continent) {
-		// TODO Auto-generated method stub
+		if (continent.equals(""))
+			continent = null;
 		super.setContinent(continent);
 	}
-
+	
 	@Size(max=26)
 	@Override
 	public String getRegion() {
@@ -66,11 +81,12 @@ public class CountryForm extends Country {
 
 	@Override
 	public void setRegion(String region) {
-		// TODO Auto-generated method stub
+		if (region.equals(""))
+			region = null;
 		super.setRegion(region);
 	}
-
-	@Digits(integer=8, fraction=2)
+	
+	@Digits(integer=8,fraction=2)
 	@Override
 	public BigDecimal getSurfaceArea() {
 		// TODO Auto-generated method stub
@@ -83,7 +99,7 @@ public class CountryForm extends Country {
 		super.setSurfaceArea(surfaceArea);
 	}
 
-	@Digits(integer=6, fraction=0)
+	@Digits(integer=6,fraction=0)
 	@Override
 	public BigDecimal getIndepYear() {
 		// TODO Auto-generated method stub
@@ -96,7 +112,7 @@ public class CountryForm extends Country {
 		super.setIndepYear(indepYear);
 	}
 
-	@Digits(integer=11, fraction=0)
+	@Digits(integer=11,fraction=0)
 	@Override
 	public BigDecimal getPopulation() {
 		// TODO Auto-generated method stub
@@ -109,7 +125,7 @@ public class CountryForm extends Country {
 		super.setPopulation(population);
 	}
 
-	@Digits(integer=2, fraction=1)
+	@Digits(integer=2,fraction=1)
 	@Override
 	public BigDecimal getLifeExpectancy() {
 		// TODO Auto-generated method stub
@@ -122,7 +138,7 @@ public class CountryForm extends Country {
 		super.setLifeExpectancy(lifeExpectancy);
 	}
 
-	@Digits(integer=8, fraction=2)
+	@Digits(integer=8,fraction=2)
 	@Override
 	public BigDecimal getGnp() {
 		// TODO Auto-generated method stub
@@ -135,7 +151,7 @@ public class CountryForm extends Country {
 		super.setGnp(gnp);
 	}
 
-	@Digits(integer=8, fraction=2)
+	@Digits(integer=8,fraction=2)
 	@Override
 	public BigDecimal getGnpOld() {
 		// TODO Auto-generated method stub
@@ -147,7 +163,7 @@ public class CountryForm extends Country {
 		// TODO Auto-generated method stub
 		super.setGnpOld(gnpOld);
 	}
-
+	
 	@Size(max=45)
 	@Override
 	public String getLocalName() {
@@ -157,7 +173,8 @@ public class CountryForm extends Country {
 
 	@Override
 	public void setLocalName(String localName) {
-		// TODO Auto-generated method stub
+		if (localName.equals(""))
+			localName = null;
 		super.setLocalName(localName);
 	}
 
@@ -170,7 +187,8 @@ public class CountryForm extends Country {
 
 	@Override
 	public void setGovernmentForm(String governmentForm) {
-		// TODO Auto-generated method stub
+		if (governmentForm.equals(""))
+			governmentForm = null;
 		super.setGovernmentForm(governmentForm);
 	}
 
@@ -183,11 +201,12 @@ public class CountryForm extends Country {
 
 	@Override
 	public void setHeadOfState(String headOfState) {
-		// TODO Auto-generated method stub
+		if (headOfState.equals(""))
+			headOfState = null;
 		super.setHeadOfState(headOfState);
 	}
-
-	@Digits(integer=11, fraction=0)
+	
+	@Digits(integer=11,fraction=0)
 	@Override
 	public BigDecimal getCapital() {
 		// TODO Auto-generated method stub
@@ -209,11 +228,9 @@ public class CountryForm extends Country {
 
 	@Override
 	public void setCode2(String code2) {
-		// TODO Auto-generated method stub
+		if (code2.equals(""))
+			code2 = null;
 		super.setCode2(code2);
 	}
-
-	
-	
 	
 }
