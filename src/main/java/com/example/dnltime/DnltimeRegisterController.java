@@ -1,6 +1,8 @@
 package com.example.dnltime;
 
+import java.text.ParseException;
 import java.util.Date;
+import java.util.Map;
 
 import javax.validation.Valid;
 
@@ -20,6 +22,7 @@ import com.example.dnltime.service.DnltimeRegisterService;
 import com.example.dnltime.service.DnltimeSearchService;
 import com.example.domain.Dnltime;
 import com.example.form.DnltimeForm;
+import com.example.util.Pagination;
 
 @Controller
 @RequestMapping("/dnltime")
@@ -69,13 +72,15 @@ public class DnltimeRegisterController {
 //		return "dnltime/registerSuccess";
 //	}
 	
-	@GetMapping("/register")
-	public String registerSuccess(Dnltime dnltime, BindingResult errors) {
-		dnltimeRegisterService.register(dnltime, errors);
+	@GetMapping("/registerAttend/{pageNo}")
+	public String registerSuccess(@PathVariable int pageNo, Dnltime dnltime, BindingResult errors) throws ParseException {
+		
+		dnltimeRegisterService.registerAttend(dnltime, errors);
 		if ( errors.hasErrors() ) {
 			System.out.println(errors);
 			return "dnltime/registerForm";
 		}		
-		return "dnltime/registerSuccess";
+		
+		return "redirect:/dnltime/page/" + pageNo;
 	}
 }

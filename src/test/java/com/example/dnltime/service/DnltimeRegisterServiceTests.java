@@ -56,7 +56,7 @@ public class DnltimeRegisterServiceTests {
 			return;
 		}
 		
-		dnltimeRegisterService.register(dnltimeForm, errors);
+		dnltimeRegisterService.registerAttend(dnltimeForm, errors);
 		if(errors.hasErrors()){
 			System.out.println("errors = " + errors);
 			return;

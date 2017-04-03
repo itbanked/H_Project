@@ -23,7 +23,6 @@ public class DnltimeForm extends Dnltime{
 		super.setAttend(attend);
 	}
 
-	@NotNull
 	@Override
 	public Date getLeave() {
 		// TODO Auto-generated method stub

@@ -23,7 +23,7 @@ create sequence dnl_dnlno_seq start with 1;
 create table dnltime(
 	dnlno	number(4)	constraint pk_dnltime primary key ,
 	attend		date	not null,
-	leave		date	not null,
+	leave		date			,
 	reason		varchar2(15 char),
 	dnl_code	number(3)  constraint fk_dnlcode references dnl(dnl_code) on delete set null,
 	membersrl   number(10) constraint fk_membersrl1 references member(membersrl) on delete set null

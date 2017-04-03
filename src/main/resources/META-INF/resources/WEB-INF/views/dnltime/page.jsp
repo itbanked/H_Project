@@ -26,13 +26,13 @@
 <body>
 	<h1>Dnltime Page ${page.paging.pageNo}</h1>
 	<div id="tableDiv" class="table-responsive">
-	<a href="/dnltime/register" class="btn btn-primary">출근</a>
+	<a href="/dnltime/registerAttend/${page.paging.lastPage + 1}" class="btn btn-primary">출근</a>
 	<table class="table table-striped table-bordered">
 		<tr class="success">
 			<th>근태번호</th>
 			<th>출근날짜</th>
 			<th>출근시간</th>
-			<th>최근시간</th>
+			<th>퇴근시간</th>
 			<th>근태사유</th>
 		</tr>
 		<c:forEach var="d" items="${page.dnltimeList}">

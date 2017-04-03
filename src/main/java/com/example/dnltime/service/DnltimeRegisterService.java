@@ -1,5 +1,6 @@
 package com.example.dnltime.service;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -22,13 +23,11 @@ public class DnltimeRegisterService {
 	@Autowired
 	DnlMapper dnlmapper;
 	
-	public void register(Dnltime dnltime, BindingResult errors){
+	public void registerAttend(Dnltime dnltime, BindingResult errors) throws ParseException{
 	
-		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 		
 		Date today = new Date();
 		dnltime.setAttend(today);	
-		dnltime.setLeave(today);
 		dnltime.setDnlCode(00);
 		dnltime.setMembersrl(6);
 		
@@ -42,5 +41,6 @@ public class DnltimeRegisterService {
 		if(!errors.hasErrors())
 			dnltimeMapper.insert(dnltime);
 	}
+	
 }
 
