@@ -80,7 +80,21 @@
 						<li><a href="/players/page/1">Members</a></li>
 					</ul>
 				</li>
+<<<<<<< HEAD
+				
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Molecule<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="/molecule/page/1">Molecule</a></li>
+						<li><a href="/mass/page/1">Mass</a></li>
+						<li><a href="/acidity/list">Acidity</a></li>
+						<li><a href="/state/list">State</a></li>
+						<li><a href="/warning/list">Warning</a></li>
+					</ul>
+				</li>
+=======
 >>>>>>> 393b32aec4b1849289071046e6732ab78a605ea6
+>>>>>>> ccd1d346978ac8e047ecfd7ba40e6dbea6970dae
 					<li><a href="#">Q & A</a></li>
 					<li><a href="#">Documentation</a></li>
 				</ul>

@@ -26,6 +26,7 @@ public class SiteMeshConfig {
 				builder.addDecoratorPath("/dnltime/*", "/WEB-INF/decorators/default.jsp");
 				builder.addDecoratorPath("/manchester/*", "/WEB-INF/decorators/default.jsp");
 				builder.addDecoratorPath("/players/*", "/WEB-INF/decorators/default.jsp");
+				builder.addDecoratorPath("/molecule/*", "/WEB-INF/decorators/default.jsp");
 			}
 		});
 //		filter.addUrlPatterns("/*");
