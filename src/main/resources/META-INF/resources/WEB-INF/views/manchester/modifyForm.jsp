@@ -17,25 +17,31 @@
 
 </head>
 <body>
-<div class="container">
-<h1>Team Modify</h1>
-<form:form action="/manchester/modify" method="post" modelAttribute="manchesterForm" class="form-horizontal">
-	
-	<div class="form-group">
-		<label for="idno" class="control-label col-sm-1">Idno : </label>
-		<form:input path="idno" readonly="true" class="col-sm-3"/>
-	</div>
-	
-	
-	<div class="form-group">
-		<label for="team" class="control-label col-sm-1">Team : </label>
-		<form:input path="team" class="col-sm-3"/>
-		<form:errors path="team" class="col-sm-3"/>
-	</div>
-	<div class="col-sm-offset-3">
-		<input type="submit" value="Team 수정" class="btn-sm btn-primary">
-	</div>
-</form:form>
+<div class="modal-header">
+   <button type="button" class="close" data-dismiss="modal">&times;</button>
+   <h4 class="modal-title">Team Modify</h4>
+ </div>
+ <div class="modal-body">
+	<form:form action="/manchester/modify" method="post" modelAttribute="manchesterForm">
+		<div class="form-group">
+			<label for="idno">Idno</label>
+			<form:input path="idno" readonly="true" class="form-control"/>
+		</div>
+		<div class="form-group">
+			<label for="team">Team</label>
+			<form:input path="team" class="form-control"/>
+			<form:errors path="team" class="form-control"/>
+		</div>
+			<input type="submit" value="Team 수정" class="btn-sm btn-primary">
+	</form:form>
 </div>
+ <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+ </div>
+  <script>
+	$('body').on('hidden.bs.modal', '.modal', function (event) {
+	    $(this).removeData('bs.modal');
+	});
+ </script>
 </body>
 </html>

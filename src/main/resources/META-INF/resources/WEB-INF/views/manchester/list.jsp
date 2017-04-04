@@ -26,13 +26,31 @@
 				<td>${manchester.idno}</td>
 				<td><a href="/manchester/item/${manchester.idno}">${manchester.team}</a></td>
 				<td>
-				<a href="/manchester/modify/${manchester.idno}" class="btn-sm btn-success">수정</a>
-				<a href="/manchester/unregister/${manchester.idno}" class="btn-sm btn-danger">삭제</a>
+				<a href="/manchester/modify/${manchester.idno}" class="btn-sm btn-success" data-toggle="modal" data-target="#myModal1">수정</a>
+				<a href="/manchester/unregister/${manchester.idno}" class="btn-sm btn-danger" data-toggle="modal" data-target="#myModal">삭제</a>
 				</td>
 			</tr>
 		</c:forEach>
 	</table>
-	<a href="/manchester/register" class="btn-sm btn-primary">Team 등록</a>
+	<a href="/manchester/register" class="btn-sm btn-primary" data-toggle="modal" data-target="#myModal3">Team 등록</a>
 </div>
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+         </div>
+    </div>
+  </div>
+  <div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog modal-m">
+      <div class="modal-content">
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="myModal3" role="dialog">
+    <div class="modal-dialog modal-m">
+      <div class="modal-content">
+         </div>
+    </div>
+  </div>
 </body>
 </html>
