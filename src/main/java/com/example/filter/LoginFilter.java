@@ -56,7 +56,11 @@ public class LoginFilter implements Filter {
 	}
 	
 	public Boolean CheckViewablePaths(String path) {
-		if ( path.equals("/Auth") || path.contains("/css") || path.equals("/NoPermission") ) {
+		if ( 	path.equals("/Auth") 
+			 || path.contains("/Sign_in")
+			 || path.equals("/NoPermission") 
+			 || path.contains("/css") 
+		   ) {
 			return true;
 		}
 		return false;
