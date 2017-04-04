@@ -65,7 +65,7 @@
 						<ul class="dropdown-menu">
 							<li><a href="/sal/page/1">Salary</a></li>
 						</ul>
-					</li>
+					</li> 
 					<li class="dropdown">
 
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">HannaShin<span class="caret"></span></a>

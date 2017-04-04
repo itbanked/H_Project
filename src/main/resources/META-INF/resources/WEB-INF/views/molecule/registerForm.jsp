@@ -19,7 +19,9 @@
 <body>
 <h1>register</h1>
 <form:form action="/molecule/register" method="post" modelAttribute="cityForm">
-	
+	 
+
+        
 	<!-- Name -->
 	<div>
 		<label for="name">Name:</label>
@@ -30,23 +32,51 @@
 	
 	<!-- CountryCode -->
 	<div>
-		<label for="countryCode">CountryCode:</label>
-		<form:input path="countryCode"/>
-		<form:errors path="countryCode"/>
+		<label for="chemicaFormula">chemical formula:</label>
+		<form:input path="chemicaFormula"/>
+		<form:errors path="chemicaFormula"/>
 	</div>
 
 
 	<!-- district -->
 	<div>
-		<label for="district">district:</label>
-		<form:input path="district"/>
-		<form:errors path="district"/>
+		<label for="density">density:</label>
+		<form:input path="density"/>
+		<form:errors path="density"/>
 	</div>
 
 
 	<!-- population -->
 	<div>
-		<label for="population">population:</label>
+		<label for="averageMeltingPoint">average melting point:</label>
+		<form:input path="population"/>
+		<form:errors path="population"/>
+	</div>
+	
+	<!-- population -->
+	<div>
+		<label for="population">solubility in water:</label>
+		<form:input path="population"/>
+		<form:errors path="population"/>
+	</div>
+	
+	<!-- population -->
+	<div>
+		<label for="population">acidity:</label>
+		<form:input path="population"/>
+		<form:errors path="population"/>
+	</div>
+	
+	<!-- population -->
+	<div>
+		<label for="population">hazard statements:</label>
+		<form:input path="population"/>
+		<form:errors path="population"/>
+	</div>
+	
+	<!-- population -->
+	<div>
+		<label for="population">note:</label>
 		<form:input path="population"/>
 		<form:errors path="population"/>
 	</div>

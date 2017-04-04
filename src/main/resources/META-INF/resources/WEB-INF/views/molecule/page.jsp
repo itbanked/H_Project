@@ -22,7 +22,8 @@
 
 
 <div class="container">
-  <h3>Organic Molecules</h3> pageNo = ${paging.pageNo}
+  <h3>Organic Molecules</h3> 
+<%--   pageNo = ${paging.pageNo} --%>
   <a href="/molecule/register" class="btn btn-primary">register</a>
          
   <table class="table table-condensed">
