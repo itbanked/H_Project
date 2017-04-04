@@ -21,27 +21,15 @@
 		td{
 			font-weight: bold;
 		}
-		.active {
-	      color: black;
-	   }
-	   .text-center {
-	      margin :30px auto;
-	      white-space : nowrap;
-	      text-overflow : ellipsis;
-	   }
-	   .btnColor {
-      background-color: black;
-      color: white;
-  	 }
 	</style>
 </head>
 <body>
 	<h1>Dnltime Page ${page.paging.pageNo}</h1>
 	<div id="tableDiv" class="table-responsive">
-	<a href="/dnltime/registerAttend" class="btn btn-default">출근</a>
+	<a href="/dnltime/registerAttend" class="btn btn-primary">출근</a>
 	
-	<table class="table table-striped">
-		<tr>
+	<table class="table table-striped table-bordered">
+		<tr class="success">
 			<th>근태번호</th>
 			<th>출근날짜</th>
 			<th>출근시간</th>
@@ -52,43 +40,42 @@
 		</tr>
 		<c:forEach var="d" items="${page.dnltimeList}">
 		<tr>
-				<td><a href="/dnltime/item/${d.dnlno}">${d.dnlno}</a></td>
-				<td><fmt:formatDate type="date" value="${d.attend}"/></td>
-				<td><fmt:formatDate type="time" value="${d.attend}"/></td>
-				<td><fmt:formatDate type="time" value="${d.leave}"/></td>
-				<td>${d.reason}</td><td><a href="/dnltime/modifyReason/${d.dnlno}?pageNo=${page.paging.pageNo}">수정</a></td>
-				<td><a href="/dnltime/modifyLeave/${d.dnlno}">퇴근</a></td>
+				<td class="success"><a href="/dnltime/item/${d.dnlno}">${d.dnlno}</a></td>
+				<td class="warning"><fmt:formatDate type="date" value="${d.attend}"/></td>
+				<td class="warning"><fmt:formatDate type="time" value="${d.attend}"/></td>
+				<td class="warning"><fmt:formatDate type="time" value="${d.leave}"/></td>
+				<td class="warning">${d.reason}</td><td class="warning"><a href="/dnltime/modifyReason/${d.dnlno}" class="btn btn-info">수정</a></td>
+				<td class="success"><a href="/dnltime/modifyLeave/${d.dnlno}" class="btn btn-info">퇴근</a></td>
 		</tr>
 		</c:forEach>
 	</table>
-</div>
-<hr>
+
 	
-		<div class="text-center">
-		<a href="/dnltime/page/1" class="btn btn-group-sm active">first</a>
-		
+	<div>
+		<ul class="pagination">
+				<li><a href="/dnltime/page/1">first</a></li>
 		<c:choose>
-		<c:when test="${page.paging.firstGroup == true}">
-		   <a href="/dnltime/page/${page.paging.firstPage}" class="btn btn-sm btnColor">&laquo;</a>
-		</c:when>
-		<c:when test="${page.paging.firstGroup == false}">
-		   <a href="/dnltime/page/${page.paging.firstPage - 1}" class="btn btn-sm btnColor">&laquo;</a>
-		</c:when>
-		</c:choose>
-		<c:forEach var="i" begin="${page.paging.firstPage}" end="${page.paging.lastPage}">
-		   <a href="/dnltime/page/${i}" class="btn btn-group-sm active">${i}</a>
-		</c:forEach>
-		
+		   <c:when test="${page.paging.firstGroup}">
+		        <li><a href="/dnltime/page/1">prev</a></li>
+		    </c:when>
+		     <c:otherwise>
+		        <li><a href="/dnltime/page/${page.firstPage - 1}">prev</a></li>
+		   	 </c:otherwise>   
+		</c:choose>				
+			<c:forEach var="i" begin="${page.paging.firstPage}" end="${page.paging.lastPage}">
+				<li><a href="/dnltime/page/${i}">${i}</a></li>
+			</c:forEach>
 		<c:choose>
-		<c:when test="${page.paging.lastGroup == true}">
-		   <a href="/dnltime/page/${page.paging.lastPage}" class="btn btn-sm btnColor">&raquo;</a>
-		</c:when>
-		<c:when test="${page.paging.lastGroup == false}">
-		   <a href="/dnltime/page/${page.paging.lastPage + 1}" class="btn btn-sm btnColor">&raquo;</a>
-		</c:when>
-		</c:choose>
-		
-		<a href="/dnltime/page/${page.paging.totalPage}" class="btn btn-group-sm active">last</a>
-		</div>
+		   <c:when test="${page.paging.lastGroup}">
+		        <li><a href="/dnltime/page/${page.paging.lastPage}">next</a></li>
+		    </c:when>
+		     <c:otherwise>
+		        <li><a href="/dnltime/page/${page.firstPage + 1}">next</a></li>
+		   	 </c:otherwise>   
+		</c:choose>	
+				<li><a href="/dnltime/page/${page.paging.lastPage}">last</a></li>
+		</ul>
+	</div>
+</div>
 </body>
 </html>

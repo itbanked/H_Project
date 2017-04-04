@@ -31,11 +31,13 @@
 		<div>
 			<fmt:formatDate value="${dnltime.attend}" var="dateString1" pattern="yyyy/MM/dd" />
 			<form:hidden path="attend" value="${dateString1}"/>
+			<form:errors path="attend"/>
 		</div>
 		<!-- Leave -->
 		<div>
 		<fmt:formatDate value="${dnltime.leave}" var="dateString2" pattern="yyyy/MM/dd" />
 			<form:hidden path="leave" value="${dateString2}"/>
+			<form:errors path="leave"/>
 		</div>
 		<!-- Reason -->
 		<div>
