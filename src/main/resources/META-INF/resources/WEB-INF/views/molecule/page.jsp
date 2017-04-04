@@ -38,7 +38,8 @@
         <th>acidity</th>
         <th>hazard statements</th>
         <th>note</th>
-        
+		<th></th>
+        <th></th>        
       </tr>
     </thead>
     <tbody>
@@ -53,6 +54,9 @@
         <td><a href="/molecule/item2/${m.acidity}">${m.acidity}</a></td>
         <td><a href="/molecule/item3/${m.hazardStatements}">${m.hazardStatements} </a></td>
         <td>${m.note}</td>
+        <td><a href="/city/modify/${city.id}?pageNo=${page.paging.pageNo}"><span class="glyphicon glyphicon-edit"></span></a></td>
+		<td><a href="/city/unregister/${city.id}?pageNo=${page.paging.pageNo}"><span class="glyphicon glyphicon-remove"></a></td>
+		
       </tr>
       </c:forEach>
     </tbody>

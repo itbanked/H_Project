@@ -74,9 +74,7 @@
 
 
 <insert id="insert">
-<!-- 	<selectKey keyProperty="name" keyColumn="name" resultType="String" order="BEFORE"> -->
-<!--  		select molecule_name_seq.nextval from dual  -->
-<!-- 	</selectKey> -->
+	
 	insert into molecule
 	(
 		name,

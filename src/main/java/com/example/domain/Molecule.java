@@ -48,6 +48,7 @@ public class Molecule {
 
 	public void setChemicalFormula(String chemicalFormula) {
 		this.chemicalFormula = chemicalFormula;
+		System.err.println("---------------------------------" + this.chemicalFormula);
 	}
 
 

@@ -36,6 +36,9 @@ public interface MoleculeMapper {
 	
 	@Select("select * from molecule where chemical_formula=#{chemicalFormula}")
 	Molecule selectByFormula(String chemicalFormula);
+	@Select("select * from molecule where name=#{name}")
+	Molecule selectByName(String name);
+	
 	Molecule selectByFormulaWithMass(String chemicalFormula);
 	
 	/*
@@ -45,7 +48,7 @@ public interface MoleculeMapper {
 	/*
 	 * Update
 	 */
-	int updateById(Molecule molecule);
+	int updateByName(Molecule molecule);
 	
 	/*
 	 * Delete

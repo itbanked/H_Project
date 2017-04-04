@@ -47,6 +47,7 @@ public class CityModifyController {
 			System.out.println(errors);
 			return "city/modifyForm";
 		}
+		
 		cityModifyService.modify(cityForm, errors);
 		if (errors.hasErrors()) {
 			System.out.println(errors);

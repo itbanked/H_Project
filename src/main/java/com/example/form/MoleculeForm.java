@@ -11,19 +11,19 @@ import com.example.domain.Molecule;
 
 public class MoleculeForm extends Molecule{
 	
-	public void setMolecule(Molecule molecule){
-		super.setName(molecule.getName());
-		super.setChemicalFormula(molecule.getChemicalFormula());
-		super.setDensity(molecule.getDensity());
-		super.setAverageMeltingPoint(molecule.getAverageMeltingPoint());
-		super.setSolubilityInWater(molecule.getSolubilityInWater());
-		super.setAcidity(molecule.getAcidity());
-		super.setHazardStatements(molecule.getHazardStatements());
-		super.setNote(molecule.getNote());
-	}
+//	public void setMolecule(Molecule molecule){
+//		super.setName(molecule.getName());
+//		super.setChemicalFormula(molecule.getChemicalFormula());
+//		super.setDensity(molecule.getDensity());
+//		super.setAverageMeltingPoint(molecule.getAverageMeltingPoint());
+//		super.setSolubilityInWater(molecule.getSolubilityInWater());
+//		super.setAcidity(molecule.getAcidity());
+//		super.setHazardStatements(molecule.getHazardStatements());
+//		super.setNote(molecule.getNote());
+//	}
 
-	@NotNull
-	@Size(max=35)
+	//@NotNull
+	//@Size(max=35)
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
@@ -55,8 +55,9 @@ public class MoleculeForm extends Molecule{
 
 	@Override
 	public void setChemicalFormula(String chemicalFormula) {
-		if(chemicalFormula.equals(""))
-			chemicalFormula=null;
+//		if(chemicalFormula.equals(""))
+//			chemicalFormula=null;
+		System.err.println("====================>" + chemicalFormula);
 		super.setChemicalFormula(chemicalFormula);
 	}
 	
@@ -69,8 +70,8 @@ public class MoleculeForm extends Molecule{
 	
 	@Override
 	public void setDensity(Double density) {
-		if(density.equals(""))
-			density = null;
+//		if(density.equals(""))
+//			density = null;
 		super.setDensity(density);
 	}
 	@Digits(integer=9,fraction=4)

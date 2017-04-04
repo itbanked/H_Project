@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.example.city.service.CityRegisterService;
 import com.example.city.service.CitySearchService;
 import com.example.domain.City;
+import com.example.domain.Molecule;
 import com.example.exception.NotFoundRuntimeException;
 import com.example.form.CityForm;
 import com.example.form.MoleculeForm;
@@ -31,7 +32,7 @@ import com.example.molecule.service.MoleculeSearchService;
 @RequestMapping("/molecule")
 public class MoleculeRegisterController {
 	
-	static Log log =LogFactory.getLog(MoleculeSearchController.class);
+	static Log log =LogFactory.getLog(MoleculeRegisterController.class);
 	@Autowired
 	MoleculeSearchService moleculeSearchService;
 	
@@ -46,13 +47,13 @@ public class MoleculeRegisterController {
 	}
 
 	@PostMapping("/register")
-	public String register(@Valid MoleculeForm moleculeForm,BindingResult errors){
-			log.info("register(" + moleculeForm + ")");
+	public String register(@Valid MoleculeForm moleculeForm, BindingResult errors){
+			//log.info("register(" + moleculeForm + ")");
 			System.out.println(moleculeForm);
 		
 		if(errors.hasErrors()){
 			System.out.println(errors);
-			return "molecule/moleculeForm";
+			return "molecule/registerForm";
 		}
 		
 		moleculeRegisterService.register(moleculeForm, errors);
@@ -64,13 +65,13 @@ public class MoleculeRegisterController {
 		
 		return "redirect:/molecule/registerSuccess/" + moleculeForm.getName();
 	}
-//	
-//	@GetMapping("/registerSuccess/{id}")
-//	public String registerSuccess(@PathVariable int id, Model model){
-//		City city=citySearchService.getCityById(id);
-//		model.addAttribute("city",city);
-//		
-//		return "city/registerSuccess";
-//		
-//	}
+	
+	@GetMapping("/registerSuccess/{name}")
+	public String registerSuccess(@PathVariable String name, Model model){
+		Molecule molecule=moleculeSearchService.getMoleculeByName(name);
+		model.addAttribute("molecule",molecule);
+		
+		return "molecule/registerSuccess";
+		
+	}
 }
