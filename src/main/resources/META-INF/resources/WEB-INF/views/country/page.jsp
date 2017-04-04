@@ -19,11 +19,8 @@
 	a:HOVER {
 		text-decoration: none;	
 	}
-	a {
+	.active {
 		color: black;
-	}
-	header {
-		margin: 50px 10px;
 	}
 	.text-center {
 		margin :30px auto;
@@ -33,9 +30,12 @@
 	tr, td {
 		text-transform: capitalize;
 	}
-	.headTR {
+	.registerBox {
+		text-align: right;
+	}
+	.btnColor {
 		background-color: black;
-		color: gold;
+		color: white;
 	}
 </style>
 
@@ -47,13 +47,14 @@
 
 
 <h3> - Country Page List pageNo ? [ ${paging.pageNo} ] </h3>
-
-<a href="/country/register/${country.code}?pageNo=${paging.pageNo}" class="btn btn-success btn-sm">
-<span class="glyphicon glyphicon-inbox"></span> Country Register</a>
+<div class="registerBox">
+	<a href="/country/register/${country.code}?pageNo=${paging.pageNo}" class="btn btn-info btn-sm">
+	<span class="glyphicon glyphicon-inbox"></span> Country Register</a>
+</div>
 
 <div class="text-center table-responsive">
-	<table class="table">
-		<tr class="headTR">
+	<table class="table table-hover">
+		<tr>
 			<td colspan="2"></td>
 			<td>No.</td>
 			<td>code</td>
@@ -99,37 +100,32 @@
 	</table>
 </div>
 
-
-
 <div class="text-center">
-	<a href="/country/page/1">처음으로</a>
+	<a href="/sal/page/1" class="btn btn-group-sm active">first</a>
 	
 	<c:choose>
 	<c:when test="${paging.firstGroup == true}">
-		<a href="/country/page/${paging.firstPage}" class="btn btn-warning btn-sm">&laquo;</a>
+		<a href="/sal/page/${paging.firstPage}" class="btn btn-sm btnColor">&laquo;</a>
 	</c:when>
 	<c:when test="${paging.firstGroup == false}">
-		<a href="/country/page/${paging.firstPage - 1}" class="btn btn-warning btn-sm">&laquo;</a>
+		<a href="/sal/page/${paging.firstPage - 1}" class="btn btn-sm btnColor">&laquo;</a>
 	</c:when>
 	</c:choose>
-	
 	<c:forEach var="i" begin="${paging.firstPage}" end="${paging.lastPage}">
-		<a href="/country/page/${i}" class="btn btn-group-sm active">${i}</a>
+		<a href="/sal/page/${i}" class="btn btn-group-sm active">${i}</a>
 	</c:forEach>
 	
 	<c:choose>
 	<c:when test="${paging.lastGroup == true}">
-		<a href="/country/page/${paging.lastPage}" class="btn btn-warning btn-sm">&raquo;</a>
+		<a href="/sal/page/${paging.lastPage}"class="btn btn-sm btnColor">&raquo;</a>
 	</c:when>
 	<c:when test="${paging.lastGroup == false}">
-		<a href="/country/page/${paging.lastPage + 1}" class="btn btn-warning btn-sm">&raquo;</a>
+		<a href="/sal/page/${paging.lastPage + 1}"class="btn btn-sm btnColor">&raquo;</a>
 	</c:when>
 	</c:choose>
 	
-	<a href="/country/page/${paging.totalPage}">끝으로</a>
+	<a href="/sal/page/${paging.totalPage}" class="btn btn-group-sm active">last</a>
 </div>
-
-<hr>
 
 <!-- <footer> -->
 <!-- <button onclick="displayBox(event)" class="btn btn-default animated fadeIn"> -->
