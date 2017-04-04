@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.example.city.service.CityRegisterService;
 import com.example.city.service.CitySearchService;
 import com.example.domain.City;
+import com.example.domain.Country;
 import com.example.form.CityForm;
 
 @Controller
@@ -24,39 +25,36 @@ import com.example.form.CityForm;
 public class CityRegisterController {
 	
 	static Log log = LogFactory.getLog(CityRegisterController.class);
-
 	@Autowired
 	CitySearchService citySearchService;
 	
 	@Autowired
 	CityRegisterService cityRegisterService;
 	
-	@GetMapping("/register")
+	
+	@GetMapping("/register")		//양식을 받고(forward)
 	public String registerForm(CityForm cityForm) {
 		log.info("registerForm()");
+		
 		return "city/registerForm";
 	}
 	
-	@PostMapping("/register")
-	public String register(@Valid CityForm cityForm, BindingResult errors) {
+	@PostMapping("/register")		//제출~DB동작까지
+	public String register(@Valid CityForm cityForm, BindingResult errors, Integer pageNo) {
 		log.info("register(" + cityForm + ")");
-		
 		System.out.println(cityForm);
 		
-		// Validate
-		if ( errors.hasErrors() ) {
+		if (errors.hasErrors()) {
 			System.out.println(errors);
 			return "city/registerForm";
 		}
-		
-		// Register
 		cityRegisterService.register(cityForm, errors);
-		if ( errors.hasErrors() ) {
+		if (errors.hasErrors()) {
 			System.out.println(errors);
 			return "city/registerForm";
 		}
 		
-		return "redirect:/city/registerSuccess/" + cityForm.getId(); 
+		return "redirect:/city/registerSuccess/" + cityForm.getId() + "?pageNo=" + pageNo;
 	}
 	
 	@GetMapping("/registerSuccess/{id}")
@@ -65,4 +63,5 @@ public class CityRegisterController {
 		model.addAttribute("city", city);
 		return "city/registerSuccess";
 	}
+	
 }

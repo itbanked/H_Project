@@ -101,30 +101,30 @@
 </div>
 
 <div class="text-center">
-	<a href="/sal/page/1" class="btn btn-group-sm active">first</a>
+	<a href="/country/page/1" class="btn btn-group-sm active">first</a>
 	
 	<c:choose>
 	<c:when test="${paging.firstGroup == true}">
-		<a href="/sal/page/${paging.firstPage}" class="btn btn-sm btnColor">&laquo;</a>
+		<a href="/country/page/${paging.firstPage}" class="btn btn-sm btnColor">&laquo;</a>
 	</c:when>
 	<c:when test="${paging.firstGroup == false}">
-		<a href="/sal/page/${paging.firstPage - 1}" class="btn btn-sm btnColor">&laquo;</a>
+		<a href="/country/page/${paging.firstPage - 1}" class="btn btn-sm btnColor">&laquo;</a>
 	</c:when>
 	</c:choose>
 	<c:forEach var="i" begin="${paging.firstPage}" end="${paging.lastPage}">
-		<a href="/sal/page/${i}" class="btn btn-group-sm active">${i}</a>
+		<a href="/country/page/${i}" class="btn btn-group-sm active">${i}</a>
 	</c:forEach>
 	
 	<c:choose>
 	<c:when test="${paging.lastGroup == true}">
-		<a href="/sal/page/${paging.lastPage}"class="btn btn-sm btnColor">&raquo;</a>
+		<a href="/country/page/${paging.lastPage}"class="btn btn-sm btnColor">&raquo;</a>
 	</c:when>
 	<c:when test="${paging.lastGroup == false}">
-		<a href="/sal/page/${paging.lastPage + 1}"class="btn btn-sm btnColor">&raquo;</a>
+		<a href="/country/page/${paging.lastPage + 1}"class="btn btn-sm btnColor">&raquo;</a>
 	</c:when>
 	</c:choose>
 	
-	<a href="/sal/page/${paging.totalPage}" class="btn btn-group-sm active">last</a>
+	<a href="/country/page/${paging.totalPage}" class="btn btn-group-sm active">last</a>
 </div>
 
 <!-- <footer> -->
