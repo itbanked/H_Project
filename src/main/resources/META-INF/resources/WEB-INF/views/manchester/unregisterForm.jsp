@@ -17,21 +17,33 @@
 
 </head>
 <body>
-<div class="container">
-<h1>Team delete</h1>
-	<table class="animated bounceInLeft table table-striped">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal">&times;</button>
+<h4 class="modal-title">Team delete</h4>
+</div>
+<div class="modal-body">
+	<table class="table table-striped">
 		<tr class="info" align="center">
 			<td><b>Idno</b></td>
 			<td><b>Team</b></td>
 		</tr>
 		<tr align="center">
-				<td>${manchester.idno}</td>
-				<td>${manchester.team}</td>
+			<td>${manchester.idno}</td>
+			<td>${manchester.team}</td>
 		</tr>
 	</table>
 	<form action="/manchester/unregister/${idno}" method="post">
 		<input type="submit" value="Team delete"  class="btn-sm btn-danger">
 	</form>
 </div>
+       
+ <div class="modal-footer">
+   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+ </div>
+ <script>
+	$('body').on('hidden.bs.modal', '.modal', function (event) {
+	    $(this).removeData('bs.modal');
+	});
+ </script>
 </body>
 </html>
