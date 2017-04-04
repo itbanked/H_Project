@@ -35,10 +35,9 @@ public class DnltimeModifyController {
 	@Autowired
 	DnltimeModifyService dnltimeModifyService;
 	
-	
 
-	@GetMapping("/modifyLeave/{dnlno}/{lastpage}")
-	public String modifyLeave(@PathVariable int dnlno,@PathVariable int lastpage , Dnltime dnltime, BindingResult errors) throws ParseException {
+	@GetMapping("/modifyLeave/{dnlno}")
+	public String modifyLeave(@PathVariable int dnlno, Dnltime dnltime, BindingResult errors) throws ParseException {
 		log.info("modifyForm(" + dnlno + ")");
 		Dnltime dtdnlno = dnltimeSearchService.getDnltimeByDnlno(dnlno);
 		dnltime.setAttend(dtdnlno.getAttend());
@@ -54,7 +53,7 @@ public class DnltimeModifyController {
 			return "dnltime/modifyForm";
 		}
 		
-		return "redirect:/dnltime/page/" + lastpage;
+		return "redirect:/dnltime/page/1" ;
 	}
 	
 	@GetMapping("/modifyReason/{dnlno}")
@@ -105,6 +104,6 @@ public class DnltimeModifyController {
 	public String modifySucess(@PathVariable int dnlno, Model model) {
 		Dnltime dnltime= dnltimeSearchService.getDnltimeByDnlno(dnlno);
 		model.addAttribute("dnltime", dnltime);
-		return "dnltime/modifySuccess";
+		return "redirect:/dnltime/page/1";
 	}
 }

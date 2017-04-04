@@ -70,17 +70,17 @@ public class DnltimeForm extends Dnltime{
 		super.setDnlCode(dnlCode);
 	}
 
-	@Digits(integer=10, fraction=0)
-	@Override
-	public int getMembersrl() {
-		// TODO Auto-generated method stub
-		return super.getMembersrl();
-	}
-
-	@Override
-	public void setMembersrl(int membersrl) {
-		// TODO Auto-generated method stub
-		super.setMembersrl(membersrl);
-	}
+//	@Digits(integer=10, fraction=0)
+//	@Override
+//	public BigDecimal getMembersrl() {
+//		// TODO Auto-generated method stub
+//		return super.getMembersrl();
+//	}
+//
+//	@Override
+//	public void setMembersrl(BigDecimal membersrl) {
+//		// TODO Auto-generated method stub
+//		super.setMembersrl(membersrl);
+//	}
 
 }

@@ -1,8 +1,11 @@
 package com.example.dnltime.service;
 
+import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import javax.servlet.http.HttpSession;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,6 +16,9 @@ import org.springframework.validation.BeanPropertyBindingResult;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.Validator;
 
+import com.example.Member.MemberSearchService;
+import com.example.domain.Dnltime;
+import com.example.domain.Member;
 import com.example.form.DnlForm;
 import com.example.form.DnltimeForm;
 
@@ -25,6 +31,12 @@ public class DnltimeRegisterServiceTests {
 	
 	@Autowired
 	DnltimeRegisterService dnltimeRegisterService;
+
+	@Autowired
+	HttpSession m_Session;
+	
+	@Autowired
+	MemberSearchService memberSearchService;	
 	
 	@Autowired
 	Validator validator;
@@ -37,7 +49,7 @@ public class DnltimeRegisterServiceTests {
 	}
 	
 	@Test
-	public void test01_register() throws ParseException{
+	public void test01_register(Dnltime dnltime, Member memberForm) throws ParseException{
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 		
 		Date leave = format.parse("2017-03-23 18:00:00");
@@ -46,7 +58,7 @@ public class DnltimeRegisterServiceTests {
 		dnltimeForm.setAttend(new Date());
 		dnltimeForm.setLeave(leave);
 		dnltimeForm.setDnlCode(00);
-		dnltimeForm.setMembersrl(6);
+		dnltimeForm.setMembersrl(new BigDecimal(6));
 		
 		BindingResult errors = new BeanPropertyBindingResult(dnltimeForm, "dnltimeForm");
 		
@@ -56,11 +68,11 @@ public class DnltimeRegisterServiceTests {
 			return;
 		}
 		
-		dnltimeRegisterService.registerAttend(dnltimeForm, errors);
-		if(errors.hasErrors()){
-			System.out.println("errors = " + errors);
-			return;
-		}
+//		dnltimeRegisterService.registerAttend(dnltime, errors, memberForm);
+//		if(errors.hasErrors()){
+//			System.out.println("errors = " + errors);
+//			return;
+//		}
 		System.out.println("dnltime = " + dnltimeSearchService.getDnltimeByDnlno(dnltimeForm.getDnlno()));
 	}
 }

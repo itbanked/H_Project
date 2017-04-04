@@ -26,7 +26,7 @@
 <body>
 	<h1>Dnltime Page ${page.paging.pageNo}</h1>
 	<div id="tableDiv" class="table-responsive">
-	<a href="/dnltime/registerAttend/${page.paging.lastPage + 1}" class="btn btn-primary">출근</a>
+	<a href="/dnltime/registerAttend" class="btn btn-primary">출근</a>
 	
 	<table class="table table-striped table-bordered">
 		<tr class="success">
@@ -45,7 +45,7 @@
 				<td class="warning"><fmt:formatDate type="time" value="${d.attend}"/></td>
 				<td class="warning"><fmt:formatDate type="time" value="${d.leave}"/></td>
 				<td class="warning">${d.reason}</td><td class="warning"><a href="/dnltime/modifyReason/${d.dnlno}?pageNo=${page.paging.pageNo}" class="btn btn-info">수정</a></td>
-				<td class="success"><a href="/dnltime/modifyLeave/${d.dnlno}/${page.paging.lastPage }" class="btn btn-info">퇴근</a></td>
+				<td class="success"><a href="/dnltime/modifyLeave/${d.dnlno}" class="btn btn-info">퇴근</a></td>
 		</tr>
 		</c:forEach>
 	</table>

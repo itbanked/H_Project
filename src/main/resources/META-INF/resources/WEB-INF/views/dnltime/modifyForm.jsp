@@ -29,16 +29,13 @@
 		</div>
 		<!-- Attend -->
 		<div>
-			<fmt:formatDate value="${dnltime.attend}" var="dateString" pattern="dd/MM/yyyy" />
-			<label for="attend" class="Define-Values">Attend : </label>
-			<form:input path="attend" value="${dateString}"/>
-			<form:errors path="attend"/>
+			<fmt:formatDate value="${dnltime.attend}" var="dateString1" pattern="yyyy/MM/dd" />
+			<form:hidden path="attend" value="${dateString1}"/>
 		</div>
 		<!-- Leave -->
 		<div>
-			<label for="leave" class="Define-Values">Leave : </label>
-			<form:input path="leave"/>
-			<form:errors path="leave"/>
+		<fmt:formatDate value="${dnltime.leave}" var="dateString2" pattern="yyyy/MM/dd" />
+			<form:hidden path="leave" value="${dateString2}"/>
 		</div>
 		<!-- Reason -->
 		<div>

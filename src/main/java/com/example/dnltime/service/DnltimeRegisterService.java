@@ -1,8 +1,11 @@
 package com.example.dnltime.service;
 
+import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import javax.servlet.http.HttpSession;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -10,7 +13,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 
+import com.example.Member.MemberSearchService;
 import com.example.domain.Dnltime;
+import com.example.domain.Member;
+import com.example.form.MemberForm;
 import com.example.mapper.DnlMapper;
 import com.example.mapper.DnltimeMapper;
 
@@ -22,15 +28,24 @@ public class DnltimeRegisterService {
 	
 	@Autowired
 	DnlMapper dnlmapper;
+
+	@Autowired
+	HttpSession m_Session;
 	
-	public void registerAttend(Dnltime dnltime, BindingResult errors) throws ParseException{
+	@Autowired
+	MemberSearchService memberSearchService;
+	
+	public void registerAttend(Dnltime dnltime, BindingResult errors , MemberForm memberForm) throws ParseException{
 	
 		
 		Date today = new Date();
 		dnltime.setAttend(today);	
 		dnltime.setDnlCode(00);
-		dnltime.setMembersrl(6);
 		
+		Member member = memberSearchService.getMemberById( (String)m_Session.getAttribute("ID") );
+		dnltime.setMembersrl(member.getMembersrl());
+		
+			
 		if(dnltime.getDnlCode() != 0 ){
 			Dnltime DnltimeCode = dnltimeMapper.selectByDnlno(dnltime.getDnlCode());
 			

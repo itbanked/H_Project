@@ -1,5 +1,6 @@
 package com.example.domain;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -12,7 +13,7 @@ public class Dnltime {
 	private Date leave;
 	private String reason;
 	private int dnlCode;
-	private int membersrl;
+	private BigDecimal membersrl;
 	private Dnl dnl;
 	private Member member;
 
@@ -90,11 +91,11 @@ public class Dnltime {
 		this.dnlCode = dnlCode;
 	}
 
-	public int getMembersrl() {
+	public BigDecimal getMembersrl() {
 		return membersrl;
 	}
 
-	public void setMembersrl(int membersrl) {
+	public void setMembersrl(BigDecimal membersrl) {
 		this.membersrl = membersrl;
 	}
 	

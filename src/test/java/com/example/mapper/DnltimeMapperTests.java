@@ -1,5 +1,6 @@
 package com.example.mapper;
 
+import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -105,7 +106,7 @@ public class DnltimeMapperTests {
 		dnltime.setAttend(attend);
 		dnltime.setLeave(new Date());
 		dnltime.setReason("병원내원");
-		dnltime.setMembersrl(1);
+		dnltime.setMembersrl(new BigDecimal(1));
 		
 		int rtn = dnltimeMapper.insert(dnltime);
 		
