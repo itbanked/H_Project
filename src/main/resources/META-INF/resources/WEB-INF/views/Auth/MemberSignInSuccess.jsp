@@ -2,12 +2,13 @@
     pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>    
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>  
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>  
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>registerSuccess.jsp</title>
+<title>RegisterForm.jsp</title>
 
 <!-- Code Assist -->
 <c:if test="false">
@@ -20,6 +21,10 @@
 
 	<h1>Register Success!</h1>
 	
-	Dnltime : ${dnltime}
+	관리자의 승인을 기다려주세요 :)
+	
+	<script>
+		setTimeout("location.href='/'", 3000);
+	</script>
 </body>
 </html>
