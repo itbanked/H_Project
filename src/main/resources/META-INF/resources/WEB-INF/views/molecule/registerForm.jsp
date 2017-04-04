@@ -18,7 +18,7 @@
 </head>
 <body>
 <h1>register</h1>
-<form:form action="/molecule/register" method="post" modelAttribute="cityForm">
+<form:form action="/molecule/register" method="post" modelAttribute="moleculeForm">
 	 
 
         
@@ -30,15 +30,15 @@
 	</div>
 
 	
-	<!-- CountryCode -->
+	<!-- chemicaFormula -->
 	<div>
-		<label for="chemicaFormula">chemical formula:</label>
-		<form:input path="chemicaFormula"/>
-		<form:errors path="chemicaFormula"/>
+		<label for="chemicalFormula">chemical formula:</label>
+		<form:input path="chemicalFormula"/>
+		<form:errors path="chemicalFormula"/>
 	</div>
 
 
-	<!-- district -->
+	<!-- density -->
 	<div>
 		<label for="density">density:</label>
 		<form:input path="density"/>
@@ -46,42 +46,42 @@
 	</div>
 
 
-	<!-- population -->
+	<!-- averageMeltingPoint -->
 	<div>
 		<label for="averageMeltingPoint">average melting point:</label>
-		<form:input path="population"/>
-		<form:errors path="population"/>
+		<form:input path="averageMeltingPoint"/>
+		<form:errors path="averageMeltingPoint"/>
 	</div>
 	
-	<!-- population -->
+	<!-- solubilityInWater -->
 	<div>
-		<label for="population">solubility in water:</label>
-		<form:input path="population"/>
-		<form:errors path="population"/>
+		<label for="solubilityInWater">solubility in water:</label>
+		<form:input path="solubilityInWater"/>
+		<form:errors path="solubilityInWater"/>
 	</div>
 	
-	<!-- population -->
+	<!-- acidity -->
 	<div>
-		<label for="population">acidity:</label>
-		<form:input path="population"/>
-		<form:errors path="population"/>
+		<label for="acidity">acidity:</label>
+		<form:input path="acidity"/>
+		<form:errors path="acidity"/>
 	</div>
 	
-	<!-- population -->
+	<!-- hazardStatements -->
 	<div>
-		<label for="population">hazard statements:</label>
-		<form:input path="population"/>
-		<form:errors path="population"/>
+		<label for="hazardStatements">hazard statements:</label>
+		<form:input path="hazardStatements"/>
+		<form:errors path="hazardStatements"/>
 	</div>
 	
-	<!-- population -->
+	<!-- note -->
 	<div>
-		<label for="population">note:</label>
-		<form:input path="population"/>
-		<form:errors path="population"/>
+		<label for="note">note:</label>
+		<form:input path="note"/>
+		<form:errors path="note"/>
 	</div>
 
-	<input type="submit" value="city등록">
+	<input type="submit" value="register">
 </form:form>
 </body>
 </html>

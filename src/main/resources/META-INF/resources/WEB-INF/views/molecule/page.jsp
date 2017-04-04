@@ -53,18 +53,17 @@
         <td><a href="/molecule/item2/${m.acidity}">${m.acidity}</a></td>
         <td><a href="/molecule/item3/${m.hazardStatements}">${m.hazardStatements} </a></td>
         <td>${m.note}</td>
-        
       </tr>
       </c:forEach>
     </tbody>
   </table>
 </div>
 
-<hr>
+
 <!-- <button onclick="displayBox(event)" class="btn btn-danger animated bounce"> -->
 <%-- ${paging} --%>
 <!-- </button> -->
-<hr>
+
 <div align="center">
 <a href="/molecule/page/${paging.firstPage - 1}">Prev</a>
 <c:forEach var="i" begin="${paging.firstPage}" end="${paging.lastPage}">
