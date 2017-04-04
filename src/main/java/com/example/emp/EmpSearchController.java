@@ -47,7 +47,7 @@ public class EmpSearchController {
 	public String getItemById(@PathVariable int id, Model model) {
 		log.info("getItem("+ id + ")");
 		
-		Emp emp = empSearchService.getCityById(id, true);
+		Emp emp = empSearchService.getEmpById(id, true);
 		model.addAttribute("emp", emp);
 		
 		return "emp/item";

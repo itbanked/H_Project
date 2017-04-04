@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import com.example.domain.Emp;
 import com.example.util.Pagination;
@@ -33,5 +34,18 @@ public interface EmpMapper {
 	Emp selectByIdWithDept(int id);
 
 	int insert(Emp emp);
+	
+	@Update({
+		"update emp set",
+		"ename = #{ename},",
+		"job = #{job},",
+		"mgr = #{mgr},",
+		"hiredate = #{hiredate},",
+		"sal = #{sal},",
+		"comm = #{comm},",
+		"deptno = #{deptno}",
+		"where empno = #{empno}"
+	})
+	int modify(Emp emp);
 
 }

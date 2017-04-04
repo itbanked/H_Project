@@ -34,6 +34,7 @@ public class MemberForm extends Member {
 		return super.setMembersrl(value);
 	}
 
+	@NotNull
 	@Size(max=80)
 	@Override
 	public String getUserid() {
@@ -47,6 +48,7 @@ public class MemberForm extends Member {
 		return super.setUserid(value);
 	}
 
+	@NotNull
 	@Size(max=250)
 	@Override
 	public String getEmail() {
@@ -60,6 +62,7 @@ public class MemberForm extends Member {
 		return super.setEmail(value);
 	}
 
+	@NotNull
 	@Size(max=40)
 	@Override
 	public String getUsername() {
@@ -73,6 +76,7 @@ public class MemberForm extends Member {
 		return super.setUsername(value);
 	}
 
+	@NotNull
 	@Size(max=32)
 	@Override
 	public String getPassword() {
@@ -86,6 +90,7 @@ public class MemberForm extends Member {
 		return super.setPassword(value);
 	}
 
+	@NotNull
 	@Size(max=1)
 	@Override
 	public String getIsadmin() {
@@ -98,7 +103,8 @@ public class MemberForm extends Member {
 		// TODO Auto-generated method stub
 		return super.setIsadmin(value);
 	}
-	
+
+	@NotNull
 	@Size(max=1)
 	@Override
 	public String getIsallowed() {

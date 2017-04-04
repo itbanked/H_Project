@@ -63,16 +63,12 @@
 					</li>
 					
 					<li class="dropdown">
-<<<<<<< HEAD
-=======
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Hyejin<span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="/sal/page/1">Salary</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">
-
->>>>>>> 2a2c59f1cd9cd24b102fa5668e623912df918027
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">HannaShin<span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="/dnltime/page/1">dnltime</a></li>
@@ -126,19 +122,4 @@
 
 
 </body>
-<<<<<<< HEAD
 </html>
-
-
-
-
-
-
-
-
-
-
-
-=======
-</html>
->>>>>>> 2a2c59f1cd9cd24b102fa5668e623912df918027

@@ -61,11 +61,11 @@ public class EmpSearchService {
 	}
 	
 	
-	public Emp getCityById(int id) {
+	public Emp getEmpById(int id) {
 		log.info("getCityById(" + id + ")");
-		return getCityById(id, false);
+		return getEmpById(id, false);
 	}
-	public Emp getCityById(int id, boolean withDept) {
+	public Emp getEmpById(int id, boolean withDept) {
 		log.info("getCityById(" + id + ", " + withDept + ")");
 		Emp emp=null;
 		if (withDept)

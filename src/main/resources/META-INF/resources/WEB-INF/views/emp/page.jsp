@@ -1,4 +1,4 @@
-<%@page import="java.util.Date"%>
+<%@page import="java.sql.Date"%>
 <%@page import="java.util.Arrays"%>
 <%@page import="java.text.DecimalFormat"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -9,15 +9,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>page.jsp</title>
+	<meta charset="UTF-8">
+	<title>page.jsp</title>
+	
+	<!-- code_assist -->
+	<c:if test="false">
+		<link rel="stylesheet" href="../code_assist/animate.css">
+		<link rel="stylesheet" href="../code_assist/bootstrap.css">
+	</c:if>
 
-<!-- code_assist -->
-<c:if test="false">
-	<link rel="stylesheet" href="../code_assist/animate.css">
-	<link rel="stylesheet" href="../code_assist/bootstrap.css">
-</c:if>
-
+	<style>
+		.opt {
+			width: 80px;
+		}
+	</style>
 </head>
 <body>
 <!-- Region for Defines -->
@@ -28,30 +33,6 @@
 <!-- Region for Title -->
 <h1>Emp Page List pageNo = ${paging.pageNo}</h1>
 <!-- End of region -->
- 
-	<%!
-		public String ConvertD2String( Object obj ) {
-			Date date = (Date)obj;
-			String Year = Int2Str( date.getYear()  , 2);
-			String Month = Int2Str( date.getMonth() + 1  , 2);
-			String Day = Int2Str( date.getDay() , 2);
-			String value =  Year + "/" + Month + "/" + Day;
-			return value;
-		}
-	
-		public String Int2Str(int num, int digits) {
-		    assert digits > 0 : "Invalid number of digits";
-	
-		    // create variable length array of zeros
-		    char[] zeros = new char[digits];
-		    Arrays.fill(zeros, '0');
-		    // format number as String
-		    DecimalFormat df = new DecimalFormat(String.valueOf(zeros));
-	
-		    return df.format(num);
-		}
-	%>
-
 <!-- Region for DataTable -->
 	<table class="table table-hover">
 		<tr>
@@ -63,21 +44,29 @@
 			<td>Sal</td>
 			<td>Comm</td>
 			<td>DeptNo</td>
+			<td class='opt'>Remove</td>
+			<td class='opt'>Modify</td>
 		</tr>
 		<c:forEach var="emp" items="${emp}" varStatus="status">
-			<c:set var="ConvertedHireDate" value="${emp.hiredate}"/>
-			<%
-				String ConvertedDate = ConvertD2String( pageContext.getAttribute("ConvertedHireDate") );
-			%>
 			<tr>
 				<td><a href="/emp/item/${emp.empno}">${emp.empno}</a></td>
 				<td>${emp.ename}</td>
 				<td>${emp.job}</td>
 				<td><a href="/emp/item/${emp.mgr}">${emp.mgr}</a></td>
-				<td><%= ConvertedDate %></td>
+				<td>${emp.hiredate}</td>
 				<td>${emp.sal}</td>
 				<td>${emp.comm}</td>
 				<td><a href="/dept/item/${emp.deptno}">${emp.deptno}</a></td>
+				<td>
+					<a href="/emp/remove/${emp.empno}?pageNo=${paging.pageNo}">
+						<span class="glyphicon glyphicon-remove"></span>
+					</a>
+				</td>
+				<td>
+					<a href="/emp/modify/${emp.empno}?pageNo=${paging.pageNo}">
+						<span class="glyphicon glyphicon-edit"></span>
+					</a>
+				</td>
 			</tr>
 		</c:forEach>
 	</table>

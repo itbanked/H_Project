@@ -1,7 +1,7 @@
 package com.example.domain;
 
 import java.math.BigDecimal;
-import java.util.Date;
+import java.sql.Date;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.core.JsonProcessingException;

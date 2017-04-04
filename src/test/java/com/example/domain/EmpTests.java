@@ -25,7 +25,6 @@ public class EmpTests {
 		Emp e = new Emp();
 		e.setEmpno(1000);
 		e.setEname("홍길동");
-		e.setHiredate(new Date());
 		
 		System.out.println(e);
 	}
