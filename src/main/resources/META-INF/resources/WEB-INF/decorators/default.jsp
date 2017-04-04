@@ -49,7 +49,8 @@
 						<ul class="dropdown-menu">
 							<li><a href="/dept/page/1">Dept</a></li>
 							<li><a href="/emp/page/1">Emp</a></li>
-							<li><a href="/emp/salgrade">Salgrade</a></li>
+							<li><a href="/sal/page/1">Salgrade</a></li>
+							<li><a href="/dnltime/page/1">Work Time</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">
@@ -60,28 +61,21 @@
 							<li><a href="/language/page/1">Language</a></li>
 						</ul>
 					</li>
+					
 					<li class="dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Hyejin<span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="/sal/page/1">Salary</a></li>
-						</ul>
-					</li>
-					<li class="dropdown">
-<<<<<<< HEAD
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">HannaShin<span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="/dnltime/page/1">dnltime</a></li>
 						</ul>
 					</li>
-=======
+				<li>
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Manchester United<span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="/manchester/list">Information</a></li>
 						<li><a href="/players/page/1">Members</a></li>
 					</ul>
 				</li>
-<<<<<<< HEAD
-				
+				<li>
 				<li class="dropdown">
 					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Molecule<span class="caret"></span></a>
 					<ul class="dropdown-menu">
@@ -92,9 +86,6 @@
 						<li><a href="/warning/list">Warning</a></li>
 					</ul>
 				</li>
-=======
->>>>>>> 393b32aec4b1849289071046e6732ab78a605ea6
->>>>>>> ccd1d346978ac8e047ecfd7ba40e6dbea6970dae
 					<li><a href="#">Q & A</a></li>
 					<li><a href="#">Documentation</a></li>
 				</ul>
@@ -128,8 +119,6 @@
 
 </body>
 </html>
-
-
 
 
 
