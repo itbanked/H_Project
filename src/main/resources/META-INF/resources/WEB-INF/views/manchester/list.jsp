@@ -6,6 +6,19 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style type="text/css">
+	
+	.registerBox {
+			text-align: right;
+		}
+		
+	.margin {
+		margin :30px auto;
+		white-space : nowrap;
+		text-overflow : ellipsis;
+	}
+</style>
+<title>Manchester United</title>
 <!-- Code Assist -->
 <c:if test="false">
 	<link rel="stylesheet" href="../code_assist/animate.css">
@@ -13,44 +26,54 @@
 </c:if>
 </head>
 <body>
-<div class="col-lg-10 col-lg-offset-1">
 <h1>Manchester United Information</h1>
-	<table class="animated bounceInLeft table table-striped">
-		<tr class="info" align="center">
+
+	<div class="registerBox">
+		<a href="/manchester/register" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal3">
+		<span class="glyphicon glyphicon-inbox"> Team Register</span></a>
+	</div>
+	
+	<div class="margin">
+	<table class="table table-hover">
+		<tr align="center">
 			<td><b>Idno</b></td>
 			<td><b>Team</b></td>
-			<td></td>
+			<td colspan="2"></td>
 		</tr>
 		<c:forEach var="manchester" items="${list}">
 			<tr align="center">
 				<td>${manchester.idno}</td>
 				<td><a href="/manchester/item/${manchester.idno}">${manchester.team}</a></td>
 				<td>
-				<a href="/manchester/modify/${manchester.idno}" class="btn-sm btn-success" data-toggle="modal" data-target="#myModal1">수정</a>
-				<a href="/manchester/unregister/${manchester.idno}" class="btn-sm btn-danger" data-toggle="modal" data-target="#myModal">삭제</a>
+				<a href="/manchester/modify/${manchester.idno}" data-toggle="modal" data-target="#myModal1">
+				<span class="glyphicon glyphicon-edit"></span></a>
+				</td>
+				<td>
+				<a href="/manchester/unregister/${manchester.idno}" data-toggle="modal" data-target="#myModal">
+				<span class="glyphicon glyphicon-remove"></span></a>
 				</td>
 			</tr>
 		</c:forEach>
 	</table>
-	<a href="/manchester/register" class="btn-sm btn-primary" data-toggle="modal" data-target="#myModal3">Team 등록</a>
-</div>
-<div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-         </div>
-    </div>
-  </div>
-  <div class="modal fade" id="myModal1" role="dialog">
-    <div class="modal-dialog modal-m">
-      <div class="modal-content">
-      </div>
-    </div>
-  </div>
-  <div class="modal fade" id="myModal3" role="dialog">
-    <div class="modal-dialog modal-m">
-      <div class="modal-content">
-         </div>
-    </div>
-  </div>
+	</div>
+	
+	<div class="modal fade" id="myModal" role="dialog">
+	    <div class="modal-dialog modal-lg">
+	      <div class="modal-content">
+	         </div>
+	    </div>
+	  </div>
+	  <div class="modal fade" id="myModal1" role="dialog">
+	    <div class="modal-dialog modal-m">
+	      <div class="modal-content">
+	      </div>
+	    </div>
+	  </div>
+	  <div class="modal fade" id="myModal3" role="dialog">
+	    <div class="modal-dialog modal-m">
+	      <div class="modal-content">
+	         </div>
+	    </div>
+	 </div>
 </body>
 </html>

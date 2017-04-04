@@ -23,7 +23,7 @@
 </div>
 <div class="modal-body">
 	<table class="table table-striped">
-		<tr class="info" align="center">
+		<tr class="active" align="center">
 			<td><b>Idno</b></td>
 			<td><b>Team</b></td>
 		</tr>
