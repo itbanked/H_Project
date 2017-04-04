@@ -46,13 +46,15 @@
 			</div>
 		</div>
 		<hr>
+		<div class="InfoBox">
 			<form action="/Auth" method="post">
 				<input class="InputBox" name="id"><br>
 				<input class="InputBox" name="pw" type="password"><br>
 				<input class="btn Action" type="submit" value="login">
 			</form>
-		<div class="InfoBox">
-			
+			<form action="/Sign_in/Form" method="get">
+				<input class="btn Action" type="submit" value="Sign in">
+			</form>
 		</div>
 	</div>
 
