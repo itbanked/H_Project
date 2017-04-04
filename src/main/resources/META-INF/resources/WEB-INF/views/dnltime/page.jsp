@@ -29,6 +29,10 @@
 	      white-space : nowrap;
 	      text-overflow : ellipsis;
 	   }
+	   .btnColor {
+      background-color: black;
+      color: white;
+  	 }
 	</style>
 </head>
 <body>
@@ -64,27 +68,27 @@
 		<a href="/dnltime/page/1" class="btn btn-group-sm active">first</a>
 		
 		<c:choose>
-		<c:when test="${paging.firstGroup == true}">
-		   <a href="/dnltime/page/${paging.firstPage}" class="btn btn-sm btnColor">&laquo;</a>
+		<c:when test="${page.paging.firstGroup == true}">
+		   <a href="/dnltime/page/${page.paging.firstPage}" class="btn btn-sm btnColor">&laquo;</a>
 		</c:when>
-		<c:when test="${paging.firstGroup == false}">
-		   <a href="/dnltime/page/${paging.firstPage - 1}" class="btn btn-sm btnColor">&laquo;</a>
+		<c:when test="${page.paging.firstGroup == false}">
+		   <a href="/dnltime/page/${page.paging.firstPage - 1}" class="btn btn-sm btnColor">&laquo;</a>
 		</c:when>
 		</c:choose>
-		<c:forEach var="i" begin="${paging.firstPage}" end="${paging.lastPage}">
+		<c:forEach var="i" begin="${page.paging.firstPage}" end="${page.paging.lastPage}">
 		   <a href="/dnltime/page/${i}" class="btn btn-group-sm active">${i}</a>
 		</c:forEach>
 		
 		<c:choose>
-		<c:when test="${paging.lastGroup == true}">
-		   <a href="/dnltime/page/${paging.lastPage}" class="btn btn-sm btnColor">&raquo;</a>
+		<c:when test="${page.paging.lastGroup == true}">
+		   <a href="/dnltime/page/${page.paging.lastPage}" class="btn btn-sm btnColor">&raquo;</a>
 		</c:when>
-		<c:when test="${paging.lastGroup == false}">
-		   <a href="/dnltime/page/${paging.lastPage + 1}" class="btn btn-sm btnColor">&raquo;</a>
+		<c:when test="${page.paging.lastGroup == false}">
+		   <a href="/dnltime/page/${page.paging.lastPage + 1}" class="btn btn-sm btnColor">&raquo;</a>
 		</c:when>
 		</c:choose>
 		
-		<a href="/dnltime/page/${paging.totalPage}" class="btn btn-group-sm active">last</a>
+		<a href="/dnltime/page/${page.paging.totalPage}" class="btn btn-group-sm active">last</a>
 		</div>
 </body>
 </html>
