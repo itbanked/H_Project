@@ -17,8 +17,12 @@
 		background-color: black;
 		color: white;
 	}
-	.active {
+	.active, .btn-group-sm {
 		color: black;
+	}
+	.activeColor {
+		color: white;
+		background-color: darkGray;
 	}
 	.registerBox {
 			text-align: right;
@@ -86,7 +90,12 @@
 	</c:when>
 	</c:choose>
 	<c:forEach var="i" begin="${paging.firstPage}" end="${paging.lastPage}">
-		<a href="/players/page/${i}" class="btn btn-group-sm active">${i}</a>
+		<c:if test="${paging.pageNo == i}">
+			<a href="/players/page/${i}" class="btn btn-group-sm active activeColor">${i}</a>
+		</c:if>
+		<c:if test="${paging.pageNo != i}">
+			<a href="/players/page/${i}" class="btn btn-group-sm">${i}</a>
+		</c:if>
 	</c:forEach>
 	
 	<c:choose>
