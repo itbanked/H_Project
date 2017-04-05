@@ -19,10 +19,14 @@
 	a:HOVER {
 		text-decoration: none;	
 	}
-	.active {
+	.active, .btn-group-sm {
 		color: black;
 	}
-	.text-center {
+	.activeColor {
+		color: white;
+		background-color: darkGray;
+	}
+	.table-responsive {
 		margin :30px auto;
 		white-space : nowrap;
 		text-overflow : ellipsis;
@@ -56,7 +60,7 @@
 </div>
 
 <!-- Region for DataTable -->
-<div class="text-center table-responsive">
+<div class="table-responsive">
 	<table class="table table-hover">
 		<tr>
 			<td>ID</td>
@@ -94,8 +98,14 @@
 		<a href="/city/page/${paging.firstPage - 1}" class="btn btn-sm btnColor">&laquo;</a>
 	</c:when>
 	</c:choose>
+	
 	<c:forEach var="i" begin="${paging.firstPage}" end="${paging.lastPage}">
-		<a href="/city/page/${i}" class="btn btn-group-sm active">${i}</a>
+		<c:if test="${paging.pageNo == i}">
+			<a href="/city/page/${i}" class="btn btn-group-sm active activeColor">${i}</a>
+		</c:if>
+		<c:if test="${paging.pageNo != i}">
+			<a href="/city/page/${i}" class="btn btn-group-sm">${i}</a>
+		</c:if>
 	</c:forEach>
 	
 	<c:choose>

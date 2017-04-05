@@ -21,6 +21,17 @@
 		td{
 			font-weight: bold;
 		}
+		.active, .btn-group-sm {
+		color: black;
+		}
+		.activeColor {
+		color: white;
+		background-color: darkGray;
+		}
+		.btnColor {
+		background-color: black;
+		color: white;
+		}
 	</style>
 </head>
 <body>
@@ -50,32 +61,66 @@
 		</c:forEach>
 	</table>
 
+<div class="text-center">
+	<a href="/dnltime/page/1" class="btn btn-group-sm active">first</a>
 	
-	<div>
-		<ul class="pagination">
-				<li><a href="/dnltime/page/1">first</a></li>
-		<c:choose>
-		   <c:when test="${page.paging.firstGroup}">
-		        <li><a href="/dnltime/page/1">prev</a></li>
-		    </c:when>
-		     <c:otherwise>
-		        <li><a href="/dnltime/page/${page.firstPage - 1}">prev</a></li>
-		   	 </c:otherwise>   
-		</c:choose>				
-			<c:forEach var="i" begin="${page.paging.firstPage}" end="${page.paging.lastPage}">
-				<li><a href="/dnltime/page/${i}">${i}</a></li>
-			</c:forEach>
-		<c:choose>
-		   <c:when test="${page.paging.lastGroup}">
-		        <li><a href="/dnltime/page/${page.paging.lastPage}">next</a></li>
-		    </c:when>
-		     <c:otherwise>
-		        <li><a href="/dnltime/page/${page.firstPage + 1}">next</a></li>
-		   	 </c:otherwise>   
-		</c:choose>	
-				<li><a href="/dnltime/page/${page.paging.lastPage}">last</a></li>
-		</ul>
-	</div>
+	<c:choose>
+	<c:when test="${page.paging.firstGroup == true}">
+		<a href="/dnltime/page/${page.paging.firstPage}" class="btn btn-sm btnColor">&laquo;</a>
+	</c:when>
+	<c:when test="${page.paging.firstGroup == false}">
+		<a href="/dnltime/page/${page.paging.firstPage - 1}" class="btn btn-sm btnColor">&laquo;</a>
+	</c:when>
+	</c:choose>
+	
+	<c:forEach var="i" begin="${page.paging.firstPage}" end="${page.paging.lastPage}">
+		<c:if test="${page.paging.pageNo == i}">
+			<a href="/dnltime/page/${i}" class="btn btn-group-sm active activeColor">${i}</a>
+		</c:if>
+		<c:if test="${page.paging.pageNo != i}">
+			<a href="/dnltime/page/${i}" class="btn btn-group-sm">${i}</a>
+		</c:if>
+	</c:forEach>
+	
+	<c:choose>
+	<c:when test="${page.paging.lastGroup == true}">
+		<a href="/dnltime/page/${page.paging.lastPage}"class="btn btn-sm btnColor">&raquo;</a>
+	</c:when>
+	<c:when test="${page.paging.lastGroup == false}">
+		<a href="/dnltime/page/${page.paging.lastPage + 1}"class="btn btn-sm btnColor">&raquo;</a>
+	</c:when>
+	</c:choose>
+	
+	<a href="/dnltime/page/${page.paging.totalPage}" class="btn btn-group-sm active">last</a>
+</div>
+
+
+	
+<!-- 	<div> -->
+<!-- 		<ul class="pagination"> -->
+<!-- 				<li><a href="/dnltime/page/1">first</a></li> -->
+<%-- 		<c:choose> --%>
+<%-- 		   <c:when test="${page.paging.firstGroup}"> --%>
+<!-- 		        <li><a href="/dnltime/page/1">prev</a></li> -->
+<%-- 		    </c:when> --%>
+<%-- 		     <c:otherwise> --%>
+<%-- 		        <li><a href="/dnltime/page/${page.firstPage - 1}">prev</a></li> --%>
+<%-- 		   	 </c:otherwise>    --%>
+<%-- 		</c:choose>				 --%>
+<%-- 			<c:forEach var="i" begin="${page.paging.firstPage}" end="${page.paging.lastPage}"> --%>
+<%-- 				<li><a href="/dnltime/page/${i}">${i}</a></li> --%>
+<%-- 			</c:forEach> --%>
+<%-- 		<c:choose> --%>
+<%-- 		   <c:when test="${page.paging.lastGroup}"> --%>
+<%-- 		        <li><a href="/dnltime/page/${page.paging.lastPage}">next</a></li> --%>
+<%-- 		    </c:when> --%>
+<%-- 		     <c:otherwise> --%>
+<%-- 		        <li><a href="/dnltime/page/${page.firstPage + 1}">next</a></li> --%>
+<%-- 		   	 </c:otherwise>    --%>
+<%-- 		</c:choose>	 --%>
+<%-- 				<li><a href="/dnltime/page/${page.paging.lastPage}">last</a></li> --%>
+<!-- 		</ul> -->
+<!-- 	</div> -->
 </div>
 </body>
 </html>

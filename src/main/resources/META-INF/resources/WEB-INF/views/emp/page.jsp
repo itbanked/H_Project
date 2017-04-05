@@ -18,6 +18,28 @@
 	<link rel="stylesheet" href="../code_assist/bootstrap.css">
 </c:if>
 
+<style>
+	.text-center {
+		margin :30px auto;
+		white-space : nowrap;
+		text-overflow : ellipsis;
+	}
+	.active, .btn-group-sm {
+		color: black;
+	}
+	.activeColor {
+		color: white;
+		background-color: darkGray;
+	}
+	tr, td {
+		text-transform: capitalize;
+	}
+	.btnColor {
+		background-color: black;
+		color: white;
+	}
+</style>
+
 </head>
 <body>
 <!-- Region for Defines -->
@@ -70,14 +92,17 @@
 				String ConvertedDate = ConvertD2String( pageContext.getAttribute("ConvertedHireDate") );
 			%>
 			<tr>
-				<td><a href="/emp/item/${emp.empno}">${emp.empno}</a></td>
+				<td><a href="/emp/item/${emp.empno}">
+				<span class="glyphicon glyphicon-hand-right"></span> ${emp.empno}</a></td>
 				<td>${emp.ename}</td>
 				<td>${emp.job}</td>
-				<td><a href="/emp/item/${emp.mgr}">${emp.mgr}</a></td>
+				<td><a href="/emp/item/${emp.mgr}">
+				<span class="glyphicon glyphicon-hand-right"></span> ${emp.mgr}</a></td>
 				<td><%= ConvertedDate %></td>
 				<td>${emp.sal}</td>
 				<td>${emp.comm}</td>
-				<td><a href="/dept/item/${emp.deptno}">${emp.deptno}</a></td>
+				<td><a href="/dept/item/${emp.deptno}">
+				<span class="glyphicon glyphicon-hand-right"></span> ${emp.deptno}</a></td>
 			</tr>
 		</c:forEach>
 	</table>
@@ -90,20 +115,40 @@
  -->
  
  <!-- Region for Page Buttons -->
- <div class="text-center">
-	<a href="/emp/page/${paging.firstPage - 1}">Prev</a>
+<div class="text-center">
+	<a href="/emp/page/1" class="btn btn-group-sm active">first</a>
+	
+	<c:choose>
+	<c:when test="${paging.firstGroup == true}">
+		<a href="/emp/page/${paging.firstPage}" class="btn btn-sm btnColor">&laquo;</a>
+	</c:when>
+	<c:when test="${paging.firstGroup == false}">
+		<a href="/emp/page/${paging.firstPage - 1}" class="btn btn-sm btnColor">&laquo;</a>
+	</c:when>
+	</c:choose>
 	<c:forEach var="i" begin="${paging.firstPage}" end="${paging.lastPage}">
-		<a href="/emp/page/${i}">${i}</a>
+		<c:if test="${paging.pageNo == i}">
+			<a href="/emp/page/${i}" class="btn btn-group-sm active activeColor">${i}</a>
+		</c:if>
+		<c:if test="${paging.pageNo != i}">
+			<a href="/emp/page/${i}" class="btn btn-group-sm">${i}</a>
+		</c:if>
 	</c:forEach>
-	<a href="/emp/page/${paging.lastPage + 1}">Next</a>
+	
+	<c:choose>
+	<c:when test="${paging.lastGroup == true}">
+		<a href="/emp/page/${paging.lastPage}"class="btn btn-sm btnColor">&raquo;</a>
+	</c:when>
+	<c:when test="${paging.lastGroup == false}">
+		<a href="/emp/page/${paging.lastPage + 1}"class="btn btn-sm btnColor">&raquo;</a>
+	</c:when>
+	</c:choose>
+	
+	<a href="/emp/page/${paging.totalPage}" class="btn btn-group-sm active">last</a>
 </div>
 <!-- End of region -->
 
-<script type="text/javascript">
-	function displayBox(event) {
-		$('.btn').toggleClass('btn-danger');
-	}
-</script>
+
 
 </body>
 </html>
