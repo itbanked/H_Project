@@ -6,17 +6,39 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset=UTF-8>
+<title>page.jsp</title>
 <!-- Code Assist -->
 <c:if test="false">
 	<link rel="stylesheet" href="../code_assist/animate.css">
 	<link rel="stylesheet" href="../code_assist/bootstrap.css">
 </c:if>
+
+<style type="text/css">
+
+	.btnColor {
+		background-color: black;
+		color: white;
+	}
+	.active {
+		color: black;
+	}
+	.registerBox {
+			text-align: right;
+		}
+	.margin {
+		margin :30px auto;
+		white-space : nowrap;
+		text-overflow : ellipsis;
+	}
+</style>
+
 </head>
 <body>
-<div class="col-lg-10 col-lg-offset-1">
+<div>
 <h1>Manchester United Members</h1>
-	<table class="animated bounceInLeft table table-striped">
-		<tr class="info" align="center">
+	<table class="table table-hover">
+		<tr align="center">
 			<td><b>Idno</b></td>
 			<td><b>Memberno</b></td>
 			<td><b>Back Number</b></td>

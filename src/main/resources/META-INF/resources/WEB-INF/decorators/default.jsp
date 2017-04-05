@@ -61,6 +61,29 @@
 							<li><a href="/language/page/1">Language</a></li>
 						</ul>
 					</li>
+<<<<<<< HEAD
+=======
+					<li class="dropdown">
+<<<<<<< HEAD
+
+=======
+>>>>>>> dc2714ad16f7b4362f7d946ccf87f2177ced7a35
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Hyejin<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="/sal/page/1">Salary</a></li>
+						</ul>
+					</li> 
+					<li class="dropdown">
+<<<<<<< HEAD
+					<li>
+=======
+>>>>>>> dc2714ad16f7b4362f7d946ccf87f2177ced7a35
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">HannaShin<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="/dnltime/page/1">dnltime</a></li>
+						</ul>
+					</li>
+>>>>>>> e2dc9d312c69c7c1e361aa5feb4acab8d8dc857b
 					<li>
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Manchester United<span class="caret"></span></a>
 						<ul class="dropdown-menu">
@@ -110,3 +133,7 @@
 
 </body>
 </html>
+<<<<<<< HEAD
+
+=======
+>>>>>>> dc2714ad16f7b4362f7d946ccf87f2177ced7a35
