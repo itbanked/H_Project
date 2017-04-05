@@ -77,6 +77,13 @@ public class MoleculeSearchService {
 		return molecule;
 	}
 	
+	public Molecule getMoleculeByName(String name) {
+		log.info("getMoleculeByName(" + name + ")");
+		Molecule molecule=null;
+		molecule = moleculeMapper.selectByName(name);
+		return molecule;
+	}
+	
 	
 
 }

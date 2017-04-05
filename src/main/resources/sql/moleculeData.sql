@@ -12,7 +12,7 @@ CREATE TABLE molecule (
 	solubility_in_water number(9,4),
 	acidity number(9,4),
 	hazard_statements varchar2(35 char),
-	note varchar2(25 char) NOT NULL,
+	note varchar2(25 char),
 	PRIMARY KEY (name)
 );
 

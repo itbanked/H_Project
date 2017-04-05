@@ -62,14 +62,20 @@
 						</ul>
 					</li>
 					<li class="dropdown">
+<<<<<<< HEAD
 
+=======
+>>>>>>> dc2714ad16f7b4362f7d946ccf87f2177ced7a35
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Hyejin<span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="/sal/page/1">Salary</a></li>
 						</ul>
-					</li>
+					</li> 
 					<li class="dropdown">
+<<<<<<< HEAD
 					<li>
+=======
+>>>>>>> dc2714ad16f7b4362f7d946ccf87f2177ced7a35
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">HannaShin<span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="/dnltime/page/1">dnltime</a></li>
@@ -124,4 +130,7 @@
 
 </body>
 </html>
+<<<<<<< HEAD
 
+=======
+>>>>>>> dc2714ad16f7b4362f7d946ccf87f2177ced7a35

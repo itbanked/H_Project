@@ -33,7 +33,7 @@ public interface CountryMapper {
 	Country selectByCode(String code);
 	Country selectByCodeWithCity(String code);
 	
-	int insert(Country country);
+    int insert(Country country);
 	
 	int updateByCode(Country country);
 	
