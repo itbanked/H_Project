@@ -27,7 +27,7 @@
 		background-color: black;
 	}
 	.modifyBox {
-		width: 180px;
+		width: 200px;
 		height: 380px;
 		margin: 50px auto;
 	}
@@ -40,16 +40,27 @@
 		text-align: right;
 	}
 	.preButton {
-		width: 600px;
+		width: 700px;
 		height: 10px;
 		margin:  auto;
 		text-align: right;
+	}
+	label,input {
+		margin-bottom: 10px;
+	}
+	.salarydate {
+		width: 200px;
+		margin: 15px auto;
 	}
 </style>
 
 </head>
 <body>
 <h1>Sal 수정</h1>
+	<div class="preButton">
+		<a class="btn btn-sm" href="/sal/page/${param.pageNo}">
+		<span class="glyphicon glyphicon-arrow-left"></span> Sal Page</a>
+	</div>
 <form:form action="/sal/modify?pageNo=${param.pageNo}" method="post" modelAttribute="salForm">
 	<div class="modifyBox">
 		<!-- salno -->
@@ -96,9 +107,11 @@
 			<label for="saldate">
 			<span class="glyphicon glyphicon-pencil"></span>
 			Salary Date</label><br>
-			<form:radiobutton path="saldate" value="10" label="non_regular/10" checked="${sal.saldate eq '10' ? 'checked' : ''}"/><br>
-			<form:radiobutton path="saldate" value="20" label="regular/20" checked="${sal.saldate eq '10' ? '' : 'checked'}"/>
-			<form:errors path="saldate"/>
+			<div class="salarydate">
+				<form:radiobutton path="saldate" value="10" label="intern Salary Date: 10"/><br>
+				<form:radiobutton path="saldate" value="20" label="employee Salary Date: 20" checked="checked"/>
+				<form:errors path="saldate"/>
+			</div>
 		</div>
 		<!-- membersrl -->
 		<div>
@@ -109,15 +122,11 @@
 			<form:errors path="membersrl"/>
 		</div>
 		<div class="modifyButton">
-			<input type="submit" value="Sal 수정">	
+			<input class="btn btn-info" type="submit" value="Sal 수정">	
 		</div>
 	
 	</div>
 	
-	<div class="preButton">
-		<a class="btn btn-sm" href="/sal/page/${param.pageNo}">
-		<span class="glyphicon glyphicon-arrow-left"></span> Sal Page</a>
-	</div>
 	
 </form:form>
 </body>

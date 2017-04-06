@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import com.example.domain.Dept;
 import com.example.util.Pagination;
@@ -35,8 +36,14 @@ public interface DeptMapper {
 	
 	int insert(Dept dept);
 	
+	@Update({
+		"update dept set",
+		"dname = #{dname},",
+		"loc = #{loc}",
+		"where deptno = #{deptno}"
+	})
 	int updateByDeptNo(Dept dept);
 	
 	@Delete("delete from dept where deptno=#{code}")
-	int deleteByDeptNo(String code);
+	int deleteByDeptNo(int code);
 }
