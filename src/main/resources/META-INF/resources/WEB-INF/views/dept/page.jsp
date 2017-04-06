@@ -63,7 +63,6 @@
 				<span class="glyphicon glyphicon-hand-right"></span> ${d.deptno}</a></td>
 				<td>${d.dname}</td>
 				<td>${d.loc}</td>
-<<<<<<< HEAD
 				<td>
 					<a href="/dept/remove/${d.deptno}?pageNo=${paging.pageNo}">
 						<span class="glyphicon glyphicon-remove"></span>
@@ -74,12 +73,6 @@
 						<span class="glyphicon glyphicon-edit"></span>
 					</a>
 				</td>
-=======
-				<td><a href="#">
-				<span class="glyphicon glyphicon-remove"></span></a></td>
-				<td><a href="#">
-				<span class="glyphicon glyphicon-edit"></span></a></td>
->>>>>>> db9fbe3d48639bb09716391fd8d384da92353dc5
 			</tr>
 		</c:forEach>
 	</table>
