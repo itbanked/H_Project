@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>registerSuccess.jsp</title>
+<title>modifySuccess.jsp</title>
 
 <!-- Code Assist -->
 <c:if test="false">
@@ -17,10 +17,15 @@
 
 </head>
 <body>
-<h1>Register Success</h1>
+<h1>modify success</h1>
 ${molecule}
+
 <hr>
-<a class="btn btn-primary" href="/molecule/page/1">이전 Page로...</a>
+
+<a class="btn btn-primary" href="/molecule/page/${param.pageNo}">이전 Page로...</a>
 
 </body>
 </html>
+
+
+

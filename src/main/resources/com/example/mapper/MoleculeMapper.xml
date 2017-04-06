@@ -100,12 +100,18 @@
 	)
 </insert>
 
-<!-- <update id="updateById"> -->
-<!-- 	update city -->
-<!-- 	   set name 		= #{name}, -->
-<!-- 		country_code	= #{countryCode}, -->
-<!-- 		district		= #{district}, -->
-<!-- 		population		= #{population} -->
-<!-- 	 where id = #{id} -->
-<!-- </update> -->
+<update id="updateByName">
+	update molecule
+	
+	    set name			=#{name},
+		chemical_formula 	=#{chemicalFormula},
+		density             =#{density},
+		average_melting_point =#{averageMeltingPoint},
+		solubility_in_water =#{solubilityInWater},
+		acidity             =#{acidity},
+		hazard_statements   =#{hazardStatements},
+		note                =#{note}
+
+	 where name = #{name}
+</update>
 </mapper>

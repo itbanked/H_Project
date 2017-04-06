@@ -11,16 +11,16 @@ import com.example.domain.Molecule;
 
 public class MoleculeForm extends Molecule{
 	
-//	public void setMolecule(Molecule molecule){
-//		super.setName(molecule.getName());
-//		super.setChemicalFormula(molecule.getChemicalFormula());
-//		super.setDensity(molecule.getDensity());
-//		super.setAverageMeltingPoint(molecule.getAverageMeltingPoint());
-//		super.setSolubilityInWater(molecule.getSolubilityInWater());
-//		super.setAcidity(molecule.getAcidity());
-//		super.setHazardStatements(molecule.getHazardStatements());
-//		super.setNote(molecule.getNote());
-//	}
+	public void setMolecule(Molecule molecule){
+		super.setName(molecule.getName());
+		super.setChemicalFormula(molecule.getChemicalFormula());
+		super.setDensity(molecule.getDensity());
+		super.setAverageMeltingPoint(molecule.getAverageMeltingPoint());
+		super.setSolubilityInWater(molecule.getSolubilityInWater());
+		super.setAcidity(molecule.getAcidity());
+		super.setHazardStatements(molecule.getHazardStatements());
+		super.setNote(molecule.getNote());
+	}
 
 	//@NotNull
 	//@Size(max=35)

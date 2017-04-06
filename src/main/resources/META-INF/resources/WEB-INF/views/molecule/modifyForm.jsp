@@ -2,13 +2,14 @@
     pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>    
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>registerForm.jsp</title>
+<title>modifyForm.jsp</title>
+
 <!-- Code Assist -->
 <c:if test="false">
 	<link rel="stylesheet" href="../code_assist/animate.css">
@@ -17,21 +18,16 @@
 
 </head>
 <body>
-<h1>register</h1>
-<%-- <form:form action="/molecule/register" method="post" modelAttribute="moleculeForm"> --%>
-<form:form action="/molecule/register?pageNo=${param.pageNo}" method="post" modelAttribute="moleculeForm">
-<%-- 	<form:errors/> --%>
-	 
+<h1>modify</h1>
+<form:form action="/molecule/modify?pageNo=${param.pageNo}" method="post" modelAttribute="moleculeForm">
+	<form:errors/>
 
-        
-	<!-- Name -->
+	<!-- name -->
 	<div>
 		<label for="name">Name:</label>
 		<form:input path="name"/>
 		<form:errors path="name"/>
 	</div>
-
-	
 	<!-- chemicaFormula -->
 	<div>
 		<label for="chemicalFormula">chemical formula:</label>
@@ -83,7 +79,12 @@
 		<form:errors path="note"/>
 	</div>
 
-	<input type="submit" value="register">
+	<input type="submit" value="modify">
+
 </form:form>
+
 </body>
 </html>
+
+
+
