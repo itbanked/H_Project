@@ -86,10 +86,6 @@
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Molecule<span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="/molecule/page/1">Molecule</a></li>
-							<li><a href="/mass/page/1">Mass</a></li>
-							<li><a href="/acidity/list">Acidity</a></li>
-							<li><a href="/state/list">State</a></li>
-							<li><a href="/warning/list">Warning</a></li>
 						</ul>
 					</li>
 				</ul>
