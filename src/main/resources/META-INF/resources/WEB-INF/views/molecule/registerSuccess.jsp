@@ -18,7 +18,36 @@
 </head>
 <body>
 <h1>Register Success</h1>
-${molecule}
+
+ <table class="table table-condensed">
+    <thead>
+      <tr>
+        <th>name</th>
+        <th>chemical formula</th>
+        <th>density</th>
+        <th>average melting point</th>
+        <th>solubility in water</th>
+        <th>acidity</th>
+        <th>hazard statements</th>
+        <th>note</th>
+        <th>mass</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+        <td>${molecule.name}</td>
+        <td>${molecule.chemicalFormula}</td>
+        <td>${molecule.density}</td>
+        <td>${molecule.averageMeltingPoint}</td>
+        <td>${molecule.solubilityInWater}</td>
+        <td>${molecule.acidity}</td>
+        <td>${molecule.hazardStatements}</td>
+        <td>${molecule.note}</td>
+        <td>${molecule.mass.molarMass}</td>
+      </tr>
+    </tbody>
+  </table>
 <hr>
 <a class="btn btn-primary" href="/molecule/page/1">이전 Page로...</a>
 

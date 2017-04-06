@@ -38,6 +38,8 @@ public class MoleculeModifyController {
 		log.info("modifyForm(" + name + ")");
 		Molecule molecule = moleculeSearchService.getMoleculeByName(name);
 		moleculeForm.setMolecule(molecule);
+		moleculeForm.setChemicalFormula(molecule.getChemicalFormula());
+		System.out.println("Current Mole : " + moleculeForm);
 		
 		return "molecule/modifyForm";
 	}

@@ -98,17 +98,28 @@ public class Molecule {
 
 
 	public void setHazardStatements(String hazardStatements) {
-		this.hazardStatements = hazardStatements;
+		if ( hazardStatements != null ) {
+			this.hazardStatements = hazardStatements;
+		}
+		else {
+			this.hazardStatements = "";
+		}
+		
 	}
 
 
 	public String getNote() {
+	
 		return note;
 	}
 
 
 	public void setNote(String note) {
-		this.note = note;
+		if (note.equals(""))
+			this.note = null;
+		else
+			this.note = note;
+		
 	}
 
 

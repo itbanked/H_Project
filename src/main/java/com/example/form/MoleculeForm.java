@@ -13,24 +13,24 @@ public class MoleculeForm extends Molecule{
 	
 	public void setMolecule(Molecule molecule){
 		super.setName(molecule.getName());
+//		if ( this.getName() == null ) {
+//			this.setName("");
+//		}
 		super.setChemicalFormula(molecule.getChemicalFormula());
 		super.setDensity(molecule.getDensity());
 		super.setAverageMeltingPoint(molecule.getAverageMeltingPoint());
 		super.setSolubilityInWater(molecule.getSolubilityInWater());
 		super.setAcidity(molecule.getAcidity());
 		super.setHazardStatements(molecule.getHazardStatements());
+//		if ( this.getHazardStatements() == null ) {
+//			this.setHazardStatements("");
+//		}
 		super.setNote(molecule.getNote());
+//		if ( this.getNote() == null ) {
+//			this.setNote("");
+//		}
 	}
 
-	//@NotNull
-	//@Size(max=35)
-	@Override
-	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
-	}
-
-	
 	@NotNull
 	@Size(max=35)
 	@Override
@@ -46,6 +46,7 @@ public class MoleculeForm extends Molecule{
 		super.setName(name);
 	}
 	
+	@NotNull
 	@Size(max=15)
 	@Override
 	public String getChemicalFormula() {
@@ -74,6 +75,7 @@ public class MoleculeForm extends Molecule{
 //			density = null;
 		super.setDensity(density);
 	}
+	
 	@Digits(integer=9,fraction=4)
 	@Override
 	public Double getAverageMeltingPoint() {
@@ -122,22 +124,23 @@ public class MoleculeForm extends Molecule{
 
 	@Override
 	public void setHazardStatements(String hazardStatements) {
-		if(hazardStatements.equals(""))
-			hazardStatements=null;
-		super.setChemicalFormula(hazardStatements);
+//		if(hazardStatements.equals(""))
+//			hazardStatements=null;
+		super.setHazardStatements(hazardStatements);
+		
 	}
 	
 	@Size(max=25)
 	@Override
 	public String getNote() {
 		// TODO Auto-generated method stub
-		return super.getHazardStatements();
+		return super.getNote();
 	}
 
 	@Override
 	public void setNote(String note) {
-		if(note.equals(""))
-			note=null;
+//		if(note.equals(""))
+//			note=null;
 		super.setNote(note);
 	}
 	
