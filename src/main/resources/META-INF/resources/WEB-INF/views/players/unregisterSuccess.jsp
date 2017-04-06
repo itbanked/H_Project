@@ -18,7 +18,7 @@
 </head>
 <body>
 <div>
-<h1 class="animated bounceInLeft">Member 삭제성공입니다.</h1>
+<h1>Member 삭제성공입니다.</h1>
 
 <a href="/players/page/${param.pageNo}">이전 Page로....</a>
 </div>
