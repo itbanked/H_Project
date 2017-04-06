@@ -29,7 +29,7 @@
 	<h1>Dnltime List</h1>
 <div id="tableDiv" class="table-responsive">
 	<table class="table table-bordered table-striped container">
-			<tr class="success">
+			<tr class="danger">
 				<th>member_srl</th>
 				<th>user_ID</th>
 				<th>email</th>
@@ -38,12 +38,12 @@
 				<th>is_admin</th>
 			</tr>
 			<tr>
-				<td class="warning">${dnltime.member.membersrl}</td>
-				<td class="warning">${dnltime.member.userid}</td>
-				<td class="warning">${dnltime.member.email}</td>
-				<td class="warning">${dnltime.member.username}</td>
-				<td class="warning">${dnltime.member.password}</td>
-				<td class="warning">${dnltime.member.isadmin}</td>
+				<td>${dnltime.member.membersrl}</td>
+				<td>${dnltime.member.userid}</td>
+				<td>${dnltime.member.email}</td>
+				<td>${dnltime.member.username}</td>
+				<td>${dnltime.member.password}</td>
+				<td>${dnltime.member.isadmin}</td>
 			</tr>
 	</table>
 </div>

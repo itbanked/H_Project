@@ -32,15 +32,18 @@
 		background-color: black;
 		color: white;
 		}
+		a{
+			color: black;
+		}
 	</style>
 </head>
 <body>
 	<h1>Dnltime Page ${page.paging.pageNo}</h1>
 	<div id="tableDiv" class="table-responsive">
-	<a href="/dnltime/registerAttend" class="btn btn-primary">출근</a>
+	<a href="/dnltime/registerAttend" class="btn btn-default btn-lg">출근</a>
 	
-	<table class="table table-striped table-bordered">
-		<tr class="success">
+	<table class="table table-striped ">
+		<tr>
 			<th>근태번호</th>
 			<th>출근날짜</th>
 			<th>출근시간</th>
@@ -48,15 +51,17 @@
 			<th>근태사유</th>
 			<th>근태사유수정</th>
 			<th>퇴근</th>
+			<th>삭제</th>
 		</tr>
 		<c:forEach var="d" items="${page.dnltimeList}">
 		<tr>
-				<td class="success"><a href="/dnltime/item/${d.dnlno}">${d.dnlno}</a></td>
-				<td class="warning"><fmt:formatDate type="date" value="${d.attend}"/></td>
-				<td class="warning"><fmt:formatDate type="time" value="${d.attend}"/></td>
-				<td class="warning"><fmt:formatDate type="time" value="${d.leave}"/></td>
-				<td class="warning">${d.reason}</td><td class="warning"><a href="/dnltime/modifyReason/${d.dnlno}" class="btn btn-info">수정</a></td>
-				<td class="success"><a href="/dnltime/modifyLeave/${d.dnlno}" class="btn btn-info">퇴근</a></td>
+				<td><a href="/dnltime/item/${d.dnlno}">${d.dnlno}</a></td>
+				<td><fmt:formatDate type="date" value="${d.attend}"/></td>
+				<td><fmt:formatDate type="time" value="${d.attend}"/></td>
+				<td><fmt:formatDate type="time" value="${d.leave}"/></td>
+				<td>${d.reason}</td><td><a href="/dnltime/modifyReason/${d.dnlno}" class="btn btn-default">수정</a></td>
+				<td><a href="/dnltime/modifyLeave/${d.dnlno}" class="btn btn-default">퇴근</a></td>
+				<td><a href="/dnltime/unregister/${d.dnlno}" class="btn btn-default">삭제</a></td>
 		</tr>
 		</c:forEach>
 	</table>
