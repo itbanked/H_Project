@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>template.jsp</title>
+<title>modifySuccess.jsp</title>
 
 <!-- Code Assist -->
 <c:if test="false">
@@ -17,10 +17,9 @@
 
 </head>
 <body>
-<div>
-<h1 class="animated bounceInLeft">Member 삭제성공입니다.</h1>
 
-<a href="/players/page/${param.pageNo}">이전 Page로....</a>
-</div>
+	<h1>modify Success!</h1>
+	
+	Dnltime : ${dnltime}
 </body>
 </html>

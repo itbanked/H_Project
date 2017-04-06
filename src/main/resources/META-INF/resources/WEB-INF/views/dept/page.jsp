@@ -15,6 +15,28 @@
 	<link rel="stylesheet" href="../code_assist/bootstrap.css">
 </c:if>
 
+<style>
+	.text-center {
+		margin :30px auto;
+		white-space : nowrap;
+		text-overflow : ellipsis;
+	}
+	.active, .btn-group-sm {
+		color: black;
+	}
+	.activeColor {
+		color: white;
+		background-color: darkGray;
+	}
+	tr, td {
+		text-transform: capitalize;
+	}
+	.btnColor {
+		background-color: black;
+		color: white;
+	}
+</style>
+
 </head>
 <body>
 <!-- Region for Defines -->
@@ -35,7 +57,8 @@
 		</tr>
 		<c:forEach var="d" items="${dept}" varStatus="status">
 			<tr>
-				<td><a href="/dept/item/${d.deptno}">${d.deptno}</a></td>
+				<td><a href="/dept/item/${d.deptno}">
+				<span class="glyphicon glyphicon-hand-right"></span> ${d.deptno}</a></td>
 				<td>${d.dname}</td>
 				<td>${d.loc}</td>
 			</tr>
@@ -51,11 +74,35 @@
  
  <!-- Region for Page Buttons -->
  <div class="text-center">
-	<a href="/dept/page/${paging.firstPage - 1}">Prev</a>
+	<a href="/dept/page/1" class="btn btn-group-sm active">first</a>
+	
+	<c:choose>
+	<c:when test="${paging.firstGroup == true}">
+		<a href="/dept/page/${paging.firstPage}" class="btn btn-sm btnColor">&laquo;</a>
+	</c:when>
+	<c:when test="${paging.firstGroup == false}">
+		<a href="/dept/page/${paging.firstPage - 1}" class="btn btn-sm btnColor">&laquo;</a>
+	</c:when>
+	</c:choose>
 	<c:forEach var="i" begin="${paging.firstPage}" end="${paging.lastPage}">
-		<a href="/dept/page/${i}">${i}</a>
+		<c:if test="${paging.pageNo == i}">
+			<a href="/dept/page/${i}" class="btn btn-group-sm active activeColor">${i}</a>
+		</c:if>
+		<c:if test="${paging.pageNo != i}">
+			<a href="/dept/page/${i}" class="btn btn-group-sm">${i}</a>
+		</c:if>
 	</c:forEach>
-	<a href="/dept/page/${paging.lastPage + 1}">Next</a>
+	
+	<c:choose>
+	<c:when test="${paging.lastGroup == true}">
+		<a href="/dept/page/${paging.lastPage}"class="btn btn-sm btnColor">&raquo;</a>
+	</c:when>
+	<c:when test="${paging.lastGroup == false}">
+		<a href="/dept/page/${paging.lastPage + 1}"class="btn btn-sm btnColor">&raquo;</a>
+	</c:when>
+	</c:choose>
+	
+	<a href="/dept/page/${paging.totalPage}" class="btn btn-group-sm active">last</a>
 </div>
 <!-- End of region -->
 

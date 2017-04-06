@@ -70,4 +70,42 @@
  	 where mo.chemical_formula = #{chemicalFormula} 
 
 </select>
+
+
+
+<insert id="insert">
+	
+	insert into molecule
+	(
+		name,
+		chemical_formula,
+		density,
+		average_melting_point,
+		solubility_in_water,
+		acidity,
+		hazard_statements,
+		note
+	)
+	values
+	(
+		#{name},
+		#{chemicalFormula},
+		#{density},
+		#{averageMeltingPoint},
+		#{solubilityInWater},
+		#{acidity},
+		#{hazardStatements},
+		#{note}
+		
+	)
+</insert>
+
+<!-- <update id="updateById"> -->
+<!-- 	update city -->
+<!-- 	   set name 		= #{name}, -->
+<!-- 		country_code	= #{countryCode}, -->
+<!-- 		district		= #{district}, -->
+<!-- 		population		= #{population} -->
+<!-- 	 where id = #{id} -->
+<!-- </update> -->
 </mapper>

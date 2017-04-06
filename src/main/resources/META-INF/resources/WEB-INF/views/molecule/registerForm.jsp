@@ -18,8 +18,10 @@
 </head>
 <body>
 <h1>register</h1>
-<form:form action="/molecule/register" method="post" modelAttribute="cityForm">
-	
+<form:form action="/molecule/register" method="post" modelAttribute="moleculeForm">
+	 
+
+        
 	<!-- Name -->
 	<div>
 		<label for="name">Name:</label>
@@ -28,30 +30,58 @@
 	</div>
 
 	
-	<!-- CountryCode -->
+	<!-- chemicaFormula -->
 	<div>
-		<label for="countryCode">CountryCode:</label>
-		<form:input path="countryCode"/>
-		<form:errors path="countryCode"/>
+		<label for="chemicalFormula">chemical formula:</label>
+		<form:input path="chemicalFormula"/>
+		<form:errors path="chemicalFormula"/>
 	</div>
 
 
-	<!-- district -->
+	<!-- density -->
 	<div>
-		<label for="district">district:</label>
-		<form:input path="district"/>
-		<form:errors path="district"/>
+		<label for="density">density:</label>
+		<form:input path="density"/>
+		<form:errors path="density"/>
 	</div>
 
 
-	<!-- population -->
+	<!-- averageMeltingPoint -->
 	<div>
-		<label for="population">population:</label>
-		<form:input path="population"/>
-		<form:errors path="population"/>
+		<label for="averageMeltingPoint">average melting point:</label>
+		<form:input path="averageMeltingPoint"/>
+		<form:errors path="averageMeltingPoint"/>
+	</div>
+	
+	<!-- solubilityInWater -->
+	<div>
+		<label for="solubilityInWater">solubility in water:</label>
+		<form:input path="solubilityInWater"/>
+		<form:errors path="solubilityInWater"/>
+	</div>
+	
+	<!-- acidity -->
+	<div>
+		<label for="acidity">acidity:</label>
+		<form:input path="acidity"/>
+		<form:errors path="acidity"/>
+	</div>
+	
+	<!-- hazardStatements -->
+	<div>
+		<label for="hazardStatements">hazard statements:</label>
+		<form:input path="hazardStatements"/>
+		<form:errors path="hazardStatements"/>
+	</div>
+	
+	<!-- note -->
+	<div>
+		<label for="note">note:</label>
+		<form:input path="note"/>
+		<form:errors path="note"/>
 	</div>
 
-	<input type="submit" value="city등록">
+	<input type="submit" value="register">
 </form:form>
 </body>
 </html>

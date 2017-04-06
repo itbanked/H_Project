@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>template.jsp</title>
+<title>registerSuccess.jsp</title>
 
 <!-- Code Assist -->
 <c:if test="false">
@@ -17,10 +17,8 @@
 
 </head>
 <body>
-<div>
-<h1 class="animated bounceInLeft">Member 삭제성공입니다.</h1>
+<h1>Register Success</h1>
+${molecule}
 
-<a href="/players/page/${param.pageNo}">이전 Page로....</a>
-</div>
 </body>
 </html>

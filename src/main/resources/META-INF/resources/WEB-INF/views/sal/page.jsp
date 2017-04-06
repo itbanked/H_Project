@@ -19,10 +19,14 @@
 	a:HOVER {
 		text-decoration: none;	
 	}
-	.active {
+	.active, .btn-group-sm {
 		color: black;
 	}
-	.text-center {
+	.activeColor {
+		color: white;
+		background-color: darkGray;
+	}
+	.table-responsive {
 		margin :30px auto;
 		white-space : nowrap;
 		text-overflow : ellipsis;
@@ -50,7 +54,7 @@
 	<span class="glyphicon glyphicon-inbox"></span>Sal 등록</a>
 </div>
 
-<div class="text-center table-responsive">
+<div class="table-responsive">
 	<table class="table table-hover">
 		<tr>
 			<td>sal_No</td>
@@ -93,7 +97,12 @@
 	</c:when>
 	</c:choose>
 	<c:forEach var="i" begin="${paging.firstPage}" end="${paging.lastPage}">
-		<a href="/sal/page/${i}" class="btn btn-group-sm active">${i}</a>
+		<c:if test="${paging.pageNo == i}">
+			<a href="/sal/page/${i}" class="btn btn-group-sm active activeColor">${i}</a>
+		</c:if>
+		<c:if test="${paging.pageNo != i}">
+			<a href="/sal/page/${i}" class="btn btn-group-sm">${i}</a>
+		</c:if>
 	</c:forEach>
 	
 	<c:choose>

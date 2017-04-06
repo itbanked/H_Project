@@ -19,8 +19,8 @@
 <body>
 <div class="col-lg-10 col-lg-offset-1">
 <h1>Member Delete</h1>
-<table class="animated bounceInLeft table table-striped">
-	<tr class="info" align="center">
+<table class="table table-hover">
+	<tr class="active" align="center">
 		<td><b>Idno</b></td>
 		<td><b>Memberno</b></td>
 		<td><b>Back Number</b></td>

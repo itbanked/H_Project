@@ -18,18 +18,16 @@ public class CityRegisterService {
 	@Autowired
 	CountryMapper countryMapper;
 	
-	public void register( City city, BindingResult errors ) {
-		if ( city.getCountryCode() != null ) {
-			Country country = countryMapper.selectByCode( city.getCountryCode() );
-			if ( country == null ) {
-				errors.reject("Invalid Country Code", "유효한 국가 코드가 아닙니다.");
-			}
+	public void register(City city, BindingResult errors) {
+		
+		if (city.getCountryCode() != null) {
+			Country country = countryMapper.selectByCode(city.getCountryCode());
+			if (country == null)
+				errors.reject("InvalidCountryCode", "유효한 Country Code가 아닙니다.");
 		}
 		
-		if ( !errors.hasErrors() ) {
+		if (!errors.hasErrors())
 			cityMapper.insert(city);
-		}
 	}
-	
 
 }
