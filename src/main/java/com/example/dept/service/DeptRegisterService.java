@@ -16,8 +16,8 @@ public class DeptRegisterService {
 	
 	public void register( Dept dept, BindingResult errors ) {
 		Dept Validate = deptMapper.selectByCode( Integer.toString( dept.getDeptno() ) );
-		if ( Validate == null ) {
-			errors.reject("Invalid Country Code", "유효한 국가 코드가 아닙니다.");
+		if ( Validate != null ) {
+			errors.reject("Invalid Dept Code", "이미 해당 부서가 존재합니다.");
 		}
 		
 		if ( !errors.hasErrors() ) {

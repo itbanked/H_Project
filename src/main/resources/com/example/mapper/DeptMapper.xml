@@ -54,16 +54,11 @@
 
 <insert id="insert">
 	insert into dept
-	(
-		deptno,
-		dname,
-		loc,
-	)
 	values
 	(
 		#{deptno},
 		#{dname},
-		#{loc},
+		#{loc}
 	)
 </insert>
 
