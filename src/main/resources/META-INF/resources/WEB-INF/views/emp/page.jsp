@@ -18,13 +18,11 @@
 		<link rel="stylesheet" href="../code_assist/bootstrap.css">
 	</c:if>
 
-<<<<<<< HEAD
 	<style>
 		.opt {
 			width: 80px;
 		}
 	</style>
-=======
 <style>
 	.text-center {
 		margin :30px auto;
@@ -47,7 +45,6 @@
 	}
 </style>
 
->>>>>>> 068c842a079123c593fdcb8dea80ea2594714b46
 </head>
 <body>
 <!-- Region for Defines -->
@@ -78,7 +75,6 @@
 				<span class="glyphicon glyphicon-hand-right"></span> ${emp.empno}</a></td>
 				<td>${emp.ename}</td>
 				<td>${emp.job}</td>
-<<<<<<< HEAD
 				<td><a href="/emp/item/${emp.mgr}">${emp.mgr}</a></td>
 				<td>${emp.hiredate}</td>
 				<td>${emp.sal}</td>
@@ -94,15 +90,6 @@
 						<span class="glyphicon glyphicon-edit"></span>
 					</a>
 				</td>
-=======
-				<td><a href="/emp/item/${emp.mgr}">
-				<span class="glyphicon glyphicon-hand-right"></span> ${emp.mgr}</a></td>
-				<td><%= ConvertedDate %></td>
-				<td>${emp.sal}</td>
-				<td>${emp.comm}</td>
-				<td><a href="/dept/item/${emp.deptno}">
-				<span class="glyphicon glyphicon-hand-right"></span> ${emp.deptno}</a></td>
->>>>>>> 068c842a079123c593fdcb8dea80ea2594714b46
 			</tr>
 		</c:forEach>
 	</table>
