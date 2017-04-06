@@ -29,7 +29,7 @@
 <body>
 <div class="container">
 <h1>Member Regist</h1>
-<form:form action="/players/register?pageNo=${param.pageNo}" method="post" modelAttribute="playersForm" class="animated bounceInLeft form-horizontal">
+<form:form action="/players/register?pageNo=${param.pageNo}" method="post" modelAttribute="playersForm" class="form-horizontal">
 	<div class="form-group">
 		<label for="idno" class="control-label col-sm-2">Idno : </label>
 		<form:input path="idno" class="col-sm-3"/>
