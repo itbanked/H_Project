@@ -68,7 +68,8 @@
 			<td>Code</td>
 			<td>District</td>
 			<td>Population</td>
-			<td colspan="2"></td>
+			<td>Remove</td>
+			<td>Modify</td>
 		</tr>
 		<c:forEach var="city" items="${citys}" varStatus="status">
 			<tr>
@@ -77,10 +78,10 @@
 			<td>${city.countryCode}</td>
 			<td>${city.district}</td>
 			<td>${city.population}</td>
-			<td><a href="/city/modify/${city.id}?pageNo=${paging.pageNo}">
-				<span class="glyphicon glyphicon-edit"></span></a></td>
 			<td><a href="/city/unregister/${city.id}?pageNo=${paging.pageNo}">
 				<span class="glyphicon glyphicon-remove"></span></a></td>
+			<td><a href="/city/modify/${city.id}?pageNo=${paging.pageNo}">
+				<span class="glyphicon glyphicon-edit"></span></a></td>
 			</tr>
 		</c:forEach>
 	</table>

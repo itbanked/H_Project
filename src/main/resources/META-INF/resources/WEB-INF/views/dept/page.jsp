@@ -54,6 +54,8 @@
 			<td>DeptNo</td>
 			<td>DName</td>
 			<td>Location</td>
+			<td>Remove</td>
+			<td>Modify</td>
 		</tr>
 		<c:forEach var="d" items="${dept}" varStatus="status">
 			<tr>
@@ -61,6 +63,10 @@
 				<span class="glyphicon glyphicon-hand-right"></span> ${d.deptno}</a></td>
 				<td>${d.dname}</td>
 				<td>${d.loc}</td>
+				<td><a href="#">
+				<span class="glyphicon glyphicon-remove"></span></a></td>
+				<td><a href="#">
+				<span class="glyphicon glyphicon-edit"></span></a></td>
 			</tr>
 		</c:forEach>
 	</table>

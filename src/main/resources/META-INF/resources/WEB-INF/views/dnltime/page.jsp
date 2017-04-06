@@ -29,9 +29,7 @@
 		background-color: black;
 		color: white;
 		}
-		a{
-			color: black;
-		}
+		
 		.under:hover{
 			text-decoration: none;
 		}
@@ -55,8 +53,8 @@
 			<th>Work Time</th>
 			<th>Leave Time</th>
 			<th>Explain</th>
-			<th>Modify Explain</th>
-			<th>Delete</th>
+			<th>Remove</th>
+			<th>Modify</th>
 			<th>Leave</th>
 		</tr>
 		<c:forEach var="d" items="${page.dnltimeList}">
@@ -66,8 +64,8 @@
 				<td><fmt:formatDate type="time" value="${d.attend}"/></td>
 				<td><fmt:formatDate type="time" value="${d.leave}"/></td>
 				<td>${d.reason}</td>
-				<td><a href="/dnltime/modifyReason/${d.dnlno}"><span class="glyphicon glyphicon-edit"></span></a></td>
 				<td><a href="/dnltime/unregister/${d.dnlno}" ><span class="glyphicon glyphicon-remove"></span></a></td>
+				<td><a href="/dnltime/modifyReason/${d.dnlno}"><span class="glyphicon glyphicon-edit"></span></a></td>
 				<td><a href="/dnltime/modifyLeave/${d.dnlno}" class="btn btn-default"><span class="glyphicon glyphicon-inbox "></span>&nbsp;퇴근</a></td>
 		</tr>
 		</c:forEach>
