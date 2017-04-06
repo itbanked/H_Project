@@ -68,10 +68,7 @@
 						</ul>
 					</li> 
 					<li class="dropdown">
-<<<<<<< HEAD
-=======
 					<li>
->>>>>>> 068c842a079123c593fdcb8dea80ea2594714b46
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">HannaShin<span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="/dnltime/page/1">dnltime</a></li>
@@ -121,12 +118,6 @@
 	<div class="container">
 		<sitemesh:write property="body"/>
 	</div>
-	
-
 
 </body>
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> 068c842a079123c593fdcb8dea80ea2594714b46
