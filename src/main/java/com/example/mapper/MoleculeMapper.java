@@ -16,17 +16,17 @@ public interface MoleculeMapper {
 	/*
 	 * Select
 	 */
-	@Select("select count(*) from molecules")
+	@Select("select count(*) from molecule")
 	int selectTotalCount();
 	   
-	@Select("select * from molecules")
+	@Select("select * from molecule")
 	List<Molecule> selectAll();
 	List<Molecule> selectAllWithMass();
 	
 	
 	@Select({
 		"select *                ",
-		"  from molecules             ",
+		"  from molecule             ",
 		" order by name            ",
 		" offset #{firstItem} - 1 rows   ",
 		" fetch next #{itemsPerPage} rows only"
@@ -34,7 +34,7 @@ public interface MoleculeMapper {
 	List<Molecule> selectPage(Pagination paging);
 	List<Molecule> selectPageWithMass(Pagination paging);
 	
-	@Select("select * from molecules where chemical_formula=#{chemicalFormula}")
+	@Select("select * from molecule where chemical_formula=#{chemicalFormula}")
 	Molecule selectByFormula(String chemicalFormula);
 	@Select("select * from molecule where name=#{name}")
 	Molecule selectByName(String name);
@@ -53,8 +53,8 @@ public interface MoleculeMapper {
 	/*
 	 * Delete
 	 */
-	@Delete("delete from molecules where chemical_formula=#{chemicalFormula}")
-	int deleteByFormula(String chemicalFormula);
+	@Delete("delete from molecule where name=#{name}")
+	int deleteByName(String name);
 	
 	
 }

@@ -2,12 +2,13 @@
     pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>    
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>registerSuccess.jsp</title>
+<title>unregisterForm.jsp</title>
 
 <!-- Code Assist -->
 <c:if test="false">
@@ -17,10 +18,15 @@
 
 </head>
 <body>
-<h1>Register Success</h1>
+<h1>delete</h1>
 ${molecule}
 <hr>
-<a class="btn btn-primary" href="/molecule/page/1">이전 Page로...</a>
+<form action="/molecule/unregister/${name}?pageNo=${param.pageNo}" method="post">
+	<input class="btn btn-primary" type="submit" value="delete">
+</form>
 
 </body>
 </html>
+
+
+

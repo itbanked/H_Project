@@ -54,8 +54,8 @@
         <td><a href="/molecule/item2/${m.acidity}">${m.acidity}</a></td>
         <td><a href="/molecule/item3/${m.hazardStatements}">${m.hazardStatements} </a></td>
         <td>${m.note}</td>
-        <td><a href="/city/modify/${city.id}?pageNo=${page.paging.pageNo}"><span class="glyphicon glyphicon-edit"></span></a></td>
-		<td><a href="/city/unregister/${city.id}?pageNo=${page.paging.pageNo}"><span class="glyphicon glyphicon-remove"></a></td>
+        <td><a href="/molecule/modify/${m.name}?pageNo=${page.paging.pageNo}"><span class="glyphicon glyphicon-edit"></span></a></td>
+		<td><a href="/molecule/unregister/${m.name}?pageNo=${page.paging.pageNo}"><span class="glyphicon glyphicon-remove"></span></a></td>
 		
       </tr>
       </c:forEach>

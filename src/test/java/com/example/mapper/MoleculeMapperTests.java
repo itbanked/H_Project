@@ -96,12 +96,12 @@ public class MoleculeMapperTests {
 		System.out.println(mapper.selectByFormula(molecule.getChemicalFormula()));
 	}
 
-	//@Test
-	public void test06_deleteByFormula() {
-		String chemicalFormula = "C3H6O";
-		int cnt = mapper.deleteByFormula(chemicalFormula);
+	@Test
+	public void test06_deleteByName() {
+		String name = "C3H6O";
+		int cnt = mapper.deleteByName(name);
 		System.out.println("cnt=" + cnt);
-		System.out.println("molecule=" + mapper.selectByFormula(chemicalFormula));
+		System.out.println("molecule=" + mapper.selectByName(name));
 	}
 
 

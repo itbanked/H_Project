@@ -36,8 +36,8 @@ public class MoleculeModifyController {
 	@GetMapping("/modify/{name}")		//양식을 받고(forward)
 	public String modifyForm(MoleculeForm moleculeForm, @PathVariable String name) {
 		log.info("modifyForm(" + name + ")");
-//		Molecule molecule = moleculeSearchService.getMoleculeByName(name);
-//		moleculeForm.setMolecule(molecule);
+		Molecule molecule = moleculeSearchService.getMoleculeByName(name);
+		moleculeForm.setMolecule(molecule);
 		
 		return "molecule/modifyForm";
 	}
