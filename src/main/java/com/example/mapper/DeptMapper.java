@@ -45,5 +45,5 @@ public interface DeptMapper {
 	int updateByDeptNo(Dept dept);
 	
 	@Delete("delete from dept where deptno=#{code}")
-	int deleteByDeptNo(String code);
+	int deleteByDeptNo(int code);
 }
