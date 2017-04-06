@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.example.city.CitySearchController;
 import com.example.dnltime.service.DnltimeSearchService;
 import com.example.domain.Dnltime;
+import com.example.util.Pagination;
 
 @Controller
 @RequestMapping("/dnltime")
@@ -57,6 +58,7 @@ public class DnltimeSearchController {
 	public String getItemByDnlnoWithMembersrl(@PathVariable int dnlno, Model model){
 		log.info("getItem("+ dnlno + ")");
 		
+				
 		Dnltime dnltime = dnltimeSearchService.getDnltimeByDnlnoWithMembersrl(dnlno);
 		model.addAttribute("dnltime", dnltime);
 		

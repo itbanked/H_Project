@@ -59,7 +59,8 @@
 <div class="table-responsive">
 	<table class="table table-hover">
 		<tr>
-			<td colspan="2"></td>
+			<td>Remove</td>
+			<td>Modify</td>
 			<td>No.</td>
 			<td>code</td>
 			<td>name</td>

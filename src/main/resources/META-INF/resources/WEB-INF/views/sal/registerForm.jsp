@@ -27,7 +27,7 @@
 		background-color: black;
 	}
 	.registerBox {
-		width: 180px;
+		width: 200px;
 		height: 380px;
 		margin: 50px auto;
 	}
@@ -48,11 +48,19 @@
 	label,input {
 		margin-bottom: 10px;
 	}
+	.salarydate {
+		width: 200px;
+		margin: 15px auto;
+	}
 </style>
 
 </head>
 <body>
 <h1>Sal 등록</h1>
+	<div class="preButton">
+		<a class="btn btn-sm" href="/sal/page/${param.pageNo}">
+		<span class="glyphicon glyphicon-arrow-left"></span> Sal Page</a>
+	</div>
 
 <form:form action="/sal/register?pageNo=${param.pageNo}" method="post" modelAttribute="salForm">
 	<div class="registerBox">
@@ -93,9 +101,11 @@
 			<label for="saldate">
 			<span class="glyphicon glyphicon-pencil"></span>
 			Salary Date</label><br>
-			<form:radiobutton path="saldate" value="10" label="non_regular/10"/><br>
-			<form:radiobutton path="saldate" value="20" label="regular/20" checked="checked"/>
-			<form:errors path="saldate"/>
+			<div class="salarydate">
+				<form:radiobutton path="saldate" value="10" label="intern Salary Date: 10"/><br>
+				<form:radiobutton path="saldate" value="20" label="employee Salary Date: 20" checked="checked"/>
+				<form:errors path="saldate"/>
+			</div>
 		</div>
 		<!-- membersrl -->
 		<div>
@@ -113,10 +123,6 @@
 		</div>
 	</div>
 	
-	<div class="preButton">
-		<a class="btn btn-sm" href="/sal/page/${param.pageNo}">
-		<span class="glyphicon glyphicon-arrow-left"></span> Sal Page</a>
-	</div>
 	
 </form:form>
 

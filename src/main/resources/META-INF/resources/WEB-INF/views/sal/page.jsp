@@ -64,7 +64,8 @@
 			<td>aid Salary</td>
 			<td>salary Date</td>
 			<td>member_Srl</td>
-			<td colspan="2"></td>
+			<td>Remove</td>
+			<td>Modify</td>
 		</tr>
 	<c:forEach var="sal" items="${sals}">
 		<tr>
@@ -76,10 +77,10 @@
 			<td>${sal.saldate}</td>
 			<td><a href="/sal/item/${sal.salno}?pageNo=${paging.pageNo}">
 			<span class="glyphicon glyphicon-hand-right"></span> ${sal.membersrl}</a></td>
-			<td><a href="/sal/modify/${sal.salno}?pageNo=${paging.pageNo}">
-				<span class="glyphicon glyphicon-edit"></span></a></td>
 			<td><a href="/sal/unregister/${sal.salno}?pageNo=${paging.pageNo}">
 				<span class="glyphicon glyphicon-remove"></span></a></td>
+			<td><a href="/sal/modify/${sal.salno}?pageNo=${paging.pageNo}">
+				<span class="glyphicon glyphicon-edit"></span></a></td>
 		</tr>
 	</c:forEach>
 	</table>
