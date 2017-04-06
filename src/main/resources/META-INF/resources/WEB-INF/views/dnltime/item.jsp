@@ -19,9 +19,6 @@
 			text-align: center;
 		}
 
-		td{
-			font-weight: bold;
-		}
 	</style>
 </head>
 <body>
@@ -47,6 +44,8 @@
 			</tr>
 	</table>
 </div>
+
+<a href="/dnltime/page/${param.pageNo}" class="btn btn-default">목록으로</a>
 
 </body>
 </html>

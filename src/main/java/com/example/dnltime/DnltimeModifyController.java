@@ -59,7 +59,6 @@ public class DnltimeModifyController {
 	@GetMapping("/modifyReason/{dnlno}")
 	public String modifyReason(@PathVariable int dnlno, Dnltime dnltime, BindingResult errors) throws ParseException {
 		
-//		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd ");
 		Dnltime dnltimeResult = dnltimeSearchService.getDnltimeByDnlno(dnlno);
 		log.info("modifyForm(" + dnltimeResult + ")");
 

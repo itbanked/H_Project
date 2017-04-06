@@ -41,7 +41,7 @@ public class DnltimeRegisterController {
 		if ( errors.hasErrors() ) {
 			System.out.println(errors);
 			return "dnltime/registerForm";
-		}		
+		}	
 		
 		return "redirect:/dnltime/page/1" ;
 	}
