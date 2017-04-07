@@ -13,6 +13,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.example.domain.Dnltime;
+import com.example.form.MemberForm;
 import com.example.util.Pagination;
 
 @RunWith(SpringRunner.class)
@@ -51,17 +52,19 @@ public class DnltimeMapperTests {
 		}		
 	}
 	
-	@Test
-	public void test02_selectPage(){
-		Pagination paging = new Pagination();
-		paging.setTotalItem(dnltimeMapper.selectTotalCount());
-		paging.setPageNo(1);
-		
-		List<Dnltime> list = dnltimeMapper.selectPage(paging);
-		
-		for(Dnltime d : list)
-			System.out.println(d);
-	}
+//	@Test
+//	public void test02_selectPage(){
+//		Pagination paging = new Pagination();
+//		paging.setTotalItem(dnltimeMapper.selectTotalCount());
+//		paging.setPageNo(1);
+//		
+//		MemberForm memberForm;
+//		
+////		List<Dnltime> list = dnltimeMapper.selectPage(paging, memberForm);
+//		
+//		for(Dnltime d : list)
+//			System.out.println(d);
+//	}
 	
 	@Test
 	public void test02_selectPageWithDnl(){

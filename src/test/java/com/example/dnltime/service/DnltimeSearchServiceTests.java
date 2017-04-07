@@ -40,24 +40,24 @@ public class DnltimeSearchServiceTests {
 			System.out.println(d);
 	}
 	
-	@Test
-	public void test02_getPage(){
-		Map<String,Object> map = dnltimeSearchService.getPage(1);
-		List<Dnltime> list = (List<Dnltime>)map.get("dnltimeList");
-		
-		for(Dnltime d : list)
-			System.out.println(d);
-			System.out.println(map.get("paging"));
-	}
-	@Test
-	public void test02_getPageWithDnl(){
-		Map<String,Object> map = dnltimeSearchService.getPage(1,true);
-		List<Dnltime> list = (List<Dnltime>)map.get("dnltimeList");
-		
-		for(Dnltime d : list)
-			System.out.println(d);
-			System.out.println(map.get("paging"));
-	}
+//	@Test
+//	public void test02_getPage(){
+//		Map<String,Object> map = dnltimeSearchService.getPage(1, 1);
+//		List<Dnltime> list = (List<Dnltime>)map.get("dnltimeList");
+//		
+//		for(Dnltime d : list)
+//			System.out.println(d);
+//			System.out.println(map.get("paging"));
+//	}
+//	@Test
+//	public void test02_getPageWithDnl(){
+//		Map<String,Object> map = dnltimeSearchService.getPage(1, 1, true);
+//		List<Dnltime> list = (List<Dnltime>)map.get("dnltimeList");
+//		
+//		for(Dnltime d : list)
+//			System.out.println(d);
+//			System.out.println(map.get("paging"));
+//	}
 	
 	@Test
 	public void test03_getDnl(){
