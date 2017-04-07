@@ -1,6 +1,5 @@
 package com.example.mapper;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Delete;

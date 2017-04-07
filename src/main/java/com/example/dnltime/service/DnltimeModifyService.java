@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 
 import com.example.domain.Dnltime;
-import com.example.form.DnltimeForm;
 import com.example.mapper.DnlMapper;
 import com.example.mapper.DnltimeMapper;
 
