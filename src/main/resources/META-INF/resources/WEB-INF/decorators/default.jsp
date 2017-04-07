@@ -58,7 +58,6 @@
 						<ul class="dropdown-menu">
 							<li><a href="/country/page/1">Country</a></li>
 							<li><a href="/city/page/1">City</a></li>
-							<li><a href="/language/page/1">Language</a></li>
 						</ul>
 					</li>
 					<li>

@@ -15,9 +15,6 @@
 	<link rel="stylesheet" href="../code_assist/bootstrap.css">
 </c:if>
 	<style>
-		h1,#tableDiv, th{
-			text-align: center;
-		}
 		.active, .btn-group-sm {
 		color: black;
 		}
@@ -35,18 +32,22 @@
 		}
 		#attend{
 			text-align: right;
-			margin: 10px;
+		}
+		.leaveButton {
+			background-color: coral;
+			color: white;
 		}
 	</style>
 </head>
 <body>
-	<h1>Dnltime Page ${page.paging.pageNo}</h1>
+	<h1>Dnltime Info</h1>
 	<div id="attend">
-	<a href="/dnltime/registerAttend" class="under btn btn-default"><span class="glyphicon glyphicon-inbox"></span>&nbsp;출근</a>
+	<a href="/dnltime/registerAttend" class="btn btn-info btn-sm">
+	<span class="glyphicon glyphicon-inbox"></span> Worktime Register</a>
 	</div>
-	<div id="tableDiv" class="table-responsive">
+	<br>
 	
-	<table class="table table-striped ">
+	<table class="table table-hover">
 		<tr>
 			<th>work No</th>
 			<th>work Date</th>
@@ -66,7 +67,8 @@
 				<td>${d.reason}</td>
 				<td><a href="/dnltime/unregister/${d.dnlno}" ><span class="glyphicon glyphicon-remove"></span></a></td>
 				<td><a href="/dnltime/modifyReason/${d.dnlno}"><span class="glyphicon glyphicon-edit"></span></a></td>
-				<td><a href="/dnltime/modifyLeave/${d.dnlno}" class="btn btn-default"><span class="glyphicon glyphicon-inbox "></span>&nbsp;퇴근</a></td>
+				<td><a href="/dnltime/modifyLeave/${d.dnlno}" class="btn btn-sm leaveButton">
+				<span class="glyphicon glyphicon-inbox "></span> Leavetime Register</a></td>
 		</tr>
 		</c:forEach>
 	</table>
@@ -131,6 +133,6 @@
 <%-- 				<li><a href="/dnltime/page/${page.paging.lastPage}">last</a></li> --%>
 <!-- 		</ul> -->
 <!-- 	</div> -->
-</div>
+
 </body>
 </html>

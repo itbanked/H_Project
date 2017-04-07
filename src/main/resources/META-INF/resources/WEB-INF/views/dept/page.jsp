@@ -48,7 +48,7 @@
 <!-- End of region -->
 
 <!-- Region for Title -->
-<h1>Dept Page List pageNo = ${paging.pageNo}</h1>
+<h1>Dept Info</h1>
 <!-- End of region -->
 <div class="registerBox">
 	<a href="/dept/Register" class="btn btn-info btn-sm">
@@ -57,6 +57,7 @@
 <BR>
 
 <!-- Region for DataTable -->
+	
 	<table class="table table-hover">
 		<tr>
 			<td>DeptNo</td>

@@ -28,7 +28,6 @@
 			text-align: right;
 		}
 	.margin {
-		margin :30px auto;
 		white-space : nowrap;
 		text-overflow : ellipsis;
 	}
@@ -42,8 +41,10 @@
 <h1>Manchester United Members</h1>
 	<div class="registerBox">
 		<a href="/players/register/${players.memberno}?pageNo=${paging.pageNo}" class="btn btn-info btn-sm">
-		<span class="glyphicon glyphicon-inbox"> Member Register</span></a>
+		<span class="glyphicon glyphicon-inbox"></span> Member Register</a>
 	</div>
+	<BR>
+	
 	<div class="margin">
 	<table class="table table-hover">
 		<tr align="center">
@@ -54,8 +55,8 @@
 			<td><b>Name</b></td>
 			<td><b>Nationality</b></td>
 			<td><b>Date of Join</b></td>
-			<td></td>
-			<td></td>
+			<td>Remove</td>
+			<td>Modify</td>
 		</tr>
 		<c:forEach var="players" items="${page.players}">
 		<tr align="center">
@@ -67,12 +68,12 @@
 			<td>${players.nationality}</td>
 			<td><fmt:formatDate value="${players.dateofjoin}" pattern="yyyy-MM-dd"/></td>
 			<td>
-				<a href="/players/modify/${players.memberno}?pageNo=${paging.pageNo}">
-				<span class="glyphicon glyphicon-edit"></span></a>
-			</td>
-			<td>
 				<a href="/players/unregister/${players.memberno}?pageNo=${	paging.pageNo}">
 				<span class="glyphicon glyphicon-remove"></span></a>
+			</td>
+			<td>
+				<a href="/players/modify/${players.memberno}?pageNo=${paging.pageNo}">
+				<span class="glyphicon glyphicon-edit"></span></a>
 			</td>
 		</tr>
 		</c:forEach>
