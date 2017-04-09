@@ -9,50 +9,13 @@
 <head>
 <meta charset="UTF-8">
 <title>modifyForm.jsp</title>
+<link rel="stylesheet" href="/css/RegisterForm.css">
 
 <!-- Code Assist -->
 <c:if test="false">
 	<link rel="stylesheet" href="../code_assist/animate.css">
 	<link rel="stylesheet" href="../code_assist/bootstrap.css">
 </c:if>
-
-<style>
-	a:HOVER {
-		text-decoration: none;	
-	}
-	a {
-		color: white;
-	}
-	.btn-sm {
-		background-color: black;
-	}
-	.modifyBox {
-		width: 200px;
-		height: 380px;
-		margin: 50px auto;
-	}
-	h1 { 
-		text-align: center;
-		margin: 50px auto;
-	}
-	.modifyButton {
-		margin: 50px auto;
-		text-align: right;
-	}
-	.preButton {
-		width: 700px;
-		height: 10px;
-		margin:  auto;
-		text-align: right;
-	}
-	label,input {
-		margin-bottom: 10px;
-	}
-	.salarydate {
-		width: 200px;
-		margin: 15px auto;
-	}
-</style>
 
 </head>
 <body>
@@ -65,42 +28,42 @@
 	<div class="modifyBox">
 		<!-- salno -->
 		<div>
-			<label for="salno">
+			<label for="salno"  class="Define-Values">
 			<span class="glyphicon glyphicon-pencil"></span>
 			sal_No</label>
-			<form:input path="salno" readonly="true"/>
+			<form:input path="salno" readonly="true" class="Define-Input-Box"/>
 		</div>
 		<!-- basicSal -->
 		<div>
-			<label for="basicSal">
+			<label for="basicSal"  class="Define-Values">
 			<span class="glyphicon glyphicon-pencil"></span>
 			Basic Salary</label>
-			<form:input path="basicSal"/>
-			<form:errors path="basicSal"/>
+			<form:input path="basicSal" class="Define-Input-Box"/>
+			<form:errors path="basicSal" class="Define-Error-Region"/>
 		</div>
 		<!-- overtimeSal -->
 		<div>
-			<label for="overtimeSal">
+			<label for="overtimeSal"  class="Define-Values">
 			<span class="glyphicon glyphicon-pencil"></span>
 			Overtime Salary</label>
-			<form:input path="overtimeSal"/>
-			<form:errors path="overtimeSal"/>
+			<form:input path="overtimeSal" class="Define-Input-Box"/>
+			<form:errors path="overtimeSal" class="Define-Error-Region"/>
 		</div>
 		<!-- comm -->
 		<div>
-			<label for="comm">
+			<label for="comm"  class="Define-Values">
 			<span class="glyphicon glyphicon-pencil"></span>
 			Commission</label>
-			<form:input path="comm"/>
-			<form:errors path="comm"/>
+			<form:input path="comm" class="Define-Input-Box"/>
+			<form:errors path="comm" class="Define-Error-Region"/>
 		</div>
 		<!-- aidSal -->
 		<div>
-			<label for="aidSal">
+			<label for="aidSal"  class="Define-Values">
 			<span class="glyphicon glyphicon-pencil"></span>
 			Aid Salary</label>
-			<form:input path="aidSal"/>
-			<form:errors path="aidSal"/>
+			<form:input path="aidSal" class="Define-Input-Box"/>
+			<form:errors path="aidSal" class="Define-Error-Region"/>
 		</div>
 		<!-- saldate -->
 		<div>
@@ -108,18 +71,18 @@
 			<span class="glyphicon glyphicon-pencil"></span>
 			Salary Date</label><br>
 			<div class="salarydate">
-				<form:radiobutton path="saldate" value="10" label="intern Salary Date: 10"/><br>
-				<form:radiobutton path="saldate" value="20" label="employee Salary Date: 20" checked="checked"/>
-				<form:errors path="saldate"/>
+				<form:radiobutton path="saldate" value="10" label="intern Salary Date: 10" style="margin-left: 20px;"/>
+				<form:radiobutton path="saldate" value="20" label="employee Salary Date: 20" checked="checked" style="margin-left: 20px;"/>
+				<form:errors path="saldate" class="Define-Error-Region"/>
 			</div>
 		</div>
 		<!-- membersrl -->
 		<div>
-			<label for="membersrl">
+			<label for="membersrl"  class="Define-Values">
 			<span class="glyphicon glyphicon-pencil"></span>
 			Member Serial</label>
-			<form:input path="membersrl"/>
-			<form:errors path="membersrl"/>
+			<form:input path="membersrl" class="Define-Input-Box"/>
+			<form:errors path="membersrl" class="Define-Error-Region"/>
 		</div>
 		<div class="modifyButton">
 			<input class="btn btn-info" type="submit" value="Sal 수정">	

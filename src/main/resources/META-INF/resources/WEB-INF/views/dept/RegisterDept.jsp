@@ -27,19 +27,19 @@
 	<form:form action="/dept/Register" method="post" modelAttribute="deptForm">
 		<!-- deptno -->
 		<div>
-			<label for="deptno" class="Define-Values">deptno : </label>
+			<label for="deptno" class="Define-Values"><span class="glyphicon glyphicon-pencil"></span>deptno : </label>
 			<form:input path="deptno" class="Define-Input-Box"/>
 			<form:errors path="deptno" class="Define-Error-Region"/>
 		</div>
 		<!-- dname -->
 		<div>
-			<label for="dname" class="Define-Values">dname : </label>
+			<label for="dname" class="Define-Values"><span class="glyphicon glyphicon-pencil"></span>dname : </label>
 			<form:input path="dname" class="Define-Input-Box"/>
 			<form:errors path="dname" class="Define-Error-Region"/>
 		</div>
 		<!-- loc -->
 		<div>
-			<label for="loc" class="Define-Values">loc : </label>
+			<label for="loc" class="Define-Values"><span class="glyphicon glyphicon-pencil"></span>loc : </label>
 			<form:input path="loc" class="Define-Input-Box"/>
 			<form:errors path="loc" class="Define-Error-Region"/>
 		</div>

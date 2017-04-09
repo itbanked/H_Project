@@ -27,49 +27,49 @@
 	<form:form action="/emp/modify" method="post" modelAttribute="empForm">
 		<!-- empno -->
 		<div>
-			<label for="empno" class="Define-Values">empno : </label>
+			<label for="empno" class="Define-Values"><span class="glyphicon glyphicon-pencil"></span>empno : </label>
 			<form:input path="empno" class="Define-Input-Box" readonly="true"/>
 			<form:errors path="empno" class="Define-Error-Region"/>
 		</div>
 		<!-- ename -->
 		<div>
-			<label for="ename" class="Define-Values">ename : </label>
+			<label for="ename" class="Define-Values"><span class="glyphicon glyphicon-pencil"></span>ename : </label>
 			<form:input path="ename" class="Define-Input-Box"/>
 			<form:errors path="ename" class="Define-Error-Region"/>
 		</div>
 		<!-- job -->
 		<div>
-			<label for="job" class="Define-Values">job : </label>
+			<label for="job" class="Define-Values"><span class="glyphicon glyphicon-pencil"></span>job : </label>
 			<form:input path="job" class="Define-Input-Box"/>
 			<form:errors path="job" class="Define-Error-Region"/>
 		</div>
 		<!-- mgr -->
 		<div>
-			<label for="mgr" class="Define-Values">mgr : </label>
+			<label for="mgr" class="Define-Values"><span class="glyphicon glyphicon-pencil"></span>mgr : </label>
 			<form:input path="mgr" class="Define-Input-Box"/>
 			<form:errors path="mgr" class="Define-Error-Region"/>
 		</div>
 		<!-- hiredate -->
 		<div>
-			<label for="hiredate" class="Define-Values">hiredate : </label>
+			<label for="hiredate" class="Define-Values"><span class="glyphicon glyphicon-pencil"></span>hiredate : </label>
 			<form:input path="hiredate" class="Define-Input-Box"/>
 			<form:errors path="hiredate" class="Define-Error-Region"/>
 		</div>
 		<!-- sal -->
 		<div>
-			<label for="sal" class="Define-Values">sal : </label>
+			<label for="sal" class="Define-Values"><span class="glyphicon glyphicon-pencil"></span>sal : </label>
 			<form:input path="sal" class="Define-Input-Box"/>
 			<form:errors path="sal" class="Define-Error-Region"/>
 		</div>
 		<!-- comm -->
 		<div>
-			<label for="comm" class="Define-Values">comm : </label>
+			<label for="comm" class="Define-Values"><span class="glyphicon glyphicon-pencil"></span>comm : </label>
 			<form:input path="comm" class="Define-Input-Box"/>
 			<form:errors path="comm" class="Define-Error-Region"/>
 		</div>
 		<!-- deptno -->
 		<div>
-			<label for="deptno" class="Define-Values">deptno : </label>
+			<label for="deptno" class="Define-Values"><span class="glyphicon glyphicon-pencil"></span>deptno : </label>
 			<form:input path="deptno" class="Define-Input-Box"/>
 			<form:errors path="deptno" class="Define-Error-Region"/>
 		</div>
