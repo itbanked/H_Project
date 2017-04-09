@@ -12,6 +12,8 @@ import org.springframework.stereotype.Service;
 import com.example.domain.City;
 import com.example.domain.Mass;
 import com.example.domain.Molecule;
+import com.example.domain.State;
+import com.example.domain.Warning;
 import com.example.mapper.CityMapper;
 import com.example.mapper.MoleculeMapper;
 import com.example.util.Pagination;
@@ -84,6 +86,49 @@ public class MoleculeSearchService {
 		return molecule;
 	}
 	
+	public Molecule getMoleculeByAverageMeltingPoint(Double averageMeltingPoint) {
+		log.info("getMoleculeByAverageMeltingPoint(" + averageMeltingPoint + ")");
+		Molecule molecule=null;
+		molecule = moleculeMapper.selectByAverageMeltingPoint(averageMeltingPoint);
+		return molecule;
+	}
+	
+	public State getByState(Double averageMeltingPoint) {
 	
 
+		State state=null;
+		String s=null;
+
+	
+		if(averageMeltingPoint>25.01){
+		 s="solid";
+		 state = moleculeMapper.selectByState(s);
+		 
+		}
+
+		else if (averageMeltingPoint<=25.01){
+			    if(averageMeltingPoint>10){
+			    	s="liquid";
+			    	state=moleculeMapper.selectByState(s);
+			    }
+			    else{
+			    	s="gas";
+			    	state=moleculeMapper.selectByState(s);
+			    }
+			
+		}
+		
+		return state;
+	}
+	
+	
+	public Warning getDescriptionByHazardStatements(String hazardStatements) {
+		log.info("getMoleculeByName(" + hazardStatements + ")");
+		Warning warning=null;
+		warning = moleculeMapper.selectByhazardStatements(hazardStatements);
+		return warning;
+	}
+	
+		
+	
 }

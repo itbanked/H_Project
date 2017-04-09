@@ -14,8 +14,19 @@ public class Molecule {
 	private String hazardStatements;
 	private String note;
 	private Mass mass;
+	private Warning warning;
 	
 	
+	public Warning getWarning() {
+		return warning;
+	}
+
+
+	public void setWarning(Warning warning) {
+		this.warning = warning;
+	}
+
+
 	@Override
 	public String toString() {
 		String str= null;

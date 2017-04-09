@@ -7,6 +7,8 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
 import com.example.domain.Molecule;
+import com.example.domain.State;
+import com.example.domain.Warning;
 import com.example.domain.Molecule;
 import com.example.util.Pagination;
 
@@ -38,8 +40,20 @@ public interface MoleculeMapper {
 	Molecule selectByFormula(String chemicalFormula);
 	@Select("select * from molecule where name=#{name}")
 	Molecule selectByName(String name);
-	
+
 	Molecule selectByFormulaWithMass(String chemicalFormula);
+
+	@Select("select * from molecule where average_melting_point=#{averageMeltingPoint}")
+	Molecule selectByAverageMeltingPoint(Double averageMeltingPoint);
+	
+	@Select("select * from state where state=#{state}")
+	State selectByState(String s);
+
+	@Select("select * from warning where hazard_statements=#{hazardStatements}")
+	Warning selectByhazardStatements(String hazardStatements);
+	
+
+	
 	
 	/*
 	 * Insert
