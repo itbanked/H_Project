@@ -63,11 +63,10 @@
 		<div>
 			<label for="saldate" class="Define-Values">
 			<span class="glyphicon glyphicon-pencil"></span>
-			Salary Date</label><br>
-			<div class="salarydate"">
-				<form:radiobutton path="saldate" value="10" label="intern Salary Date: 10" style="margin-left: 20px;"/> 
-				<form:radiobutton path="saldate" value="20" label="employee Salary Date: 20" checked="checked" style="margin-left: 20px;"/>
-				<form:errors path="saldate" class="Define-Error-Region"/>
+			Salary Date</label>
+			<form:radiobutton path="saldate" value="10" label="intern Salary Date: 10"/><BR>
+			<form:radiobutton path="saldate" value="20" label="employee Salary Date: 20" checked="checked" style="margin-left:203px;"/>
+			<form:errors path="saldate" class="Define-Error-Region"/>
 			</div>
 		</div>
 		<!-- membersrl -->
