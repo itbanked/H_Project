@@ -74,6 +74,7 @@
         <td>Note</td>
         <td>Remove</td>
         <td>Modify</td>
+       
 		<td></td>
         <th></th>        
       </tr>
@@ -90,8 +91,9 @@
         <td><a href="/molecule/acidity/${m.acidity}">${m.acidity}</a></td>
         <td><a href="/molecule/hazard/${m.hazardStatements}">${m.hazardStatements} </a></td>
         <td>${m.note}</td>
+        <td><a href="/molecule/unregister/${m.name}?pageNo=${page.paging.pageNo}"><span class="glyphicon glyphicon-remove"></span></a></td>
         <td><a href="/molecule/modify/${m.name}?pageNo=${page.paging.pageNo}"><span class="glyphicon glyphicon-edit"></span></a></td>
-		<td><a href="/molecule/unregister/${m.name}?pageNo=${page.paging.pageNo}"><span class="glyphicon glyphicon-remove"></span></a></td>
+		
 		
       </tr>
       </c:forEach>
