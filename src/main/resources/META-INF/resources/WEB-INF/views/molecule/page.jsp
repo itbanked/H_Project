@@ -49,7 +49,7 @@
 
 
 
-  <h3>Organic Molecules</h3> 
+  <h1>Organic Molecules</h1> 
 <%--   pageNo = ${paging.pageNo} --%>
 <!--   <a href="/molecule/register" class="btn btn-primary">register</a> -->
   
@@ -57,6 +57,7 @@
 	<a href="/molecule/register" class="btn btn-info btn-sm">
 	<span class="glyphicon glyphicon-inbox"></span> Register</a>
 </div>
+<br>
 
 <div class="table-responsive">         
   <table class="table table-hover">
