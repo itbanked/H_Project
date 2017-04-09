@@ -27,18 +27,26 @@ public class EmpRegisterController {
 	@Autowired
 	EmpRegisterService empRegisterService;
 	
-	@GetMapping("/register")
+	@GetMapping("/Register")
 	public String registerForm(EmpForm empForm) {
 		log.info("registerForm()");
 		return "emp/registerForm";
 	}
 	
-	@PostMapping("/register")
+	@PostMapping("/Register")
 	public String register(@Valid EmpForm empForm, BindingResult errors) {
 		log.info("register(" + empForm + ")");
 		
 		System.out.println(empForm);
 		
+		//Validate
+		if ( errors.hasErrors() ) {
+			System.out.println(errors);
+			return "emp/registerForm";
+		}
+		
+		// Register
+		empRegisterService.register(empForm, errors);
 		if ( errors.hasErrors() ) {
 			System.out.println(errors);
 			return "emp/registerForm";

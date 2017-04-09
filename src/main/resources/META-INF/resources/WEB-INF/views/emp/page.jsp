@@ -59,7 +59,7 @@
 <h1>Emp Info</h1>
 <!-- End of region -->
 <div class="registerBox">
-	<a href="#" class="btn btn-info btn-sm">
+	<a href="/emp/Register" class="btn btn-info btn-sm">
 	<span class="glyphicon glyphicon-inbox"></span> Emp Register</a>
 </div>
 <BR>
