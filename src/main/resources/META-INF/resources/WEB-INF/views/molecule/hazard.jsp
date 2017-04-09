@@ -20,8 +20,8 @@ ${error}<br>
     <thead>
       <tr>
        
-        <th>hazard statements</th>
-        <th>description</th>
+        <td>hazard statements</td>
+        <td>description</td>
 
       </tr>
     </thead>

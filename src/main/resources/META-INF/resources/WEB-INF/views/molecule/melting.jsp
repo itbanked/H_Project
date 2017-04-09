@@ -19,16 +19,16 @@ ${error}<br>
   <table style="width:400px" class="table table-condensed">
     <thead>
       <tr>
-        <th>average melting point</th>
-        <th>state</th>
-        <th>note</th>
+<!--         <td>average melting point</td> -->
+        <td>state</td>
+        <td>note</td>
 
       </tr>
     </thead>
     <tbody>
     
       <tr>
-        <td>${molecule.averageMeltingPoint}</td>
+<%--         <td>${molecule.averageMeltingPoint}</td> --%>
         <td style="color:red">${state.state}</td>
         <td style="color:red">${state.note}</td>
     

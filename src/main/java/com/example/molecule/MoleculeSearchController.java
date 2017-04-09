@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.city.service.CitySearchService;
+import com.example.domain.Acidity;
 import com.example.domain.City;
 import com.example.domain.Molecule;
 import com.example.domain.State;
@@ -81,5 +82,16 @@ public class MoleculeSearchController {
 		
 	}
 	
+	@GetMapping("/acidity/{acidity}")
+	public String getAcidity(@PathVariable Double acidity, Model model) {
+		log.info("getItem("+ acidity + ")");
+		Acidity acidity1 = moleculeSearchService.getByAcidity(acidity);
+		Molecule molecule = moleculeSearchService.getMoleculeByAcidity(acidity);
+		model.addAttribute("acidity", acidity1);
+		model.addAttribute("molecule", molecule);
+		
+		return "molecule/acidity";
+		
+	}
 
 }

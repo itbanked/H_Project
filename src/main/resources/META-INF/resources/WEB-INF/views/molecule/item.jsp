@@ -19,9 +19,9 @@ ${error}<br>
   <table style="width:400px" class="table table-condensed">
     <thead>
       <tr>
-        <th>name</th>
-        <th>chemical formula</th>
-        <th>mass</th>
+        <td>name</td>
+        <td>chemical formula</td>
+        <td>mass</td>
 
       </tr>
     </thead>

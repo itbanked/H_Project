@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
+import com.example.domain.Acidity;
 import com.example.domain.Molecule;
 import com.example.domain.State;
 import com.example.domain.Warning;
@@ -52,7 +53,11 @@ public interface MoleculeMapper {
 	@Select("select * from warning where hazard_statements=#{hazardStatements}")
 	Warning selectByhazardStatements(String hazardStatements);
 	
-
+	@Select("select * from acidity where acidity=#{acidity}")
+	Acidity selectByPka(String a);
+	
+	@Select("select * from molecule where acidity=#{acidity}")
+	Molecule selectByAcidity(Double Acidity);
 	
 	
 	/*

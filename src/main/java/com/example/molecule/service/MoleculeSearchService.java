@@ -9,6 +9,7 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.domain.Acidity;
 import com.example.domain.City;
 import com.example.domain.Mass;
 import com.example.domain.Molecule;
@@ -129,6 +130,42 @@ public class MoleculeSearchService {
 		return warning;
 	}
 	
+	
+	
+	public Acidity getByAcidity(Double acidity) {	
+
+		Acidity acidity1=null;
+		String a=null;
+
+	
+		if(acidity>14){
+		 a="basic";
+		 acidity1 = moleculeMapper.selectByPka(a);
+		 
+		}
+
+		else if (acidity<=14){
+			    if(acidity==14){
+			    	a="neutral";
+			    	acidity1=moleculeMapper.selectByPka(a);
+			    }
+			    else{
+			    	a="acidic";
+			    	acidity1=moleculeMapper.selectByPka(a);
+			    }
+			
+		}
 		
+		return acidity1;
+	}
+	
+	
+	public Molecule getMoleculeByAcidity(Double acidity) {
+		log.info("getMoleculeByName(" + acidity + ")");
+		Molecule molecule=null;
+		molecule = moleculeMapper.selectByAcidity(acidity);
+		return molecule;
+	}
+	
 	
 }
