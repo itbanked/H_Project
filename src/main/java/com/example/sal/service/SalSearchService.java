@@ -9,6 +9,7 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.domain.Member;
 import com.example.domain.Sal;
 import com.example.mapper.SalMapper;
 import com.example.util.Pagination;
@@ -74,5 +75,10 @@ public class SalSearchService {
 			sal = salMapper.selectBySalno(salno);
 		
 		return sal;
+	}
+	
+	public List<Member> getMemberInfos() {
+		List<Member> list = salMapper.GetMemberInfos();
+		return list;
 	}
 }

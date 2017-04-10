@@ -73,7 +73,7 @@
 		<div>
 			<label for="membersrl" class="Define-Values">
 			<span class="glyphicon glyphicon-pencil"></span>
-			Member Serial</label>
+			<a href="/sal/GetMemberLists" target="_blank">Member Serial</a></label>
 			<form:input path="membersrl" class="Define-Input-Box"/>
 			<form:errors path="membersrl" class="Define-Error-Region"/>
 		</div>

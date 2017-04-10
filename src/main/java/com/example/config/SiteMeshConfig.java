@@ -31,6 +31,7 @@ public class SiteMeshConfig {
 				builder.addExcludedPath("/manchester/unregister/*");
 				builder.addExcludedPath("/manchester/modify/*");
 				builder.addExcludedPath("/manchester/register");
+				builder.addExcludedPath("/sal/GetMemberLists");
 			}
 		});
 //		filter.addUrlPatterns("/*");

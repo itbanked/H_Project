@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.example.domain.Member;
 import com.example.domain.Sal;
 import com.example.sal.service.SalSearchService;
 
@@ -53,5 +54,15 @@ public class SalSearchController {
 		model.addAttribute("sal", sal);
 		
 		return "sal/item";
+	}
+	
+	@GetMapping("/GetMemberLists")
+	public String getMemberLists(Model model) {
+		log.info("getMemberLists()");
+		
+		List<Member> member = salSearchService.getMemberInfos();
+		model.addAttribute("Members", member);
+		
+		return "sal/GetMemberList";
 	}
 }
