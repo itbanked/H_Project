@@ -22,6 +22,10 @@
 <body>
 
 	<h1>Emp Register Form</h1>
+	<div class="preButton">
+		<a class="btn btn-sm" href="/emp/page/${param.pageNo}">
+		<span class="glyphicon glyphicon-arrow-left"></span> Sal Page</a>
+	</div>
 	
 	<form:form action="/emp/Register" method="post" modelAttribute="empForm">
 		<!-- empno -->

@@ -17,18 +17,19 @@
 
 </head>
 <body>
-<h1>Country 삭제 성공입니다.</h1>
+<h1>Remove Country Success !</h1>
 <div class="text-center table-responsive">
 	<table class="table table-bordered">
-		<tr class="danger">
-			<td>삭제된 Country Code</td>
+		<tr class="success">
+			<td>Removed Country Code</td>
 		</tr>
 		<tr>
 			<td>${code}</td>
 		</tr>
 	</table>
-	</table>
-<a href="/country/page/${param.pageNo}">Country Page로</a>
 </div>
+<script>
+	setTimeout("location.href='/country/page/1'", 3000);
+</script>
 </body>
 </html>

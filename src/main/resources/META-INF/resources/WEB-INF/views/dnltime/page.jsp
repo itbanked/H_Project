@@ -40,7 +40,7 @@
 	</style>
 </head>
 <body>
-	<h1>Dnltime Info</h1>
+	<h1>Worktime Info</h1>
 	<div id="attend">
 	<a href="/dnltime/registerAttend" class="btn btn-info btn-sm">
 	<span class="glyphicon glyphicon-inbox"></span> Worktime Register</a>

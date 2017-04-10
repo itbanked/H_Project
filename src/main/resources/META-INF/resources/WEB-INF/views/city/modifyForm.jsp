@@ -19,7 +19,7 @@
 
 </head>
 <body>
-<h1>City Modify Service</h1>
+<h1>Modify city</h1>
 
 <div class="preButton">
 	<a class="btn btn-sm"href="/city/page/${param.pageNo}">

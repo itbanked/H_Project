@@ -17,7 +17,7 @@
 
 </head>
 <body>
-<h1>Country 수정 성공입니다.</h1>
+<h1>Modify Success !</h1>
 <div class="text-center table-responsive">
 	<table class="table table-bordered">
 		<tr class="danger">
@@ -55,7 +55,9 @@
 			<td>${country.code2 == null? 'null' : country.code2}</td>
 		</tr>
 	</table>
-<a href="/country/page/${param.pageNo}">Country Page로</a>
 </div>
+<script>
+	setTimeout("location.href='/country/page/1'", 3000);
+</script>
 </body>
 </html>

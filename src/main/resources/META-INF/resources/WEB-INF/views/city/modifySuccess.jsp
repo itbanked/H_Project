@@ -16,19 +16,7 @@
 </c:if>
 
 <style>
-	.headTR {
-		background-color: lightGray;
-		font-weight: bold;
-	}
-	a:hover {
-		text-decoration: none;
-	}
-	a {
-		color: black;
-	}
-	.okBox {
-		text-align: right;
-	}
+	
 </style>
 
 </head>
@@ -36,7 +24,7 @@
 <h1>Modify Success!</h1>
 <div class="text-center table-responsive">
 	<table class="table table-hover">
-		<tr class="headTR">
+		<tr class="danger">
 			<td>id</td>
 			<td>name</td>
 			<td>countryCode</td>
@@ -53,8 +41,8 @@
 	</table>
 </div>
 
-<div class="okBox">
-	<a href="/city/page/${param.pageNo}" class="btn btn-sm btn-default">Modify OK</a>
-</div>
+<script>
+	setTimeout("location.href='/city/page/1'", 3000);
+</script>
 </body>
 </html>

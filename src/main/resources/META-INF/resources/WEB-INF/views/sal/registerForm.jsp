@@ -19,7 +19,7 @@
 
 </head>
 <body>
-<h1>Sal 등록</h1>
+<h1>Salary Register Form</h1>
 	<div class="preButton">
 		<a class="btn btn-sm" href="/sal/page/${param.pageNo}">
 		<span class="glyphicon glyphicon-arrow-left"></span> Sal Page</a>

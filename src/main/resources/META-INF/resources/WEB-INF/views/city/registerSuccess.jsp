@@ -16,21 +16,6 @@
 	<link rel="stylesheet" href="../code_assist/bootstrap.css">
 </c:if>
 
-<style type="text/css">
-	.headTR {
-		background-color: lightGray;
-		font-weight: bold;
-	}
-	a:hover {
-		text-decoration: none;
-	}
-	a {
-		color: black;
-	}
-	.okBox {
-		text-align: right;
-	}
-</style>
 
 </head>
 <body>
@@ -39,7 +24,7 @@
 	
 	<div class="text-center table-responsive">
 		<table class="table table-hover">
-		<tr class="headTR">
+		<tr class="danger">
 			<td>id</td>
 			<td>name</td>
 			<td>countryCode</td>
@@ -56,9 +41,8 @@
 		</table>
 	</div>
 	
-	<div class="okBox">
-		<a href="/city/page/${param.pageNo}" class="btn btn-sm btn-default">Register OK</a>
-	</div>
-	
+	<script>
+		setTimeout("location.href='/city/page/1'", 3000);
+	</script>
 </body>
 </html>

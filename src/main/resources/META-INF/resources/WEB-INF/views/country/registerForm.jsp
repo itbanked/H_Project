@@ -19,7 +19,11 @@
 
 </head>
 <body>
-<h1>Country 등록</h1>
+<h1>Register country</h1>
+	<div class="preButton">
+		<a class="btn btn-sm"href="/country/page/${param.pageNo}">
+		<span class="glyphicon glyphicon-arrow-left"></span> Country Page</a>
+	</div>
 <form:form action="/country/register?pageNo=${param.pageNo}" method="post" modelAttribute="countryForm">
 	
 	<!-- code -->
@@ -142,10 +146,7 @@
 	<div class="registerButton">
 		<input type="submit" value="Country 등록">	
 	</div>
-	<div class="preButton">
-		<a class="btn btn-sm"href="/country/page/${param.pageNo}">
-		<span class="glyphicon glyphicon-arrow-left"></span> Country Page</a>
-	</div>
+	
 
 </form:form>
 

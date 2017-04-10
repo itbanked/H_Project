@@ -15,28 +15,12 @@
 	<link rel="stylesheet" href="../code_assist/bootstrap.css">
 </c:if>
 
-<style>
-	.headTR {
-		background-color: lightGray;
-		font-weight: bold;
-	}
-	a:hover {
-		text-decoration: none;
-	}
-	a {
-		color: black;
-	}
-	.okBox {
-		text-align: right;
-	}
-</style>
-
 </head>
 <body>
 <h1>Register Success!</h1>
 	<div class="text-center table-responsive">
 		<table class="table table-hover">
-			<tr class="headTR">
+			<tr class="danger">
 				<td>code</td>
 				<td>name</td>
 				<td>continent</td>
@@ -74,8 +58,8 @@
 		</table>
 	</div>
 	
-	<div class="okBox">
-		<a href="/country/page/${param.pageNo}" class="btn btn-sm btn-default">Register OK</a>
-	</div>	
+	<script>
+		setTimeout("location.href='/country/page/1'", 3000);
+	</script>	
 </body>
 </html>

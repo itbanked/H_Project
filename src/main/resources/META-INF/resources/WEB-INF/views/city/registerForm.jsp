@@ -20,7 +20,7 @@
 </head>
 <body>
 
-<h1>City Register Service</h1>
+<h1>Register city</h1>
 
 <div class="preButton">
 	<a class="btn btn-sm"href="/city/page/${param.pageNo}">

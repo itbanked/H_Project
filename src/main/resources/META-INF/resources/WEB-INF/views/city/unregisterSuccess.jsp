@@ -14,37 +14,22 @@
 	<link rel="stylesheet" href="../code_assist/animate.css">
 	<link rel="stylesheet" href="../code_assist/bootstrap.css">
 </c:if>
-<style type="text/css">
-	.headTR {
-		background-color: lightGray;
-		font-weight: bold;
-	}
-	a:hover {
-		text-decoration: none;
-	}
-	a {
-		color: black;
-	}
-	.okBox {
-		text-align: right;
-	}
-</style>
 
 </head>
 <body>
-<h1>Delete Success!</h1>
+<h1>Remove City Success !</h1>
 <div class="text-center table-responsive">
-<table class="table table-hover">
-	<tr class="headTR">
-		<td>Deleted City ID</td>
+<table class="table table-bordered">
+	<tr class="success">
+		<td>Removed City ID</td>
 	</tr>
 	<tr>
 		<td>${id}</td>
 	</tr>
 </table>
 </div>
-<div class="okBox">
-	<a href="/city/page/${param.pageNo}" class="btn btn-sm btn-default">Delete OK</a>
-</div>
+<script>
+	setTimeout("location.href='/city/page/1'", 3000);
+</script>
 </body>
 </html>

@@ -21,7 +21,30 @@
 
 	<h1>Register Success!</h1>
 	
-	Emp : ${emp}
+	<div class="text-center table-responsive">
+	<table class="table table-bordered">
+		<tr class="danger">
+			<td>emp_No</td>
+			<td>ename</td>
+			<td>job</td>
+			<td>mgr</td>
+			<td>hiredate</td>
+			<td>sal</td>
+			<td>comm</td>
+			<td>dept_No</td>
+		</tr>
+		<tr>
+			<td>${emp.emono}</td>
+			<td>${emp.ename}</td>
+			<td>${emp.job == null ? 'null' : emp.job}</td>
+			<td>${emp.mgr == null ? 'null' : emp.mgr}</td>
+			<td>${emp.hiredate == null ? 'null' : emp.hiredate}</td>
+			<td>${emp.sal == null ? 'null' : emp.sal}</td>
+			<td>${emp.comm == null ? 'null' : emp.comm}</td>
+			<td>${emp.deptno}</td>
+		</tr>
+	</table>
+	</div>
 	
 	<script>
 		setTimeout("location.href='/emp/page/1'", 3000);

@@ -19,7 +19,7 @@
 
 </head>
 <body>
-<h1>Sal 수정</h1>
+<h1>Salary Modify Form</h1>
 	<div class="preButton">
 		<a class="btn btn-sm" href="/sal/page/${param.pageNo}">
 		<span class="glyphicon glyphicon-arrow-left"></span> Sal Page</a>
@@ -70,8 +70,8 @@
 			<label for="saldate" class="Define-Values">
 			<span class="glyphicon glyphicon-pencil"></span>
 			Salary Date</label>
-			<form:radiobutton path="saldate" value="10" label="intern Salary Date: 10"/><BR>
-			<form:radiobutton path="saldate" value="20" label="employee Salary Date: 20" checked="checked" style="margin-left:203px;"/>
+			<form:radiobutton path="saldate" value="10" label="intern Salary Date: 10" checked="${ sal.saldate eq '10' ? 'checked' : '' }"/><BR>
+			<form:radiobutton path="saldate" value="20" label="employee Salary Date: 20" checked="${ sal.saldate eq '10' ? '' : 'checked' }" style="margin-left:203px;"/>
 			<form:errors path="saldate" class="Define-Error-Region"/>
 		</div>
 		<!-- membersrl -->
@@ -79,16 +79,13 @@
 			<label for="membersrl"  class="Define-Values">
 			<span class="glyphicon glyphicon-pencil"></span>
 			Member Serial</label>
-			<form:input path="membersrl" class="Define-Input-Box"/>
+			<form:input path="membersrl" readonly="true" class="Define-Input-Box"/>
 			<form:errors path="membersrl" class="Define-Error-Region"/>
 		</div>
 		<div class="modifyButton">
 			<input class="btn btn-info" type="submit" value="Sal 수정">	
 		</div>
-	
 	</div>
-	
-	
 </form:form>
 </body>
 </html>
