@@ -19,18 +19,18 @@
 <body>
 <h1>Register Success</h1>
 
- <table class="table table-condensed">
+ <table class="table table-hover">
     <thead>
       <tr>
-        <th>name</th>
-        <th>chemical formula</th>
-        <th>density</th>
-        <th>average melting point</th>
-        <th>solubility in water</th>
-        <th>acidity</th>
-        <th>hazard statements</th>
-        <th>note</th>
-        <th>mass</th>
+        <td>Name</td>
+        <td>Chemical formula</td>
+        <td>Density</td>
+        <td>Average melting point</td>
+        <td>Solubility in water</td>
+        <td>Acidity</td>
+        <td>Hazard statements</td>
+        <td>Note</td>
+        <td>Mass</td>
       </tr>
     </thead>
     <tbody>

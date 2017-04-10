@@ -15,23 +15,22 @@ ${error}<br>
 
 
 <div class="container">
-       <h3>Mass Info</h3>
+       <h3>Warning Info</h3>
   <table style="width:400px" class="table table-condensed">
     <thead>
       <tr>
-        <td>name</td>
-        <td>chemical formula</td>
-        <td>mass</td>
+       
+        <td>hazard statements</td>
+        <td>description</td>
 
       </tr>
     </thead>
     <tbody>
     
       <tr>
-        <td>${molecule.name}</td>
-        <td>${molecule.chemicalFormula}</td>
-        <td style="color:red">${molecule.mass.molarMass}</td>
-    
+        <td>${warning.hazardStatements}</td>
+        <td style="color:red">${warning.description}</td>
+   
        
       </tr>
     

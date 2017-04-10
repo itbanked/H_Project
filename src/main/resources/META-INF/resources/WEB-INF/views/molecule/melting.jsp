@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>item.jsp</title>
+<title>average melting point.jsp</title>
 
 </head>
 <body>
@@ -15,24 +15,24 @@ ${error}<br>
 
 
 <div class="container">
-       <h3>Mass Info</h3>
+       <h3>average melting point Info</h3>
   <table style="width:400px" class="table table-condensed">
     <thead>
       <tr>
-        <td>name</td>
-        <td>chemical formula</td>
-        <td>mass</td>
+<!--         <td>average melting point</td> -->
+        <td>state</td>
+        <td>note</td>
 
       </tr>
     </thead>
     <tbody>
     
       <tr>
-        <td>${molecule.name}</td>
-        <td>${molecule.chemicalFormula}</td>
-        <td style="color:red">${molecule.mass.molarMass}</td>
+<%--         <td>${molecule.averageMeltingPoint}</td> --%>
+        <td style="color:red">${state.state}</td>
+        <td style="color:red">${state.note}</td>
     
-       
+<%--        ${state}  --%>
       </tr>
     
     </tbody>

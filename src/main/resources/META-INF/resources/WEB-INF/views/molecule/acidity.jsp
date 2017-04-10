@@ -15,24 +15,23 @@ ${error}<br>
 
 
 <div class="container">
-       <h3>Mass Info</h3>
+       <h3>Acidity Info</h3>
   <table style="width:400px" class="table table-condensed">
     <thead>
       <tr>
-        <td>name</td>
-        <td>chemical formula</td>
-        <td>mass</td>
+<!--         <td>pka</td> -->
+        <td>acidity</td>
+        <td>note</td>
+       
 
       </tr>
     </thead>
     <tbody>
     
       <tr>
-        <td>${molecule.name}</td>
-        <td>${molecule.chemicalFormula}</td>
-        <td style="color:red">${molecule.mass.molarMass}</td>
-    
-       
+<%--         <td>${molecule.acidity}</td> --%>
+        <td style="color:red">${acidity.acidity}</td>
+        <td style="color:red">${acidity.note}</td>
       </tr>
     
     </tbody>

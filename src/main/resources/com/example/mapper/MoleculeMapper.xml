@@ -17,6 +17,21 @@
 		</association>
 	</resultMap>
 	
+	<resultMap type="com.example.domain.Molecule" id="moleculeWithWarning">
+	<id property="name" column="name"/>
+		<result property="chemicalFormula" column="chemical_formula"/>
+		<result property="density" column="density"/>
+		<result property="averageMeltingPoint" column="average_melting_point"/>
+		<result property="solubilityInWater" column="solubility_in_water"/>
+		<result property="acidity" column="acidity"/>
+		<result property="hazardStatements" column="hazard_statements"/>
+		<result property="note" column="note"/>
+		<association property="warning" javaType="com.example.domain.Warning">
+			<id property="hazardStatements" column="hazard_statements"/>
+			<result property="description" column="description"/>
+		</association>
+	</resultMap>
+	
 <select id="selectAllWithMass" resultMap="moleculeWithMass">
 	
 	select mo.name as name,
@@ -70,6 +85,8 @@
  	 where mo.chemical_formula = #{chemicalFormula} 
 
 </select>
+
+
 
 
 

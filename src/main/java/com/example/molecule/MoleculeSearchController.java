@@ -13,8 +13,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.city.service.CitySearchService;
+import com.example.domain.Acidity;
 import com.example.domain.City;
 import com.example.domain.Molecule;
+import com.example.domain.State;
+import com.example.domain.Warning;
 import com.example.exception.NotFoundRuntimeException;
 import com.example.molecule.service.MoleculeSearchService;
 
@@ -57,5 +60,38 @@ public class MoleculeSearchController {
 		return "molecule/item";
 	}
 	
+	@GetMapping("/melting/{averageMeltingPoint}")
+	public String getAverageMeltingPoint(@PathVariable Double averageMeltingPoint, Model model) {
+		log.info("getItem("+ averageMeltingPoint + ")");
+		
+		Molecule molecule = moleculeSearchService.getMoleculeByAverageMeltingPoint(averageMeltingPoint);
+		State state=moleculeSearchService.getByState(averageMeltingPoint);
+		model.addAttribute("molecule", molecule);
+		model.addAttribute("state",state);
+		return "molecule/melting";
+		
+	}
+	
+	@GetMapping("/hazard/{hazardStatements}")
+	public String getWarning(@PathVariable String hazardStatements, Model model) {
+		log.info("getItem("+ hazardStatements + ")");
+		Warning warning = moleculeSearchService.getDescriptionByHazardStatements(hazardStatements);
+		model.addAttribute("warning", warning);
+		
+		return "molecule/hazard";
+		
+	}
+	
+	@GetMapping("/acidity/{acidity}")
+	public String getAcidity(@PathVariable Double acidity, Model model) {
+		log.info("getItem("+ acidity + ")");
+		Acidity acidity1 = moleculeSearchService.getByAcidity(acidity);
+		Molecule molecule = moleculeSearchService.getMoleculeByAcidity(acidity);
+		model.addAttribute("acidity", acidity1);
+		model.addAttribute("molecule", molecule);
+		
+		return "molecule/acidity";
+		
+	}
 
 }
