@@ -15,11 +15,7 @@
 	<link rel="stylesheet" href="../code_assist/bootstrap.css">
 </c:if>
 
-<style>
-	#trColor {
-		background-color: #ffeecc;
-	}
-</style>
+
 
 </head>
 <body>
@@ -27,9 +23,12 @@
 <c:set var="member" value="${sal.member}"/>
 
 <h1>Salary of Member Info</h1>
+
+<BR>
+
 <div class="text-center table-responsive">
 	<table class="table table-bordered">
-		<tr id="trColor">
+		<tr class="danger">
 			<td>member_srl</td>
 			<td>user_ID</td>
 			<td>email</td>
@@ -43,6 +42,7 @@
 		</tr>
 	</table>
 </div>
-<a href="/sal/page/${param.pageNo}">목록으로</a>
+<a class="btn btn-sm btn-default" href="/sal/page/${param.pageNo}">
+<span class="glyphicon glyphicon-arrow-left"></span> salary page</a>
 </body>
 </html>

@@ -36,29 +36,29 @@ public class SalSearchServiceTests {
 			System.out.println(s);
 	}
 	
-	@Test
-	public void test02_getPage() {
-		Map<String, Object> map = salSearchService.getPage(1);
-		
-		List<Sal> list = (List<Sal>)map.get("sals");
-		
-		for (Sal s : list)
-			System.out.println(s);
-
-		System.out.println(map.get("paging"));
-	}
+//	@Test
+//	public void test02_getPage() {
+//		Map<String, Object> map = salSearchService.getPage(1);
+//		
+//		List<Sal> list = (List<Sal>)map.get("sals");
+//		
+//		for (Sal s : list)
+//			System.out.println(s);
+//
+//		System.out.println(map.get("paging"));
+//	}
 	
-	@Test
-	public void test02_getPageWithMember() {
-		Map<String, Object> map = salSearchService.getPage(2, true);
-		
-		List<Sal> list = (List<Sal>)map.get("sals");
-		
-		for (Sal s : list)
-			System.out.println(s);
-		
-		System.out.println(map.get("paging"));
-	}
+//	@Test
+//	public void test02_getPageWithMember() {
+//		Map<String, Object> map = salSearchService.getPage(2, true);
+//		
+//		List<Sal> list = (List<Sal>)map.get("sals");
+//		
+//		for (Sal s : list)
+//			System.out.println(s);
+//		
+//		System.out.println(map.get("paging"));
+//	}
 	
 	@Test
 	public void test03_getSalBySalno() {

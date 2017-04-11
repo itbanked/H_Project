@@ -23,7 +23,7 @@ public interface DnltimeMapper {
 		"where membersrl = #{membersrl}		",	
 		" order by dnlno					"
 	})
-	int selectTotalUserCount(MemberForm memberform);
+	int selectTotalUserCount(MemberForm memberForm);
 	
 	@Select({
 		"select count(*)					",

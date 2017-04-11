@@ -4,13 +4,17 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.Member.MemberSearchService;
 import com.example.domain.Member;
 import com.example.domain.Sal;
+import com.example.form.MemberForm;
 import com.example.mapper.SalMapper;
 import com.example.util.Pagination;
 
@@ -20,6 +24,13 @@ public class SalSearchService {
 	
 	@Autowired
 	SalMapper salMapper;
+	
+	@Autowired
+	HttpSession m_Session;
+	
+	@Autowired
+	MemberSearchService memberSearchService;
+	
 	
 	public List<Sal> getListAll() {
 		log.info("getListAll()");
@@ -38,22 +49,36 @@ public class SalSearchService {
 		return list;
 	}
 	
-	public Map<String, Object> getPage(int pageNo) {
+	public Map<String, Object> getPage(int pageNo, MemberForm memberForm) {
 		
-		return getPage(pageNo, false);
+		return getPage(pageNo, memberForm, false);
 	}
 	
-	public Map<String, Object> getPage(int pageNo, boolean withMember) {
+	public Map<String, Object> getPage(int pageNo, MemberForm memberForm, boolean withMember) {
 		Pagination paging = new Pagination();
-		paging.setTotalItem(salMapper.selectTotalCount());
+		paging.setTotalItem(salMapper.selectTotalUserCount(memberForm));
 		paging.setPageNo(pageNo);
 		
 		List<Sal> list = null;
 		if (withMember)
 			list = salMapper.selectPageWithMember(paging);
 		else
-			list = salMapper.selectPage(paging);
+			list = salMapper.selectPage(paging, memberForm);
 		
+		Map<String, Object> map = new HashMap<>();
+		map.put("sals", list);
+		map.put("paging", paging);
+		
+		return map;
+	}
+	
+	public Map<String, Object> getPageWithIsAdmin(int pageNo, MemberForm memberForm) {
+		Pagination paging = new Pagination();
+		paging.setTotalItem(salMapper.selectTotalIsAdmin());
+		paging.setPageNo(pageNo);
+		
+		List<Sal> list = salMapper.selectPageIsAdmin(paging);
+
 		Map<String, Object> map = new HashMap<>();
 		map.put("sals", list);
 		map.put("paging", paging);

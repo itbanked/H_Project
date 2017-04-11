@@ -44,17 +44,17 @@ public class SalMapperTests {
 	}
 	
 	
-	@Test
-	public void test02_selectPage() {
-		Pagination paging = new Pagination();
-		paging.setTotalItem(salMapper.selectTotalCount());
-		paging.setPageNo(1);
-		
-		List<Sal> list = salMapper.selectPage(paging);
-		
-		for (Sal s : list)
-			System.out.println(s);
-	}
+//	@Test
+//	public void test02_selectPage() {
+//		Pagination paging = new Pagination();
+//		paging.setTotalItem(salMapper.selectTotalCount());
+//		paging.setPageNo(1);
+//		
+//		List<Sal> list = salMapper.selectPage(paging);
+//		
+//		for (Sal s : list)
+//			System.out.println(s);
+//	}
 	@Test
 	public void test02_selectPageWithMember() {
 		Pagination paging = new Pagination();
