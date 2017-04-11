@@ -15,40 +15,9 @@
 	<link rel="stylesheet" href="../code_assist/bootstrap.css">
 </c:if>
 
-<style type="text/css">
-	a:HOVER {
-		text-decoration: none;	
-	}
-	a {
-		color: white;
-	}
-	.btn-sm {
-		background-color: black;
-	}
-	.registerBox {
-		width: 180px;
-		height: 380px;
-		margin: 50px auto;
-	}
-	h1 { 
-		text-align: center;
-		margin: 50px auto;
-	}
-	.registerButton {
-		margin: 50px auto;
-		text-align: right;
-	}
-	.preButton {
-		width: 900px;
-		height: 10px;
-		margin: 50px auto;
-		text-align: right;
-	}
-</style>
-
 </head>
 <body>
-<h1>Sal 수정 성공입니다.</h1>
+<h1>Modify Success !</h1>
 <div class="text-center table-responsive">
 	<table class="table table-bordered">
 		<tr class="danger">
@@ -71,9 +40,9 @@
 		</tr>
 	</table>
 </div>
-	<div class="preButton">
-		<a class="btn btn-sm" href="/sal/page/${param.pageNo}">
-		<span class="glyphicon glyphicon-arrow-left"></span> Sal Page</a>
-	</div>
+
+<script>
+	setTimeout("location.href='/sal/page/1'", 3000);
+</script>
 </body>
 </html>

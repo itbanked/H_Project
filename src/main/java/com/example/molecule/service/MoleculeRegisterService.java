@@ -20,14 +20,8 @@ public class MoleculeRegisterService {
 		@Autowired
 		CountryMapper countryMapper;
 		
-		public void register(Molecule molecule,BindingResult errors){
-//			if(city.getCountryCode()!=null){
-//				Country country=countryMapper.selectByCode(city.getCountryCode());
-//				
-//				if(country==null)
-//					errors.reject("InvalidCountryCode","유효한 countrycode 가 아닙니다.");
-//			}
-			if(!errors.hasErrors())
+		public void register(Molecule molecule){
+		
 				moleculeMapper.insert(molecule);
 			
 		}

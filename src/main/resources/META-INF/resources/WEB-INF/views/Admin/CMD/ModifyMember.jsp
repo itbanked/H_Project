@@ -45,7 +45,7 @@
 		</div>
 		<!-- password -->
 		<div>
-			<label for="password" class="Define-Values">password<BR>(수정이 필요한경우만) : </label>
+			<label for="password" class="Define-Values">password(Required) : </label>
 			<form:input path="password" class="Define-Input-Box"/>
 			<form:errors path="password" class="Define-Error-Region"/>
 		</div>

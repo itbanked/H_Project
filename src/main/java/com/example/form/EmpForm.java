@@ -3,6 +3,10 @@ package com.example.form;
 import java.math.BigDecimal;
 import java.sql.Date;
 
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 import com.example.domain.Dept;
 import com.example.domain.Emp;
 
@@ -18,7 +22,7 @@ public class EmpForm extends Emp {
 		setMgr(e.getMgr());
 		setSal(e.getSal());
 	}
-
+	
 	@Override
 	public Dept getDept() {
 		// TODO Auto-generated method stub
@@ -36,7 +40,9 @@ public class EmpForm extends Emp {
 		// TODO Auto-generated method stub
 		return super.toString();
 	}
-
+	
+	@NotNull
+	@Digits(integer=4,fraction=0)
 	@Override
 	public int getEmpno() {
 		// TODO Auto-generated method stub
@@ -49,6 +55,7 @@ public class EmpForm extends Emp {
 		super.setEmpno(empno);
 	}
 
+	@Size(max=10)
 	@Override
 	public String getEname() {
 		// TODO Auto-generated method stub
@@ -61,6 +68,7 @@ public class EmpForm extends Emp {
 		super.setEname(ename);
 	}
 
+	@Size(max=9)
 	@Override
 	public String getJob() {
 		// TODO Auto-generated method stub
@@ -73,6 +81,7 @@ public class EmpForm extends Emp {
 		super.setJob(job);
 	}
 
+	@Digits(integer=4,fraction=0)
 	@Override
 	public Integer getMgr() {
 		// TODO Auto-generated method stub
@@ -97,6 +106,7 @@ public class EmpForm extends Emp {
 		super.setHiredate(hiredate);
 	}
 
+	@Digits(integer=7,fraction=2)
 	@Override
 	public BigDecimal getSal() {
 		// TODO Auto-generated method stub
@@ -109,6 +119,7 @@ public class EmpForm extends Emp {
 		super.setSal(sal);
 	}
 
+	@Digits(integer=7,fraction=2)
 	@Override
 	public BigDecimal getComm() {
 		// TODO Auto-generated method stub
@@ -121,6 +132,7 @@ public class EmpForm extends Emp {
 		super.setComm(comm);
 	}
 
+	@Digits(integer=2,fraction=0)
 	@Override
 	public Integer getDeptno() {
 		// TODO Auto-generated method stub

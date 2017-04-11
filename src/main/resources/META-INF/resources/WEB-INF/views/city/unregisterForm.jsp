@@ -15,57 +15,59 @@
 	<link rel="stylesheet" href="../code_assist/animate.css">
 	<link rel="stylesheet" href="../code_assist/bootstrap.css">
 </c:if>
-
-<style>
-	.unregisterButton {
-		text-align: right;
-	}
-	.preButton {
-		width: 600px;
-		height: 10px;
-		margin: 0 auto;
-		text-align: right;
-	}
-	.text-center {
-		margin :30px auto;
-		white-space : nowrap;
-		text-overflow : ellipsis;
-	}
-	
-</style>
+<link rel="stylesheet" href="/css/RegisterForm.css">
 
 </head>
 <body>
-<h1>City Delete Service</h1>
+<h1>City Remove Form</h1>
 
-<div class="preButton">
-	<a class="btn btn-sm" href="/city/page/${param.pageNo}">
-	<span class="glyphicon glyphicon-arrow-left"></span> City Page</a>
-</div>
+<form:form action="/city/unregister/${id}?pageNo=${param.pageNo}" method="post" modelAttribute="city">
+	
+		<!-- id -->
+		<div>
+			<label for="id" class="Define-Values">
+			<span class="glyphicon glyphicon-pencil"></span>
+			Id</label>
+			<form:input path="id" readonly="true" class="Define-Input-Box"/>
+		</div>
+		<!-- name -->
+		<div>
+			<label for="name" class="Define-Values"><span class="glyphicon glyphicon-pencil"></span>
+			Name</label>
+			<form:input path="name" class="Define-Input-Box" readonly="true"/>
+			<form:errors path="name" class="Define-Error-Region"/>
+		</div>
+		<!-- countryCode -->
+		<div>
+			<label for="countryCode" class="Define-Values"><span class="glyphicon glyphicon-pencil"></span>
+			CountryCode</label>
+			<form:input path="countryCode" class="Define-Input-Box" readonly="true"/>
+			<form:errors path="countryCode" class="Define-Error-Region"/>
+		</div>
+		<div>
+			<form:errors/>
+		</div> 
+		<!-- district -->
+		<div>
+			<label for="district" class="Define-Values"><span class="glyphicon glyphicon-pencil"></span>
+			District</label>
+			<form:input path="district" class="Define-Input-Box" readonly="true"/>
+			<form:errors path="district" class="Define-Error-Region"/>
+		</div>
+		<!-- population -->
+		<div>
+			<label for="population" class="Define-Values"><span class="glyphicon glyphicon-pencil"></span>
+			Population</label>
+			<form:input path="population" class="Define-Input-Box" readonly="true"/>
+			<form:errors path="population" class="Define-Error-Region"/>
+		</div>
+		<!-- modify Button -->
+		<div class="modifyButton">
+			<input type="submit" value="City Remove">	
+		</div>	
+	
+</form:form>
 
-<div class="text-center table-responsive">
-	<table class="table table-hover">
-		<tr class="headTR">
-			<td>id</td>
-			<td>name</td>
-			<td>country_code</td>
-			<td>district</td>
-			<td>population</td>
-		</tr>
-		<tr>
-			<td>${city.id}</td> 
-			<td>${city.name}</td> 
-			<td>${city.countryCode == null ? 'null' : city.countryCode}</td>
-			<td>${city.district == null ? 'null' : city.district}</td>
-			<td>${city.population == null ? 'null' : city.population}</td>
-		</tr>
-	</table>
-</div>
-<div class="unregisterButton">
-	<form action="/city/unregister/${id}?pageNo=${param.pageNo}" method="post">
-		<input type="submit" value="City Delete">
-	</form>
-</div>
 
 </body>
 </html>

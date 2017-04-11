@@ -173,8 +173,14 @@ delete from country;
 	
    
 select * from dnltime;
+
 	   
-	   
+select * 							
+ from dnltime	
+where membersrl = '1'					
+ order by dnlno					
+offset 1 rows		
+ fetch next 10 rows only ;
 	   
 	   
 	   

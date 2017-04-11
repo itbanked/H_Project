@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
+import com.example.domain.Member;
 import com.example.domain.Sal;
 import com.example.util.Pagination;
 
@@ -45,6 +46,9 @@ public interface SalMapper {
 	 * Update
 	 */
 	int updateBySalno(Sal sal);
+	
+	@Select("select * from member order by membersrl")
+	List<Member> GetMemberInfos();
 	
 	/*
 	 * Delete

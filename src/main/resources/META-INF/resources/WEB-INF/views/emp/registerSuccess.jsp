@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>ModifyForm.jsp</title>
+<title>RegisterForm.jsp</title>
 
 <!-- Code Assist -->
 <c:if test="false">
@@ -19,7 +19,7 @@
 </head>
 <body>
 
-	<h1>Modify Success!</h1>
+	<h1>Register Success!</h1>
 	
 	<div class="text-center table-responsive">
 	<table class="table table-bordered">

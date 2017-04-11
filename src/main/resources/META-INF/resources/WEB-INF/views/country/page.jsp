@@ -27,7 +27,6 @@
 		background-color: darkGray;
 	}
 	.table-responsive {
-		margin :30px auto;
 		white-space : nowrap;
 		text-overflow : ellipsis;
 	}
@@ -50,11 +49,12 @@
 <c:set var="paging" value="${page.paging}"/>
 
 
-<h3> - Country Page List pageNo ? [ ${paging.pageNo} ] </h3>
+<h1>Country Info</h1>
 <div class="registerBox">
 	<a href="/country/register/${country.code}?pageNo=${paging.pageNo}" class="btn btn-info btn-sm">
 	<span class="glyphicon glyphicon-inbox"></span> Country Register</a>
 </div>
+<BR>
 
 <div class="table-responsive">
 	<table class="table table-hover">

@@ -46,7 +46,8 @@ public class SalUnregisterController {
 	@GetMapping("/unregisterSuccess/{salno}")
 	public String unregisterSuccess(@PathVariable int salno, Model model) {
 		log.info("unregisterSuccess(" + salno + ")");
-		model.addAttribute("salno", salno);
+		Sal sal = salSearchService.getSalBySalno(salno);
+		model.addAttribute("sal", sal);
 		return "sal/unregisterSuccess";
 	}
 }

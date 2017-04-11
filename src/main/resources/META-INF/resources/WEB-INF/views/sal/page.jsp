@@ -27,7 +27,6 @@
 		background-color: darkGray;
 	}
 	.table-responsive {
-		margin :30px auto;
 		white-space : nowrap;
 		text-overflow : ellipsis;
 	}
@@ -48,11 +47,12 @@
 <c:set var="sals" value="${page.sals}"/>
 <c:set var="paging" value="${page.paging}"/>
 
-<h1>Salary Page.No = ${paging.pageNo}</h1>
+<h1>Salary Info</h1>
 <div class="registerBox">
 	<a href="/sal/register/${sal.salno}?pageNo=${pageNo}" class="btn btn-info btn-sm">
-	<span class="glyphicon glyphicon-inbox"></span>Sal 등록</a>
+	<span class="glyphicon glyphicon-inbox"></span> Sal Register</a>
 </div>
+<BR>
 
 <div class="table-responsive">
 	<table class="table table-hover">

@@ -4,12 +4,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.Member.MemberSearchService;
 import com.example.domain.Dnltime;
+import com.example.form.MemberForm;
 import com.example.mapper.DnltimeMapper;
 import com.example.util.Pagination;
 
@@ -19,6 +23,12 @@ public class DnltimeSearchService {
 	
 	@Autowired
 	DnltimeMapper dnltimeMapper;
+	
+	@Autowired
+	HttpSession m_Session;
+	
+	@Autowired
+	MemberSearchService memberSearchService;
 	
 	public List<Dnltime> getListAll(){
 		log.info("getListAll()");
@@ -36,29 +46,43 @@ public class DnltimeSearchService {
 		return list;
 	}
 	
-	public Map<String, Object> getPage(int pageNo){
+	public Map<String, Object> getPage(int pageNo, MemberForm memberForm){
 		
-		return getPage(pageNo, false);
+		return getPage(pageNo, memberForm, false);
 	}
 
-	public Map<String, Object> getPage(int pageNo, boolean withDnl){
+	public Map<String, Object> getPage(int pageNo, MemberForm memberForm , boolean withDnl){
 		Pagination paging = new Pagination();
-		paging.setTotalItem(dnltimeMapper.selectTotalCount());
+		paging.setTotalItem(dnltimeMapper.selectTotalUserCount(memberForm));
 		paging.setPageNo(pageNo);
 		
 		List<Dnltime> list = null;
-		
 		if(withDnl)
-			list = dnltimeMapper.selectPageWithDnl(paging);
+			list = dnltimeMapper.selectPageWithDnl(paging);	
 		else
-			list = dnltimeMapper.selectPage(paging);
+			list = dnltimeMapper.selectPage(paging, memberForm);
 		
 		Map<String, Object> map = new HashMap<>();
 		map.put("dnltimeList", list);
 		map.put("paging", paging);
 		
 		return map;
-	}	
+	}
+
+	public Map<String, Object> getPageWithIsAdmin(int pageNo, MemberForm memberForm ){
+		Pagination paging = new Pagination();
+		paging.setTotalItem(dnltimeMapper.selectTotalIsAdmin());
+		paging.setPageNo(pageNo);
+		
+		List<Dnltime> list = dnltimeMapper.selectPageIsAdmin(paging);	
+		
+		Map<String, Object> map = new HashMap<>();
+		map.put("dnltimeList", list);
+		map.put("paging", paging);
+		
+		return map;
+	}
+	
 	public Dnltime getDnltimeByDnlno(int dnlno){
 		log.info("getDnltimeByDnlno( " + dnlno + ")");
 		

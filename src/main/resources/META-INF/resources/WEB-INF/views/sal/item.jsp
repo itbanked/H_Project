@@ -34,16 +34,12 @@
 			<td>user_ID</td>
 			<td>email</td>
 			<td>user_Name</td>
-			<td>password</td>
-			<td>is_admin</td>
 		</tr>
 		<tr>
 			<td>${member.membersrl}</td>
 			<td>${member.userid}</td>
 			<td>${member.email}</td>
 			<td>${member.username}</td>
-			<td>${member.password}</td>
-			<td>${member.isadmin}</td>
 		</tr>
 	</table>
 </div>

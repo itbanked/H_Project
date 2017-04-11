@@ -14,8 +14,19 @@ public class Molecule {
 	private String hazardStatements;
 	private String note;
 	private Mass mass;
+	private Warning warning;
 	
 	
+	public Warning getWarning() {
+		return warning;
+	}
+
+
+	public void setWarning(Warning warning) {
+		this.warning = warning;
+	}
+
+
 	@Override
 	public String toString() {
 		String str= null;
@@ -98,17 +109,28 @@ public class Molecule {
 
 
 	public void setHazardStatements(String hazardStatements) {
-		this.hazardStatements = hazardStatements;
+		if ( hazardStatements != null ) {
+			this.hazardStatements = hazardStatements;
+		}
+		else {
+			this.hazardStatements = "";
+		}
+		
 	}
 
 
 	public String getNote() {
+	
 		return note;
 	}
 
 
 	public void setNote(String note) {
-		this.note = note;
+		if (note.equals(""))
+			this.note = null;
+		else
+			this.note = note;
+		
 	}
 
 

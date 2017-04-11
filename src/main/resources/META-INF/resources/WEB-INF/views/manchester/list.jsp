@@ -13,7 +13,6 @@
 		}
 		
 	.margin {
-		margin :30px auto;
 		white-space : nowrap;
 		text-overflow : ellipsis;
 	}
@@ -30,27 +29,29 @@
 
 	<div class="registerBox">
 		<a href="/manchester/register" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal3">
-		<span class="glyphicon glyphicon-inbox"> Team Register</span></a>
+		<span class="glyphicon glyphicon-inbox"></span> Team Register</a>
 	</div>
+	<BR>
 	
 	<div class="margin">
 	<table class="table table-hover">
 		<tr align="center">
 			<td><b>Idno</b></td>
 			<td><b>Team</b></td>
-			<td colspan="2"></td>
+			<td>Remove</td>
+			<td>Modify</td>
 		</tr>
 		<c:forEach var="manchester" items="${list}">
 			<tr align="center">
 				<td>${manchester.idno}</td>
 				<td><a href="/manchester/item/${manchester.idno}">${manchester.team}</a></td>
 				<td>
-				<a href="/manchester/modify/${manchester.idno}" data-toggle="modal" data-target="#myModal1">
-				<span class="glyphicon glyphicon-edit"></span></a>
-				</td>
-				<td>
 				<a href="/manchester/unregister/${manchester.idno}" data-toggle="modal" data-target="#myModal">
 				<span class="glyphicon glyphicon-remove"></span></a>
+				</td>
+				<td>
+				<a href="/manchester/modify/${manchester.idno}" data-toggle="modal" data-target="#myModal1">
+				<span class="glyphicon glyphicon-edit"></span></a>
 				</td>
 			</tr>
 		</c:forEach>

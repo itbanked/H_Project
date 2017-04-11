@@ -10,6 +10,8 @@
 <meta charset="UTF-8">
 <title>unregisterForm.jsp</title>
 
+<link rel="stylesheet" href="/css/RegisterForm.css">
+
 <!-- Code Assist -->
 <c:if test="false">
 	<link rel="stylesheet" href="../code_assist/animate.css">
@@ -18,33 +20,72 @@
 
 </head>
 <body>
-<h1>Salary 삭제</h1>
-<div class="text-center table-responsive">
-	<table class="table table-bordered">
-		<tr class="danger">
-			<td>sal_No</td>
-			<td>basic Salary</td>
-			<td>overtime Salary</td>
-			<td>Commission</td>
-			<td>aid Salary</td>
-			<td>salary Date</td>
-			<td>member_Srl</td>
-		</tr>
-		<tr>
-			<td>${sal.salno}</td>
-			<td>${sal.basicSal}</td>
-			<td>${sal.overtimeSal == null ? 'null' : sal.overtimeSal}</td>
-			<td>${sal.comm == null ? 'null' : sal.comm}</td>
-			<td>${sal.aidSal == null ? 'null' : sal.aidSal}</td>
-			<td>${sal.saldate == null ? 'null' : sal.saldate}</td>
-			<td>${sal.membersrl}</td>
-		</tr>
-	</table>
+<h1>Salary Remove Form</h1>
+<div class="preButton">
+	<a class="btn btn-sm" href="/sal/page/${param.pageNo}">
+	<span class="glyphicon glyphicon-arrow-left"></span> Sal Page</a>
 </div>
-<div class="unregisterButton">
-	<form action="/sal/unregister/${salno}?pageNo=${param.pageNo}" method="post">
-		<input class="btn btn-warning" type="submit" value="sal삭제">
-	</form>
-</div>
+
+<form:form action="/sal/unregister/${salno}?pageNo=${param.pageNo}" method="post" modelAttribute="sal">
+		<!-- salno -->
+		<div>
+			<label for="salno"  class="Define-Values">
+			<span class="glyphicon glyphicon-pencil"></span>
+			sal_No</label>
+			<form:input path="salno" readonly="true" class="Define-Input-Box"/>
+		</div>
+		<!-- basicSal -->
+		<div>
+			<label for="basicSal"  class="Define-Values">
+			<span class="glyphicon glyphicon-pencil"></span>
+			Basic Salary</label>
+			<form:input path="basicSal" readonly="true" class="Define-Input-Box"/>
+			<form:errors path="basicSal" class="Define-Error-Region"/>
+		</div>
+		<!-- overtimeSal -->
+		<div>
+			<label for="overtimeSal"  class="Define-Values">
+			<span class="glyphicon glyphicon-pencil"></span>
+			Overtime Salary</label>
+			<form:input path="overtimeSal" readonly="true" class="Define-Input-Box"/>
+			<form:errors path="overtimeSal" class="Define-Error-Region"/>
+		</div>
+		<!-- comm -->
+		<div>
+			<label for="comm"  class="Define-Values">
+			<span class="glyphicon glyphicon-pencil"></span>
+			Commission</label>
+			<form:input path="comm" readonly="true" class="Define-Input-Box"/>
+			<form:errors path="comm" class="Define-Error-Region"/>
+		</div>
+		<!-- aidSal -->
+		<div>
+			<label for="aidSal"  class="Define-Values">
+			<span class="glyphicon glyphicon-pencil"></span>
+			Aid Salary</label>
+			<form:input path="aidSal" readonly="true" class="Define-Input-Box"/>
+			<form:errors path="aidSal" class="Define-Error-Region"/>
+		</div>
+		<!-- saldate -->
+		<div>
+			<label for="saldate" class="Define-Values">
+			<span class="glyphicon glyphicon-pencil"></span>
+			Salary Date</label>
+			<form:radiobutton path="saldate" value="10" label="intern Salary Date: 10" checked="${ sal.saldate eq '10' ? 'checked' : '' }" disabled="true"/><BR>
+			<form:radiobutton path="saldate" value="20" label="employee Salary Date: 20" checked="${ sal.saldate eq '10' ? '' : 'checked' }" disabled="true" style="margin-left:203px;"/>
+			<form:errors path="saldate" class="Define-Error-Region"/>
+		</div>
+		<!-- membersrl -->
+		<div>
+			<label for="membersrl"  class="Define-Values">
+			<span class="glyphicon glyphicon-pencil"></span>
+			Member Serial</label>
+			<form:input path="membersrl" readonly="true" class="Define-Input-Box"/>
+			<form:errors path="membersrl" class="Define-Error-Region"/>
+		</div>
+		<div class="modifyButton">
+			<input class="btn btn-info" type="submit" value="Remove Sal">	
+		</div>
+</form:form>
 </body>
 </html>

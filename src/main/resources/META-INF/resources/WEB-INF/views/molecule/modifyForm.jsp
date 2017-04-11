@@ -79,7 +79,8 @@
 		<form:errors path="note"/>
 	</div>
 
-	<input type="submit" value="modify">
+	<input class="btn btn-primary" type="submit" value="modify">
+	
 
 </form:form>
 

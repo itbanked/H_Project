@@ -18,20 +18,19 @@
 
 </head>
 <body>
-<h1>Salary_NO. ${salno}삭제가 완료 되었습니다.</h1>
+<h1>Remove Salary Success !</h1>
 <div class="text-center table-responsive">
 <table class="table table-bordered">
-	<tr class="danger">
-		<td>삭제된 Salary_No</td>
+	<tr class="success">
+		<td>Removed Salary_No</td>
 	</tr>
 	<tr>
 		<td>${salno}</td>
 	</tr>
 </table>
 </div>
-<div class="preButton">
-		<a class="btn btn-sm" href="/sal/page/${param.pageNo}">
-		<span class="glyphicon glyphicon-arrow-left"></span> Sal Page</a>
-	</div>
+<script>
+	setTimeout("location.href='/sal/page/1'", 3000);
+</script>
 </body>
 </html>

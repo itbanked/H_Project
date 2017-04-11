@@ -10,48 +10,17 @@
 <meta charset="UTF-8">
 <title>RegisterForm.jsp</title>
 
-<link rel="stylesheet" href="../css/RegisterForm.css">
+<link rel="stylesheet" href="/css/RegisterForm.css">
 
 <!-- Code Assist -->
 <c:if test="false">
 	<link rel="stylesheet" href="../code_assist/animate.css">
 	<link rel="stylesheet" href="../code_assist/bootstrap.css">
 </c:if>
-<style type="text/css">
-	a:HOVER {
-		text-decoration: none;	
-	}
-	a {
-		color: white;
-	}
-	.btn-sm {
-		background-color: black;
-	}
-	.registerBox {
-		width: 180px;
-		height: 300px;
-		margin: 50px auto;
-	}
-	h1 { 
-		text-align: center;
-		margin: 50px auto;
-	}
-	.registerButton {
-		margin: 50px auto;
-		text-align: right;
-	}
-	.preButton {
-		width: 600px;
-		height: 10px;
-		margin: 0 auto;
-		text-align: right;
-	}
-</style>
-
 </head>
 <body>
 
-<h1>City Register Service</h1>
+<h1>Register city</h1>
 
 <div class="preButton">
 	<a class="btn btn-sm"href="/city/page/${param.pageNo}">
@@ -63,34 +32,34 @@
 	<div class="registerBox">
 		<!-- name -->
 		<div>
-			<label for="name"><span class="glyphicon glyphicon-pencil"></span>
-			Name</label><br>
-			<form:input path="name"/>
-			<form:errors path="name"/>
+			<label for="name" class="Define-Values"><span class="glyphicon glyphicon-pencil"></span>
+			Name</label>
+			<form:input path="name" class="Define-Input-Box"/>
+			<form:errors path="name" class="Define-Error-Region"/>
 		</div>
 		<!-- countryCode -->
 		<div>
-			<label for="countryCode"><span class="glyphicon glyphicon-pencil"></span>
-			CountryCode</label><br>
-			<form:input path="countryCode"/>
-			<form:errors path="countryCode"/>
+			<label for="countryCode" class="Define-Values"><span class="glyphicon glyphicon-pencil"></span>
+			CountryCode</label>
+			<form:input path="countryCode" class="Define-Input-Box"/>
+			<form:errors path="countryCode" class="Define-Error-Region"/>
 		</div>
 		<div>
 			<form:errors/>
 		</div> 
 		<!-- district -->
 		<div>
-			<label for="district"><span class="glyphicon glyphicon-pencil"></span>
-			District</label><br>
-			<form:input path="district"/>
-			<form:errors path="district"/>
+			<label for="district" class="Define-Values"><span class="glyphicon glyphicon-pencil"></span>
+			District</label>
+			<form:input path="district" class="Define-Input-Box"/>
+			<form:errors path="district" class="Define-Error-Region"/>
 		</div>
 		<!-- population -->
 		<div>
-			<label for="population"><span class="glyphicon glyphicon-pencil"></span>
-			Population</label><br>
-			<form:input path="population"/>
-			<form:errors path="population"/>
+			<label for="population" class="Define-Values"><span class="glyphicon glyphicon-pencil"></span>
+			Population</label>
+			<form:input path="population" class="Define-Input-Box"/>
+			<form:errors path="population" class="Define-Error-Region"/>
 		</div>
 		<!-- register Button -->
 		<div class="registerButton">

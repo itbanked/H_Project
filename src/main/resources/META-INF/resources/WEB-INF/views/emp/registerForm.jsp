@@ -1,4 +1,3 @@
-<%@page import="org.springframework.web.context.annotation.SessionScope"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -9,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Modify emp</title>
+<title>RegisterForm.jsp</title>
 
 <link rel="stylesheet" href="/css/RegisterForm.css">
 
@@ -22,16 +21,17 @@
 </head>
 <body>
 
-	<h1>Emp Modify Form</h1>
+	<h1>Emp Register Form</h1>
 	<div class="preButton">
 		<a class="btn btn-sm" href="/emp/page/${param.pageNo}">
 		<span class="glyphicon glyphicon-arrow-left"></span> Sal Page</a>
 	</div>
-	<form:form action="/emp/modify" method="post" modelAttribute="empForm">
+	
+	<form:form action="/emp/Register" method="post" modelAttribute="empForm">
 		<!-- empno -->
 		<div>
 			<label for="empno" class="Define-Values"><span class="glyphicon glyphicon-pencil"></span>empno : </label>
-			<form:input path="empno" class="Define-Input-Box" readonly="true"/>
+			<form:input path="empno" class="Define-Input-Box"/>
 			<form:errors path="empno" class="Define-Error-Region"/>
 		</div>
 		<!-- ename -->
@@ -76,7 +76,7 @@
 			<form:input path="deptno" class="Define-Input-Box"/>
 			<form:errors path="deptno" class="Define-Error-Region"/>
 		</div>
-		<input type="submit" value="Modify Emp">
+		<input type="submit" value="Register Emp">
 	</form:form>
 
 </body>

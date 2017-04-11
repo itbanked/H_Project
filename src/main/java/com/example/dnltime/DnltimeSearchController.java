@@ -3,6 +3,8 @@ package com.example.dnltime;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,10 +14,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.example.Member.MemberSearchService;
 import com.example.city.CitySearchController;
 import com.example.dnltime.service.DnltimeSearchService;
 import com.example.domain.Dnltime;
-import com.example.util.Pagination;
+import com.example.domain.Member;
+import com.example.form.MemberForm;
 
 @Controller
 @RequestMapping("/dnltime")
@@ -25,6 +29,12 @@ public class DnltimeSearchController {
 	
 	@Autowired
 	DnltimeSearchService dnltimeSearchService;
+	
+	@Autowired
+	HttpSession m_Session;
+	
+	@Autowired
+	MemberSearchService memberSearchService;
 	
 	@GetMapping("/list")
 	public String getList(Model model){
@@ -36,12 +46,32 @@ public class DnltimeSearchController {
 	}
 	
 	@GetMapping("/page/{pageNo}")
-	public String getPage(@PathVariable int pageNo, Model model){
+	public String getPage(@PathVariable int pageNo, Model model, MemberForm memberForm){
 		log.info("getPage(" + pageNo + ")");
 		
-		Map<String, Object> page = dnltimeSearchService.getPage(pageNo);
-		model.addAttribute("page", page);
-		return "dnltime/page";
+		Member member = memberSearchService.getMemberById( (String)m_Session.getAttribute("ID") );
+		memberForm.setMembersrl(member.getMembersrl());	
+		memberForm.setUserid(member.getUserid());
+		memberForm.setEmail(member.getIsadmin());
+		memberForm.setUsername(member.getUsername());
+		memberForm.setIsadmin(member.getIsadmin());
+		
+		log.info("getpage(" + memberForm + ")");
+		
+		if(member.getIsadmin().equals("Y")){
+			Map<String, Object> page = dnltimeSearchService.getPageWithIsAdmin(pageNo, memberForm);
+			model.addAttribute("page", page);
+			return "dnltime/page";
+		}
+		else{
+			Map<String, Object> page = dnltimeSearchService.getPage(pageNo, memberForm);
+			model.addAttribute("page", page);
+			return "dnltime/pageUser";
+		}
+		
+		
+//		Map<String, Object> page = dnltimeSearchService.getPage(pageNo, memberForm);
+//		model.addAttribute("page", page);
 	}
 
 //	@GetMapping("/item/{dnlno}")

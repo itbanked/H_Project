@@ -2,23 +2,18 @@ package com.example.dnltime;
 
 import java.text.ParseException;
 
-import javax.servlet.http.HttpSession;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.example.Member.MemberSearchService;
 import com.example.city.CityRegisterController;
 import com.example.dnltime.service.DnltimeRegisterService;
 import com.example.dnltime.service.DnltimeSearchService;
 import com.example.domain.Dnltime;
-import com.example.domain.Member;
 import com.example.form.MemberForm;
 
 @Controller

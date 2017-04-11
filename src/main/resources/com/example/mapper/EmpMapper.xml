@@ -53,7 +53,7 @@
 </select>
 
 <insert id="insert">
-	insert into dept
+	insert into emp
 	(
 		empno,
 		ename,
@@ -62,7 +62,7 @@
 		hiredate,
 		sal,
 		comm,
-		deptno,
+		deptno
 	)
 	values
 	(
@@ -73,7 +73,7 @@
 		#{hiredate},
 		#{sal},
 		#{comm},
-		#{deptno},
+		#{deptno}
 	)
 </insert>
 

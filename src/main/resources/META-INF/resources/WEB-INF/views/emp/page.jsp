@@ -43,6 +43,9 @@
 		background-color: black;
 		color: white;
 	}
+	.registerBox {
+		text-align: right;
+	}
 </style>
 
 </head>
@@ -53,8 +56,13 @@
 <!-- End of region --> 
 
 <!-- Region for Title -->
-<h1>Emp Page List pageNo = ${paging.pageNo}</h1>
+<h1>Emp Info</h1>
 <!-- End of region -->
+<div class="registerBox">
+	<a href="/emp/Register" class="btn btn-info btn-sm">
+	<span class="glyphicon glyphicon-inbox"></span> Emp Register</a>
+</div>
+<BR>
 <!-- Region for DataTable -->
 	<table class="table table-hover">
 		<tr>

@@ -18,9 +18,37 @@
 </head>
 <body>
 <h1>modify success</h1>
-${molecule}
 
-<hr>
+ <table class="table table-hover">
+    <thead>
+      <tr>
+        <td>Name</td>
+        <td>Chemical formula</td>
+        <td>Density</td>
+        <td>Average melting point</td>
+        <td>Solubility in water</td>
+        <td>Acidity</td>
+        <td>Hazard statements</td>
+        <td>Note</td>
+        <td>Mass</td>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+        <td>${molecule.name}</td>
+        <td>${molecule.chemicalFormula}</td>
+        <td>${molecule.density}</td>
+        <td>${molecule.averageMeltingPoint}</td>
+        <td>${molecule.solubilityInWater}</td>
+        <td>${molecule.acidity}</td>
+        <td>${molecule.hazardStatements}</td>
+        <td>${molecule.note}</td>
+        <td>${molecule.mass.molarMass}</td>
+      </tr>
+    </tbody>
+  </table>
+
 
 <a class="btn btn-primary" href="/molecule/page/${param.pageNo}">이전 Page로...</a>
 

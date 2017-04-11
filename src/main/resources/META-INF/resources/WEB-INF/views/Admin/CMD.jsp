@@ -17,10 +17,21 @@
 	<link rel="stylesheet" href="../code_assist/bootstrap.css">
 </c:if>
 
+
+<style type="text/css">
+	.registerBox {
+		text-align: right;
+	}
+</style>
+
 </head>
 <body>
 
-	<H1>This is Control Member Database Page</H1>
+	<H1>Control Member Database Page</H1>
+	
+	<div class="registerBox">
+		<a class="btn btn-info" href="/Admin/CMD/Add">AddMember</a>
+	</div><BR>
 	
 	<table class='table'>
 		<tr>
@@ -43,13 +54,11 @@
 				<td>${Member.password}</td>
 				<td>${Member.isadmin}</td>
 				<td>${Member.isallowed}</td>
-				<td><a class="btn btn-success" href="/Admin/CMD/Mod/${Member.membersrl}">Modify</a></td>
-				<td><a class="btn btn-danger" href="/Admin/CMD/Rem/${Member.membersrl}">Delete</a></td>
+				<td><a href="/Admin/CMD/Mod/${Member.membersrl}"><span class="glyphicon glyphicon-edit"></span></a></td>
+				<td><a href="/Admin/CMD/Rem/${Member.membersrl}"><span class="glyphicon glyphicon-remove"></span></a></td>
 			</tr>
 		</c:forEach> 
 	</table>
-	
-	<a class="btn btn-info" href="/Admin/CMD/Add">AddMember</a>
 
 </body>
 </html>

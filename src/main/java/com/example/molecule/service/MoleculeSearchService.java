@@ -9,9 +9,12 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.domain.Acidity;
 import com.example.domain.City;
 import com.example.domain.Mass;
 import com.example.domain.Molecule;
+import com.example.domain.State;
+import com.example.domain.Warning;
 import com.example.mapper.CityMapper;
 import com.example.mapper.MoleculeMapper;
 import com.example.util.Pagination;
@@ -84,6 +87,85 @@ public class MoleculeSearchService {
 		return molecule;
 	}
 	
+	public Molecule getMoleculeByAverageMeltingPoint(Double averageMeltingPoint) {
+		log.info("getMoleculeByAverageMeltingPoint(" + averageMeltingPoint + ")");
+		Molecule molecule=null;
+		molecule = moleculeMapper.selectByAverageMeltingPoint(averageMeltingPoint);
+		return molecule;
+	}
+	
+	public State getByState(Double averageMeltingPoint) {
 	
 
+		State state=null;
+		String s=null;
+
+	
+		if(averageMeltingPoint>25.01){
+		 s="solid";
+		 state = moleculeMapper.selectByState(s);
+		 
+		}
+
+		else if (averageMeltingPoint<=25.01){
+			    if(averageMeltingPoint>10){
+			    	s="liquid";
+			    	state=moleculeMapper.selectByState(s);
+			    }
+			    else{
+			    	s="gas";
+			    	state=moleculeMapper.selectByState(s);
+			    }
+			
+		}
+		
+		return state;
+	}
+	
+	
+	public Warning getDescriptionByHazardStatements(String hazardStatements) {
+		log.info("getMoleculeByName(" + hazardStatements + ")");
+		Warning warning=null;
+		warning = moleculeMapper.selectByhazardStatements(hazardStatements);
+		return warning;
+	}
+	
+	
+	
+	public Acidity getByAcidity(Double acidity) {	
+
+		Acidity acidity1=null;
+		String a=null;
+
+	
+		if(acidity>14){
+		 a="basic";
+		 acidity1 = moleculeMapper.selectByPka(a);
+		 
+		}
+
+		else if (acidity<=14){
+			    if(acidity==14){
+			    	a="neutral";
+			    	acidity1=moleculeMapper.selectByPka(a);
+			    }
+			    else{
+			    	a="acidic";
+			    	acidity1=moleculeMapper.selectByPka(a);
+			    }
+			
+		}
+		
+		return acidity1;
+	}
+	
+	
+	public Molecule getMoleculeByAcidity(Double acidity) {
+		log.info("getMoleculeByName(" + acidity + ")");
+		Molecule molecule=null;
+		molecule = moleculeMapper.selectByAcidity(acidity);
+		return molecule;
+	}
+	
+	
 }

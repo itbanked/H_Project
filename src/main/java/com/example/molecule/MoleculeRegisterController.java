@@ -43,34 +43,32 @@ public class MoleculeRegisterController {
 	public String registerform(MoleculeForm moleculeForm){
 		
 		log.info("registerForm()");
+		System.out.println("Register Progress 00");
 		return "molecule/registerForm";
+		
 	}
 
 	@PostMapping("/register")
 	public String register(@Valid MoleculeForm moleculeForm, BindingResult errors){
-			//log.info("register(" + moleculeForm + ")");
-			System.out.println(moleculeForm);
 		
-		if(errors.hasErrors()){
-			System.out.println(errors);
-			return "molecule/registerForm";
+		String resultUrl = "molecule/registerForm";
+		System.err.println("1111111111111111");
+		if(!errors.hasErrors()) {
+			moleculeRegisterService.register(moleculeForm);
+				resultUrl = "redirect:/molecule/registerSuccess/" + moleculeForm.getName(); 
+				
 		}
+		System.err.println("55555555555555");
 		
-		moleculeRegisterService.register(moleculeForm, errors);
-		if(errors.hasErrors()){
-			System.out.println(errors);
-			return "molecule/moleculeForm";
-		}
-		
-		
-		return "redirect:/molecule/registerSuccess/" + moleculeForm.getName();
+		return resultUrl;
 	}
 	
 	@GetMapping("/registerSuccess/{name}")
 	public String registerSuccess(@PathVariable String name, Model model){
 		Molecule molecule=moleculeSearchService.getMoleculeByName(name);
 		model.addAttribute("molecule",molecule);
-		
+
+		System.out.println("Register Progress 04");
 		return "molecule/registerSuccess";
 		
 	}

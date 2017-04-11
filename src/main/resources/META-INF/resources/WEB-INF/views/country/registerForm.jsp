@@ -9,6 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <title>registerForm.jsp</title>
+<link rel="stylesheet" href="/css/RegisterForm.css">
 
 <!-- Code Assist -->
 <c:if test="false">
@@ -16,63 +17,36 @@
 	<link rel="stylesheet" href="../code_assist/bootstrap.css">
 </c:if>
 
-<style>
-	a:HOVER {
-		text-decoration: none;	
-	}
-	a {
-		color: white;
-	}
-	.btn-sm {
-		background-color: black;
-	}
-	.registerBox {
-		width: 180px;
-		height: 300px;
-		margin: 50px auto;
-	}
-	h1 { 
-		text-align: center;
-		margin: 50px auto;
-	}
-	.registerButton {
-		margin: 50px auto;
-		text-align: right;
-	}
-	.preButton {
-		width: 600px;
-		height: 10px;
-		margin: 0 auto;
-		text-align: right;
-	}
-</style>
-
 </head>
 <body>
-<h1>Country 등록</h1>
+<h1>Register country</h1>
+	<div class="preButton">
+		<a class="btn btn-sm"href="/country/page/${param.pageNo}">
+		<span class="glyphicon glyphicon-arrow-left"></span> Country Page</a>
+	</div>
 <form:form action="/country/register?pageNo=${param.pageNo}" method="post" modelAttribute="countryForm">
 	
 	<!-- code -->
 	<div>
-		<label for="code"><span class="glyphicon glyphicon-pencil"></span>
-		Country Code</label><br>
-		<form:input path="code"/>
-		<form:errors path="code"/>	
+		<label for="code" class="Define-Values"><span class="glyphicon glyphicon-pencil"></span>
+		Country Code</label>
+		<form:input path="code" class="Define-Input-Box"/>
+		<form:errors path="code" class="Define-Error-Region"/>	
 	</div>
 	<div>
 		<form:errors/>
 	</div> 
 	<!-- name -->
 	<div>
-		<label for="name"><span class="glyphicon glyphicon-pencil"></span>
-		Country Name</label><br>
-		<form:input path="name"/>
-		<form:errors path="name"/>	
+		<label for="name" class="Define-Values"><span class="glyphicon glyphicon-pencil"></span>
+		Country Name</label>
+		<form:input path="name" class="Define-Input-Box"/>
+		<form:errors path="name" class="Define-Error-Region"/>	
 	</div>
 	<!-- continent -->
 	<div>
-		<label for="continent"><span class="glyphicon glyphicon-pencil"></span>
-		Continent</label><br>
+		<label for="continent" class="Define-Values"><span class="glyphicon glyphicon-pencil"></span>
+		Continent</label>
 		<form:select path="continent">
 			<form:option value="Asia"/>
 			<form:option value="Europe"/>
@@ -82,100 +56,97 @@
 			<form:option value="Antarctica"/>
 			<form:option value="South America"/>
 		</form:select>
-		<form:errors path="continent"/>	
+		<form:errors path="continent" class="Define-Error-Region"/>	
 	</div>
 	<!-- region -->
 	<div>
-		<label for="region"><span class="glyphicon glyphicon-pencil"></span>
-		Region</label><br>
-		<form:input path="region"/>
-		<form:errors path="region"/>	
+		<label for="region" class="Define-Values"><span class="glyphicon glyphicon-pencil"></span>
+		Region</label>
+		<form:input path="region" class="Define-Input-Box"/>
+		<form:errors path="region" class="Define-Error-Region"/>	
 	</div>
 	<!-- surfaceArea -->
 	<div>
-		<label for="surfaceArea"><span class="glyphicon glyphicon-pencil"></span>
-		Surface Area</label><br>
-		<form:input path="surfaceArea"/>
-		<form:errors path="surfaceArea"/>	
+		<label for="surfaceArea" class="Define-Values"><span class="glyphicon glyphicon-pencil"></span>
+		Surface Area</label>
+		<form:input path="surfaceArea" class="Define-Input-Box"/>
+		<form:errors path="surfaceArea" class="Define-Error-Region"/>	
 	</div>
 	<!-- indepYear -->
 	<div>
-		<label for="indepYear"><span class="glyphicon glyphicon-pencil"></span>
-		Indep Year</label><br>
-		<form:input path="indepYear"/>
-		<form:errors path="indepYear"/>	
+		<label for="indepYear" class="Define-Values"><span class="glyphicon glyphicon-pencil"></span>
+		Indep Year</label>
+		<form:input path="indepYear" class="Define-Input-Box"/>
+		<form:errors path="indepYear" class="Define-Error-Region"/>	
 	</div>
 	<!-- population -->
 	<div>
-		<label for="population"><span class="glyphicon glyphicon-pencil"></span>
-		Population</label><br>
-		<form:input path="population"/>
-		<form:errors path="population"/>	
+		<label for="population" class="Define-Values"><span class="glyphicon glyphicon-pencil"></span>
+		Population</label>
+		<form:input path="population" class="Define-Input-Box"/>
+		<form:errors path="population" class="Define-Error-Region"/>	
 	</div>
 	<!-- lifeExpectancy -->
 	<div>
-		<label for="lifeExpectancy"><span class="glyphicon glyphicon-pencil"></span>
-		Life Expectancy</label><br>
-		<form:input path="lifeExpectancy"/>
-		<form:errors path="lifeExpectancy"/>	
+		<label for="lifeExpectancy" class="Define-Values"><span class="glyphicon glyphicon-pencil"></span>
+		Life Expectancy</label>
+		<form:input path="lifeExpectancy" class="Define-Input-Box"/>
+		<form:errors path="lifeExpectancy" class="Define-Error-Region"/>	
 	</div>
 	<!-- gnp -->
 	<div>
-		<label for="gnp"><span class="glyphicon glyphicon-pencil"></span>
-		GNP</label><br>
-		<form:input path="gnp"/>
-		<form:errors path="gnp"/>	
+		<label for="gnp" class="Define-Values"><span class="glyphicon glyphicon-pencil"></span>
+		GNP</label>
+		<form:input path="gnp" class="Define-Input-Box"/>
+		<form:errors path="gnp" class="Define-Error-Region"/>	
 	</div>
 	<!-- gnpOld -->
 	<div>
-		<label for="gnpOld"><span class="glyphicon glyphicon-pencil"></span>
-		GNP Old</label><br>
-		<form:input path="gnpOld"/>
-		<form:errors path="gnpOld"/>	
+		<label for="gnpOld" class="Define-Values"><span class="glyphicon glyphicon-pencil"></span>
+		GNP Old</label>
+		<form:input path="gnpOld" class="Define-Input-Box"/>
+		<form:errors path="gnpOld" class="Define-Error-Region"/>	
 	</div>
 	<!-- localName -->
 	<div>
-		<label for="localName"><span class="glyphicon glyphicon-pencil"></span>
-		Local Name</label><br>
-		<form:input path="localName"/>
-		<form:errors path="localName"/>	
+		<label for="localName" class="Define-Values"><span class="glyphicon glyphicon-pencil"></span>
+		Local Name</label>
+		<form:input path="localName" class="Define-Input-Box"/>
+		<form:errors path="localName" class="Define-Error-Region"/>	
 	</div>
 	<!-- governmentForm -->
 	<div>
-		<label for="governmentForm"><span class="glyphicon glyphicon-pencil"></span>
-		Country code</label><br>
-		<form:input path="governmentForm"/>
-		<form:errors path="governmentForm"/>	
+		<label for="governmentForm" class="Define-Values"><span class="glyphicon glyphicon-pencil"></span>
+		Country code</label>
+		<form:input path="governmentForm" class="Define-Input-Box"/>
+		<form:errors path="governmentForm" class="Define-Error-Region"/>	
 	</div>
 	<!-- headOfState -->
 	<div>
-		<label for="headOfState"><span class="glyphicon glyphicon-pencil"></span>
-		Head Of State</label><br>
-		<form:input path="headOfState"/>
-		<form:errors path="headOfState"/>	
+		<label for="headOfState" class="Define-Values"><span class="glyphicon glyphicon-pencil"></span>
+		Head Of State</label>
+		<form:input path="headOfState" class="Define-Input-Box"/>
+		<form:errors path="headOfState" class="Define-Error-Region"/>	
 	</div>
 	<!-- capital -->
 	<div>
-		<label for="capital"><span class="glyphicon glyphicon-pencil"></span>
-		Capital</label><br>
-		<form:input path="capital"/>
-		<form:errors path="capital"/>	
+		<label for="capital" class="Define-Values"><span class="glyphicon glyphicon-pencil"></span>
+		Capital</label>
+		<form:input path="capital" class="Define-Input-Box"/>
+		<form:errors path="capital" class="Define-Error-Region"/>	
 	</div>
 	<!-- code2 -->
 	<div>
-		<label for="code2"><span class="glyphicon glyphicon-pencil"></span>
-		Country code2</label><br>
-		<form:input path="code2"/>
-		<form:errors path="code2"/>	
+		<label for="code2" class="Define-Values"><span class="glyphicon glyphicon-pencil"></span>
+		Country code2</label>
+		<form:input path="code2" class="Define-Input-Box"/>
+		<form:errors path="code2" class="Define-Error-Region"/>	
 	</div>
 	<!-- register Button -->
 	<div class="registerButton">
 		<input type="submit" value="Country 등록">	
 	</div>
-	<div class="preButton">
-		<a class="btn btn-sm"href="/country/page/${param.pageNo}">
-		<span class="glyphicon glyphicon-arrow-left"></span> Country Page</a>
-	</div>
+	
 
 </form:form>
 

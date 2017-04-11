@@ -27,7 +27,6 @@
 		background-color: darkGray;
 	}
 	.table-responsive {
-		margin :30px auto;
 		white-space : nowrap;
 		text-overflow : ellipsis;
 	}
@@ -51,13 +50,14 @@
 <!-- End of region -->
 
 <!-- Region for Title -->
-<h1>City Page List pageNo = ${paging.pageNo}</h1>
+<h1>City Info</h1>
 <!-- End of region -->
 
 <div class="registerBox">
 	<a href="/city/register/${city.id}?pageNo=${paging.pageNo}" class="btn btn-info btn-sm">
 	<span class="glyphicon glyphicon-inbox"></span> City Register</a>
 </div>
+<BR>
 
 <!-- Region for DataTable -->
 <div class="table-responsive">

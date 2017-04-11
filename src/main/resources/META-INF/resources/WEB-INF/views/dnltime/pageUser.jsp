@@ -40,7 +40,7 @@
 	</style>
 </head>
 <body>
-	<h1>Worktime Info</h1>
+	<h1>Dnltime Info</h1>
 	<div id="attend">
 	<a href="/dnltime/registerAttend" class="btn btn-info btn-sm">
 	<span class="glyphicon glyphicon-inbox"></span> Worktime Register</a>
@@ -54,8 +54,6 @@
 			<th>Work Time</th>
 			<th>Leave Time</th>
 			<th>Explain</th>
-			<th>Remove</th>
-			<th>Modify</th>
 			<th>Leave</th>
 		</tr>
 		<c:forEach var="d" items="${page.dnltimeList}">
@@ -65,8 +63,6 @@
 				<td><fmt:formatDate type="time" value="${d.attend}"/></td>
 				<td><fmt:formatDate type="time" value="${d.leave}"/></td>
 				<td>${d.reason}</td>
-				<td><a href="/dnltime/unregister/${d.dnlno}" ><span class="glyphicon glyphicon-remove"></span></a></td>
-				<td><a href="/dnltime/modifyReason/${d.dnlno}?pageNo=${page.paging.pageNo}"><span class="glyphicon glyphicon-edit"></span></a></td>
 				<td><a href="/dnltime/modifyLeave/${d.dnlno}" class="btn btn-sm leaveButton">
 				<span class="glyphicon glyphicon-inbox "></span> Leavetime Register</a></td>
 		</tr>
