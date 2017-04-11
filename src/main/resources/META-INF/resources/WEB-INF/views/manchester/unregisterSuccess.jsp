@@ -17,8 +17,8 @@
 
 </head>
 <body>
-<div class="col-lg-10 col-lg-offset-1">
-<h1 class="animated bounceInLeft">Team 삭제성공입니다.</h1>
+<div>
+<h1>Team 삭제성공입니다.</h1>
 
 <a href="/manchester/list/">이전 Page로....</a>
 </div>
