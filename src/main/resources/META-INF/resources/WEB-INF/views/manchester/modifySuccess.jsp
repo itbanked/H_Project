@@ -17,10 +17,10 @@
 
 </head>
 <body>
-<div class="col-lg-10 col-lg-offset-1">
+<div>
 <h1>Team 수정성공입니다.</h1>
-<table class="animated bounceInLeft table table-striped">
-<tr class="info" align="center">
+<table class="table table-striped">
+<tr class="active" align="center">
 	<td><b>Idno</b></td>
 	<td><b>Team</b></td>
 </tr>
