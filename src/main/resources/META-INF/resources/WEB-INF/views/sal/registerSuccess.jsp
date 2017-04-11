@@ -51,7 +51,7 @@
 </div>
 
 <script>
-	setTimeout("location.href='/emp/page/1'", 3000);
+	setTimeout("location.href='/sal/page/1'", 3000);
 </script>
 </body>
 </html>

@@ -16,12 +16,28 @@
 	<link rel="stylesheet" href="../code_assist/bootstrap.css">
 </c:if>
 
+<style>
+	#d1{
+		width:500px;
+		margin-top:20px;
+	}
+	#d1, th{
+		text-align: center;
+	}
+	#img1{
+		width:50px;
+		height:50px;
+		position:absolute; 
+		bottom: 10px;
+		right: 10px;	
+	}
+</style>
 </head>
 <body>
 	<h1>Dnltime Modify Service</h1>
 	
 	<form:form action="/dnltime/modifyReason?pageNo=${param.pageNo}" method="post" modelAttribute="dnltime">
-
+	<form:errors></form:errors>
 		<!-- Dnlno -->
 		<div>
 			<label for="dnlno" class="Define-Values"><span class="glyphicon glyphicon-pencil"></span>Dnlno : </label>
@@ -59,5 +75,21 @@
 		<input type="submit" value="modify Dnltime">
 	</form:form>
 	
+	<div id="d1">
+	<table class="table table-bordered table-striped">
+		<tr class="danger"><th>DnltimeCode</th><th>Code 설명</th></tr>	
+		<tr>	<td>0</td><td>출근</td>	</tr>
+		<tr>	<td>1</td><td>지각</td>	</tr>
+		<tr>	<td>2</td><td>외출</td>	</tr>
+		<tr>	<td>3</td><td>조퇴</td>	</tr>
+		<tr>	<td>4</td><td>결근</td>	</tr>
+		<tr>	<td>5</td><td>출장</td>	</tr>
+		<tr>	<td>6</td><td>휴직</td>	</tr>
+		<tr>	<td>7</td><td>휴가</td>	</tr>		
+	</table>
+	</div>
+	
+<!-- 	<img id="img1" src="http://gkgkgk0064.dothome.co.kr/Plus.png"> -->
+
 </body>
 </html>

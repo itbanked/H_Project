@@ -33,7 +33,7 @@ public class DnltimeModifyController {
 	
 
 	@GetMapping("/modifyLeave/{dnlno}")
-	public String modifyLeave(@PathVariable int dnlno, Dnltime dnltime, BindingResult errors) throws ParseException {
+	public String modifyLeave(@PathVariable int dnlno, Dnltime dnltime, BindingResult errors, Integer pageNo) throws ParseException {
 		log.info("modifyForm(" + dnlno + ")");
 		Dnltime dtdnlno = dnltimeSearchService.getDnltimeByDnlno(dnlno);
 		dnltime.setAttend(dtdnlno.getAttend());
@@ -49,7 +49,7 @@ public class DnltimeModifyController {
 			return "dnltime/modifyForm";
 		}
 		
-		return "redirect:/dnltime/page/1" ;
+		return "redirect:/dnltime/page/1" + "?pageNo=" + pageNo ;
 	}
 	
 	@GetMapping("/modifyReason/{dnlno}")

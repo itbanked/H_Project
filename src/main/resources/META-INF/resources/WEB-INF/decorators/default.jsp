@@ -49,7 +49,7 @@
 						<ul class="dropdown-menu">
 							<li><a href="/dept/page/1">Dept</a></li>
 							<li><a href="/emp/page/1">Emp</a></li>
-							<li><a href="/sal/page/1">Salgrade</a></li>
+							<li><a href="/sal/page/1">Salary</a></li>
 							<li><a href="/dnltime/page/1">Work Time</a></li>
 						</ul>
 					</li>

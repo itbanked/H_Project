@@ -66,7 +66,7 @@
 				<td><fmt:formatDate type="time" value="${d.leave}"/></td>
 				<td>${d.reason}</td>
 				<td><a href="/dnltime/unregister/${d.dnlno}" ><span class="glyphicon glyphicon-remove"></span></a></td>
-				<td><a href="/dnltime/modifyReason/${d.dnlno}"><span class="glyphicon glyphicon-edit"></span></a></td>
+				<td><a href="/dnltime/modifyReason/${d.dnlno}?pageNo=${page.paging.pageNo}"><span class="glyphicon glyphicon-edit"></span></a></td>
 				<td><a href="/dnltime/modifyLeave/${d.dnlno}" class="btn btn-sm leaveButton">
 				<span class="glyphicon glyphicon-inbox "></span> Leavetime Register</a></td>
 		</tr>

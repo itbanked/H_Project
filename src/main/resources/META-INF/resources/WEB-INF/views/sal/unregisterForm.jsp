@@ -83,7 +83,9 @@
 			<form:input path="membersrl" readonly="true" class="Define-Input-Box"/>
 			<form:errors path="membersrl" class="Define-Error-Region"/>
 		</div>
-		<input type="submit" value="Remove Salary">
+		<div class="modifyButton">
+			<input class="btn btn-info" type="submit" value="Remove Sal">	
+		</div>
 </form:form>
 </body>
 </html>
