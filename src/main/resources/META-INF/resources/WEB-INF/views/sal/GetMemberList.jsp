@@ -10,6 +10,8 @@
 <title>GetMemberList.jsp</title>
 
 <link rel="stylesheet" href="/css/ListService.css">
+<!-- 2. bootstrap -->
+<link rel="stylesheet" href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css">
 
 <!-- Code Assist -->
 <c:if test="false">
@@ -34,7 +36,13 @@
 	.content {
 		width: 260px;
 	}
-
+	#d1{
+		width:500px;
+		margin-top:20px;
+	}
+	#d1{
+		text-align: center;
+	}
 </style>
 
 </head>
@@ -42,8 +50,8 @@
 
 	<H1>Get Member List</H1>
 	
-	<table class='table'>
-		<tr>
+	<table id="d1" class="table table-bordered">
+		<tr class="success">
 			<td class="title serial">MemberSrl</td>
 			<td class="title content">UserID</td>
 		</tr>
