@@ -63,6 +63,8 @@
   <table class="table table-hover">
     
       <tr>
+        <td>Remove</td>
+        <td>Modify</td>
         <td>No.</td>
         <td>Name</td>
         <td>Chemical formula</td>
@@ -71,17 +73,14 @@
         <td>Solubility in water</td>
         <td>Acidity</td>
         <td>Hazard statements</td>
-        <td>Note</td>
-        <td>Remove</td>
-        <td>Modify</td>
-       
-		<td></td>
-        <th></th>        
+        <td>Note</td>       
       </tr>
     
     
     <c:forEach var="m" items="${molecules}" varStatus="status">
       <tr>
+        <td><a href="/molecule/unregister/${m.name}?pageNo=${page.paging.pageNo}"><span class="glyphicon glyphicon-remove"></span></a></td>
+        <td><a href="/molecule/modify/${m.name}?pageNo=${page.paging.pageNo}"><span class="glyphicon glyphicon-edit"></span></a></td>
         <td>${status.index+1}</td>
         <td>${m.name}</td>
         <td><a href="/molecule/item/${m.chemicalFormula}">${m.chemicalFormula}</a> </td>
@@ -91,13 +90,8 @@
         <td><a href="/molecule/acidity/${m.acidity}">${m.acidity}</a></td>
         <td><a href="/molecule/hazard/${m.hazardStatements}">${m.hazardStatements} </a></td>
         <td>${m.note}</td>
-        <td><a href="/molecule/unregister/${m.name}?pageNo=${page.paging.pageNo}"><span class="glyphicon glyphicon-remove"></span></a></td>
-        <td><a href="/molecule/modify/${m.name}?pageNo=${page.paging.pageNo}"><span class="glyphicon glyphicon-edit"></span></a></td>
-		
-		
       </tr>
       </c:forEach>
- 
   </table>
 </div>
 
