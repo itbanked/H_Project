@@ -81,7 +81,7 @@
 			<form:errors/>
 		</div> 
 		<div class="registerButton">
-			<input class="btn btn-info" type="submit" value="Sal 등록">	
+			<input class="btn btn-info" type="submit" value="Register Sal">	
 		</div>
 	</div>
 	

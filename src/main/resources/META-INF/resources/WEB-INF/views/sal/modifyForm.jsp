@@ -83,7 +83,7 @@
 			<form:errors path="membersrl" class="Define-Error-Region"/>
 		</div>
 		<div class="modifyButton">
-			<input class="btn btn-info" type="submit" value="Sal 수정">	
+			<input class="btn btn-info" type="submit" value="Modify Sal">	
 		</div>
 	</div>
 </form:form>
