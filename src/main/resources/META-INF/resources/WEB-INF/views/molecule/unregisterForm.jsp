@@ -9,6 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <title>unregisterForm.jsp</title>
+<link rel="stylesheet" href="/css/RegisterForm.css">
 
 <!-- Code Assist -->
 <c:if test="false">

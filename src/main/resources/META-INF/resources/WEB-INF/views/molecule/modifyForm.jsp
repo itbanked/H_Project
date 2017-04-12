@@ -9,6 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <title>modifyForm.jsp</title>
+<link rel="stylesheet" href="/css/RegisterForm.css">
 
 <!-- Code Assist -->
 <c:if test="false">
@@ -25,58 +26,64 @@
 	<!-- name -->
 	<div>
 		<label for="name">Name:</label>
-		<form:input path="name"/>
-		<form:errors path="name"/>
+		<form:input path="name" readonly="readonly" class="Define-Input-Box"/>
+		<form:errors path="name" class="Define-Error-Region"/>
 	</div>
 	<!-- chemicaFormula -->
 	<div>
 		<label for="chemicalFormula">chemical formula:</label>
-		<form:input path="chemicalFormula"/>
-		<form:errors path="chemicalFormula"/>
+		<form:input path="chemicalFormula" readonly="readonly" class="Define-Input-Box"/>
+		<form:errors path="chemicalFormula" class="Define-Error-Region"/>
 	</div>
 
 
 	<!-- density -->
 	<div>
 		<label for="density">density:</label>
-		<form:input path="density"/>
-		<form:errors path="density"/>
+		<form:input path="density" class="Define-Input-Box"/>
+		<form:errors path="density" class="Define-Error-Region"/>
 	</div>
 
 
 	<!-- averageMeltingPoint -->
 	<div>
 		<label for="averageMeltingPoint">average melting point:</label>
-		<form:input path="averageMeltingPoint"/>
-		<form:errors path="averageMeltingPoint"/>
+		<form:input path="averageMeltingPoint" class="Define-Input-Box"/>
+		<form:errors path="averageMeltingPoint" class="Define-Error-Region"/>
 	</div>
 	
 	<!-- solubilityInWater -->
 	<div>
 		<label for="solubilityInWater">solubility in water:</label>
-		<form:input path="solubilityInWater"/>
-		<form:errors path="solubilityInWater"/>
+		<form:input path="solubilityInWater" class="Define-Input-Box"/>
+		<form:errors path="solubilityInWater" class="Define-Error-Region"/>
 	</div>
 	
 	<!-- acidity -->
 	<div>
 		<label for="acidity">acidity:</label>
-		<form:input path="acidity"/>
-		<form:errors path="acidity"/>
+		<form:input path="acidity" class="Define-Input-Box"/>
+		<form:errors path="acidity" class="Define-Error-Region"/>
 	</div>
 	
 	<!-- hazardStatements -->
 	<div>
-		<label for="hazardStatements">hazard statements:</label>
-		<form:input path="hazardStatements"/>
-		<form:errors path="hazardStatements"/>
+		<label for="hazardStatements" class="Define-Values">hazard statements:</label>
+		<form:select path="hazardStatements" class="Define-Input-Box">
+			<form:option value="toxic"/>
+			<form:option value="H319"/>
+			<form:option value="H304"/>
+			<form:option value="NFPA704_3_1_0"/>
+			<form:option value="NFPA704_0_1_0"/>
+		</form:select>
+		<form:errors path="hazardStatements" class="Define-Error-Region"/>
 	</div>
 	
 	<!-- note -->
 	<div>
 		<label for="note">note:</label>
-		<form:input path="note"/>
-		<form:errors path="note"/>
+		<form:input path="note" class="Define-Input-Box"/>
+		<form:errors path="note" class="Define-Error-Region"/>
 	</div>
 
 	<input class="btn btn-primary" type="submit" value="modify">
