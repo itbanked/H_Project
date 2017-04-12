@@ -72,7 +72,13 @@
 	<!-- hazardStatements -->
 	<div>
 		<label for="hazardStatements" class="Define-Values">hazard statements:</label>
-		<form:input path="hazardStatements"/>
+		<form:select path="hazardStatements">
+			<form:option value="toxic"/>
+			<form:option value="H319"/>
+			<form:option value="H304"/>
+			<form:option value="NFPA704_3_1_0"/>
+			<form:option value="NFPA704_0_1_0"/>
+		</form:select>
 		<form:errors path="hazardStatements"/>
 	</div>
 	
