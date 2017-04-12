@@ -21,7 +21,26 @@
 
 	<h1>Register Success!</h1>
 	
-	Member : ${member}
+	<div class="text-center table-responsive">
+	<table class="table table-bordered">
+		<tr class="danger">
+			<td>member Serial</td>
+			<td>user ID</td>
+			<td>email</td>
+			<td>user Name</td>
+			<td>isadmin</td>
+			<td>isallowed</td>
+		</tr>
+		<tr>
+			<td>${member.membersrl}</td>
+			<td>${member.userid}</td>
+			<td>${member.email}</td>
+			<td>${member.username}</td>
+			<td>${member.isadmin}</td>
+			<td>${member.isallowed}</td>
+		</tr>
+	</table>
+</div>
 	
 	<script>
 		setTimeout("location.href='/Admin/CMD/'", 3000);

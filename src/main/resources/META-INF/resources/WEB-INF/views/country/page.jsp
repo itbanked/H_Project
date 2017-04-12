@@ -104,7 +104,7 @@
 	</c:forEach>
 	</table>
 </div>
-
+<br>
 <div class="text-center">
 	<a href="/country/page/1" class="btn btn-group-sm active">first</a>
 	
