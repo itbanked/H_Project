@@ -29,16 +29,16 @@ create table dnltime(
 	membersrl   number(10) constraint fk_membersrl1 references member(membersrl) on delete set null
 );
 
-insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , '은행업무', 02 , 1);
-insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , '병원진료', 00 , 1);
+insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , '외출', 02 , 1);
+insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , '출근', 00 , 1);
 insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 00 , 2);
-insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , '병원진료', 00 , 6);
+insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , '출근', 00 , 6);
 insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 04 , 6);
 insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 05 , 2);
-insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , '출장', 06 , 1);
-insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 07 , 24);
+insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , '휴직', 06 , 1);
+insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , '휴가', 07 , 24);
 insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 05 , 1);
-insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , '고객미팅', 04 , 25);
+insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , '결근', 04 , 25);
 insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 03 , 6);
 insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 01 , 2);
 
