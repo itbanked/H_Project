@@ -58,6 +58,12 @@
 							<li><a href="/city/page/1">City</a></li>
 						</ul>
 					</li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">member<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="/dnltime/member/1">1번 member</a></li>
+						</ul>
+					</li>
 				</ul>
 					
 				<ul class="nav navbar-nav navbar-right">

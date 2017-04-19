@@ -5,8 +5,6 @@ import java.util.Date;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-
-import com.example.domain.City;
 import com.example.domain.Dnltime;
 
 public class DnltimeForm extends Dnltime{

@@ -1,5 +1,6 @@
 package com.example.mapper;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Delete;
@@ -32,6 +33,8 @@ public interface DnltimeMapper {
 	})
 	int selectTotalIsAdmin();
 
+	List<Dnltime> selectmembersrl(int membersrl);
+	
 	@Select("select * from dnltime order by dnlno")
 	List<Dnltime> selectAll();
 	List<Dnltime> selectAllWithDnl();
@@ -67,4 +70,6 @@ public interface DnltimeMapper {
 	
 	@Delete("delete from dnltime where dnlno=#{dnlno}")
 	int deleteByDnlno(int dnlno);
+	
+
 }

@@ -55,7 +55,6 @@ public class MemberSearchService {
 		
 		return member;
 	}
-	
-	
+
 
 }

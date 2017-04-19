@@ -79,7 +79,7 @@ public class SalForm extends Sal{
 		return super.getSaldate();
 	}
 	
-	@DateTimeFormat(pattern="yyyy/MM/dd")
+	@DateTimeFormat(pattern="MM/dd/yyyy")
 	@Override
 	public void setSaldate(Date saldate) {
 		// TODO Auto-generated method stub

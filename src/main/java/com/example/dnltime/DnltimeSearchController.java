@@ -1,5 +1,6 @@
 package com.example.dnltime;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 
@@ -94,4 +95,15 @@ public class DnltimeSearchController {
 		
 		return "dnltime/item";
 	}
+	
+	@GetMapping("/member/{membersrl}")
+	public String getMemberList(@PathVariable int membersrl, Model model){
+		log.info("getMemberList()");
+		
+		List<Dnltime> dnltime = dnltimeSearchService.getmembersrl(membersrl);
+		model.addAttribute("memberlist", dnltime);
+		
+		return "dnltime/member";
+	}
+	
 }
