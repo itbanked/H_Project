@@ -47,7 +47,7 @@
 
 </head>
 <body>
-
+	<div class="container">
 	<H1>Get Member List</H1>
 	
 	<table id="d1" class="table table-bordered">
@@ -62,6 +62,7 @@
 			</tr>
 		</c:forEach> 
 	</table>
+	</div>
 
 </body>
 </html>

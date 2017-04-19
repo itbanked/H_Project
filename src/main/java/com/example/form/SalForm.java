@@ -7,6 +7,8 @@ import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.NumberFormat;
+import org.springframework.format.annotation.NumberFormat.Style;
 
 import com.example.domain.Sal;
 
@@ -31,6 +33,7 @@ public class SalForm extends Sal{
 	}
 	
 	@Override
+	@NumberFormat(style = Style.NUMBER, pattern="##,###,###")
 	public void setBasicSal(BigDecimal basicSal) {
 		// TODO Auto-generated method stub
 		super.setBasicSal(basicSal);
@@ -44,6 +47,7 @@ public class SalForm extends Sal{
 	}
 
 	@Override
+	@NumberFormat(style = Style.NUMBER, pattern="##,###,###")
 	public void setOvertimeSal(BigDecimal overtimeSal) {
 		super.setOvertimeSal(overtimeSal);
 	}
@@ -56,6 +60,7 @@ public class SalForm extends Sal{
 	}
 
 	@Override
+	@NumberFormat(style = Style.NUMBER, pattern="##,###,###")
 	public void setComm(BigDecimal comm) {
 		super.setComm(comm);
 	}
@@ -68,6 +73,7 @@ public class SalForm extends Sal{
 	}
 
 	@Override
+	@NumberFormat(style = Style.NUMBER, pattern="##,###,###")
 	public void setAidSal(BigDecimal aidSal) {
 		super.setAidSal(aidSal);
 	}

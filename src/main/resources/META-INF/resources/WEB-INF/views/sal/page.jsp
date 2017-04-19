@@ -70,11 +70,11 @@
 	<c:forEach var="sal" items="${sals}">
 		<tr>
 			<td>${sal.salno}</td>
-			<td>${sal.basicSal}</td>
-			<td>${sal.overtimeSal}</td>
-			<td>${sal.comm}</td>
-			<td>${sal.aidSal}</td>
-			<td> <fmt:formatDate value="${sal.saldate}" pattern="yyyy-MM-dd"/> </td>
+			<td><fmt:formatNumber value="${sal.basicSal}" pattern="##,###,###"/></td>
+			<td><fmt:formatNumber value="${sal.overtimeSal}" pattern="##,###,###"/></td>
+			<td><fmt:formatNumber value="${sal.comm}" pattern="##,###,###"/></td>
+			<td><fmt:formatNumber value="${sal.aidSal}" pattern="##,###,###"/></td>
+			<td><fmt:formatDate value="${sal.saldate}" pattern="yyyy-MM-dd"/></td>
 			<td><a href="/sal/item/${sal.salno}?pageNo=${paging.pageNo}">
 			<span class="glyphicon glyphicon-hand-right"></span> ${sal.membersrl}</a></td>
 			<td><a href="/sal/unregister/${sal.salno}?pageNo=${paging.pageNo}">
