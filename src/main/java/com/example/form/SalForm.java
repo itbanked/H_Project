@@ -1,10 +1,12 @@
 package com.example.form;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import com.example.domain.Sal;
 
@@ -71,15 +73,15 @@ public class SalForm extends Sal{
 	}
 
 	@NotNull
-	@Digits(integer=2, fraction=0)
 	@Override
-	public Integer getSaldate() {
+	public Date getSaldate() {
 		// TODO Auto-generated method stub
 		return super.getSaldate();
 	}
-
+	
+	@DateTimeFormat(pattern="yyyy/MM/dd")
 	@Override
-	public void setSaldate(Integer saldate) {
+	public void setSaldate(Date saldate) {
 		// TODO Auto-generated method stub
 		super.setSaldate(saldate);
 	}

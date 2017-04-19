@@ -1,6 +1,9 @@
 package com.example.mapper;
 
 import java.math.BigDecimal;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.junit.Test;
@@ -84,11 +87,16 @@ public class SalMapperTests {
 	}
 	
 	@Test
-	public void test04_insert() {
+	public void test04_insert() throws ParseException {
+		
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		
+		Date salaryDate = format.parse("2017-04-20");
+		
 		Sal sal = new Sal();
 		sal.setBasicSal(new BigDecimal(200));
 		sal.setMembersrl(new BigDecimal(1));
-		sal.setSaldate(10);
+		sal.setSaldate(salaryDate);
 		
 		Member member = memberMapper.selectByMembersrl(sal.getMembersrl());
 		

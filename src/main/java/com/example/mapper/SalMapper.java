@@ -23,8 +23,8 @@ public interface SalMapper {
 	
 	@Select({
 		"select count(*)					",
-		"  from sal						",
-		"where membersrl = #{membersrl}		",	
+		"  from sal							",
+		" where membersrl = #{membersrl}	",	
 		" order by salno					"
 	})
 	int selectTotalUserCount(MemberForm memberForm);

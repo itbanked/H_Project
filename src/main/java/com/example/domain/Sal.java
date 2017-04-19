@@ -1,6 +1,7 @@
 package com.example.domain;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -12,7 +13,7 @@ public class Sal {
 	private BigDecimal overtimeSal;
 	private BigDecimal comm;
 	private BigDecimal aidSal;
-	private Integer saldate;
+	private Date saldate;
 	private BigDecimal membersrl;
 	
 	private Member member;
@@ -83,11 +84,11 @@ public class Sal {
 		this.aidSal = aidSal;
 	}
 
-	public Integer getSaldate() {
+	public Date getSaldate() {
 		return saldate;
 	}
 
-	public void setSaldate(Integer saldate) {
+	public void setSaldate(Date saldate) {
 		this.saldate = saldate;
 	}
 

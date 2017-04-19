@@ -17,6 +17,17 @@
 	<link rel="stylesheet" href="../code_assist/bootstrap.css">
 </c:if>
 
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+	 $( function() {
+    	$( "#datepicker").datepicker({
+    		
+    	});
+  } );
+	
+</script>
 </head>
 <body>
 <h1>Salary Register Form</h1>
@@ -64,8 +75,7 @@
 			<label for="saldate" class="Define-Values">
 			<span class="glyphicon glyphicon-pencil"></span>
 			Salary Date</label>
-			<form:radiobutton path="saldate" value="10" label="intern Salary Date: 10"/><BR>
-			<form:radiobutton path="saldate" value="20" label="employee Salary Date: 20" checked="checked" style="margin-left:203px;"/>
+			<form:input path="saldate" id="datepicker"/>
 			<form:errors path="saldate" class="Define-Error-Region"/>
 			</div>
 		</div>

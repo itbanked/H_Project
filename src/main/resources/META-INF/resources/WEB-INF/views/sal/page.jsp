@@ -74,7 +74,7 @@
 			<td>${sal.overtimeSal}</td>
 			<td>${sal.comm}</td>
 			<td>${sal.aidSal}</td>
-			<td>${sal.saldate}</td>
+			<td> <fmt:formatDate value="${sal.saldate}" pattern="yyyy-MM-dd"/> </td>
 			<td><a href="/sal/item/${sal.salno}?pageNo=${paging.pageNo}">
 			<span class="glyphicon glyphicon-hand-right"></span> ${sal.membersrl}</a></td>
 			<td><a href="/sal/unregister/${sal.salno}?pageNo=${paging.pageNo}">

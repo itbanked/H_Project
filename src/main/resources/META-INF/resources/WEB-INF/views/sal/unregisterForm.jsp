@@ -18,6 +18,18 @@
 	<link rel="stylesheet" href="../code_assist/bootstrap.css">
 </c:if>
 
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+	 $( function() {
+    	$( "#datepicker").datepicker({
+    		
+    	});
+  } );
+	
+</script>
+
 </head>
 <body>
 <h1>Salary Remove Form</h1>
@@ -26,7 +38,7 @@
 	<span class="glyphicon glyphicon-arrow-left"></span> Sal Page</a>
 </div>
 
-<form:form action="/sal/unregister/${salno}?pageNo=${param.pageNo}" method="post" modelAttribute="sal">
+<form:form action="/sal/unregister/${salno}?pageNo=${param.pageNo}" method="post" modelAttribute="salForm">
 		<!-- salno -->
 		<div>
 			<label for="salno"  class="Define-Values">
@@ -71,8 +83,7 @@
 			<label for="saldate" class="Define-Values">
 			<span class="glyphicon glyphicon-pencil"></span>
 			Salary Date</label>
-			<form:radiobutton path="saldate" value="10" label="intern Salary Date: 10" checked="${ sal.saldate eq '10' ? 'checked' : '' }" disabled="true"/><BR>
-			<form:radiobutton path="saldate" value="20" label="employee Salary Date: 20" checked="${ sal.saldate eq '10' ? '' : 'checked' }" disabled="true" style="margin-left:203px;"/>
+			<form:input path="saldate" id="datepicker" disabled="true"/>
 			<form:errors path="saldate" class="Define-Error-Region"/>
 		</div>
 		<!-- membersrl -->

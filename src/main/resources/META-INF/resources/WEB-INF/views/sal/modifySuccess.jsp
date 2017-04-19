@@ -35,7 +35,7 @@
 			<td>${sal.overtimeSal == null ? 'null' : sal.overtimeSal}</td>
 			<td>${sal.comm == null ? 'null' : sal.comm}</td>
 			<td>${sal.aidSal == null ? 'null' : sal.aidSal}</td>
-			<td>${sal.saldate == null ? 'null' : sal.saldate}</td>
+			<td> <fmt:formatDate value="${sal.saldate}" pattern="yyyy-MM-dd"/> </td>
 			<td>${sal.membersrl}</td>
 		</tr>
 	</table>

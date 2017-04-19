@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.domain.Sal;
+import com.example.form.SalForm;
 import com.example.sal.service.SalSearchService;
 import com.example.sal.service.SalUnregisterService;
 
@@ -27,10 +28,11 @@ public class SalUnregisterController {
 	SalUnregisterService salUnregisterService;
 	
 	@GetMapping("/unregister/{salno}")
-	public String unregisterForm(@PathVariable int salno, Model model) {
+	public String unregisterForm(SalForm salForm, @PathVariable int salno, Model model) {
 		log.info("unregister(" + salno + ")");
 		Sal sal = salSearchService.getSalBySalno(salno);
-		model.addAttribute("sal", sal);
+		salForm.setSal(sal);
+		model.addAttribute("sal", salForm);
 		
 		return "sal/unregisterForm";
 	}
