@@ -40,11 +40,11 @@
 		</tr>
 		<tr>
 			<td>${sal.salno}</td>
-			<td>${sal.basicSal}</td>
-			<td>${sal.overtimeSal == null ? 'null' : sal.overtimeSal}</td>
-			<td>${sal.comm == null ? 'null' : sal.comm}</td>
-			<td>${sal.aidSal == null ? 'null' : sal.aidSal}</td>
-			<td><fmt:formatDate value="${sal.saldate}" pattern="yyyy-MM-dd"/></td>
+			<td><fmt:formatNumber value="${sal.basicSal}" pattern="##,###,###"/></td>
+			<td><fmt:formatNumber value="${sal.overtimeSal}" pattern="##,###,###"/>${sal.overtimeSal == null ? 'null' : ''}</td>
+			<td><fmt:formatNumber value="${sal.comm}" pattern="##,###,###"/>${sal.comm == null ? 'null' : ''}</td>
+			<td><fmt:formatNumber value="${sal.aidSal}" pattern="##,###,###"/>${sal.aidSal == null ? 'null' : ''}</td>
+			<td> <fmt:formatDate value="${sal.saldate}" pattern="yyyy-MM-dd"/> </td>
 			<td>${sal.membersrl}</td>
 		</tr>
 	</table>
