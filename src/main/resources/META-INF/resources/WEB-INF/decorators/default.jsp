@@ -47,8 +47,6 @@
 					<li class="dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Employee<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="/dept/page/1">Dept</a></li>
-							<li><a href="/emp/page/1">Emp</a></li>
 							<li><a href="/sal/page/1">Salary</a></li>
 							<li><a href="/dnltime/page/1">Work Time</a></li>
 						</ul>
@@ -58,20 +56,6 @@
 						<ul class="dropdown-menu">
 							<li><a href="/country/page/1">Country</a></li>
 							<li><a href="/city/page/1">City</a></li>
-						</ul>
-					</li>
-					<li>
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Manchester United<span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="/manchester/list">Information</a></li>
-							<li><a href="/players/page/1">Members</a></li>
-						</ul>
-					</li>
-					<li>
-					<li class="dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Molecule<span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="/molecule/page/1">Molecule</a></li>
 						</ul>
 					</li>
 				</ul>
