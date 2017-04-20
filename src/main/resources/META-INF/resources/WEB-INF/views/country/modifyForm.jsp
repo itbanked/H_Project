@@ -19,11 +19,13 @@
 
 </head>
 <body>
-<h1>Modify country</h1>
+<h1>Modify Country</h1>
 	<div class="preButton">
 		<a class="btn btn-sm"href="/country/page/${param.pageNo}">
 		<span class="glyphicon glyphicon-arrow-left"></span> Country Page</a>
 	</div>
+	<BR>
+	
 <form:form action="/country/modify?pageNo=${param.pageNo}" method="post" modelAttribute="countryForm">
 	
 	<!-- code -->
@@ -142,9 +144,11 @@
 		<form:input path="code2" class="Define-Input-Box"/>
 		<form:errors path="code2" class="Define-Error-Region"/>	
 	</div>
+	<BR>
+	
 	<!-- register Button -->
 	<div class="registerButton">
-		<input type="submit" value="Country 수정">	
+		<input type="submit" value="Country Modify">	
 	</div>
 
 </form:form>

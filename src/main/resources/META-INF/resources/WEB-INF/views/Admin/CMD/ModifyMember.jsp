@@ -60,8 +60,11 @@
 			<label for="isallowed" class="Define-Values">isallowed :</label>
 			<form:radiobutton path="isallowed" value="Y" label="True" checked="${ member.isallowed eq 'Y' ? 'checked' : '' }"/>
 			<form:radiobutton path="isallowed" value="N" label="False" checked="${ member.isallowed eq 'Y' ? '' : 'checked' }"/>
+		</div>
+		<br>
+		<div class="registerButton">
+			<input type="submit" value="Modify Member">
 		</div> 
-		<input type="submit" value="Modify Member">
 	</form:form>
 
 </body>

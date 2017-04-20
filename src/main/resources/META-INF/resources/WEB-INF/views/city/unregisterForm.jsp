@@ -19,7 +19,12 @@
 
 </head>
 <body>
-<h1>City Remove Form</h1>
+<h1>Remove City</h1>
+	<div class="preButton">
+		<a class="btn btn-sm" href="/city/page/${param.pageNo}">
+		<span class="glyphicon glyphicon-arrow-left"></span> City Page</a>
+	</div>
+	<BR>
 
 <form:form action="/city/unregister/${id}?pageNo=${param.pageNo}" method="post" modelAttribute="city">
 	
@@ -61,6 +66,7 @@
 			<form:input path="population" class="Define-Input-Box" readonly="true"/>
 			<form:errors path="population" class="Define-Error-Region"/>
 		</div>
+		<BR>
 		<!-- modify Button -->
 		<div class="modifyButton">
 			<input type="submit" value="City Remove">	

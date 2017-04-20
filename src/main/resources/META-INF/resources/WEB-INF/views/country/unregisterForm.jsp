@@ -19,11 +19,12 @@
 
 </head>
 <body>
-<h1>Country Remove Form</h1>
+<h1>Remove Country</h1>
 	<div class="preButton">
 		<a class="btn btn-sm"href="/country/page/${param.pageNo}">
 		<span class="glyphicon glyphicon-arrow-left"></span> Country Page</a>
 	</div>
+	<br>
 	
 <form:form action="/country/unregister/${code}?pageNo=${param.pageNo}" method="post" modelAttribute="country">
 	
@@ -143,6 +144,7 @@
 		<form:input path="code2" readonly="true" class="Define-Input-Box"/>
 		<form:errors path="code2" class="Define-Error-Region"/>	
 	</div>
+	<br>
 	<!-- register Button -->
 	<div class="registerButton">
 		<input type="submit" value="Country Remove">	
