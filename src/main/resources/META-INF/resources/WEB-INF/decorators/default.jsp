@@ -39,11 +39,11 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="/">April Project</a>
+				<a class="navbar-brand" href="/">H_Project</a>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Home</a></li>
+					<li class="active"><a href="/index/page">Home</a></li>
 					<li class="dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Employee<span class="caret"></span></a>
 						<ul class="dropdown-menu">
@@ -56,12 +56,6 @@
 						<ul class="dropdown-menu">
 							<li><a href="/country/page/1">Country</a></li>
 							<li><a href="/city/page/1">City</a></li>
-						</ul>
-					</li>
-					<li class="dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#">member<span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="/dnltime/member/1">1번 member</a></li>
 						</ul>
 					</li>
 				</ul>

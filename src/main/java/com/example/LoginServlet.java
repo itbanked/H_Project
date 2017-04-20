@@ -77,10 +77,12 @@ public class LoginServlet extends HttpServlet {
 					session.setAttribute("ID", id);
 					if ( IsAdmin(id) ) {
 						session.setAttribute("IsAdmin", true);
-						resp.sendRedirect("/country/page/1");
+						resp.sendRedirect("/index/page");
+//						resp.sendRedirect("/country/page/1");
 					}
 					else {
-						resp.sendRedirect("/city/page/1");
+						resp.sendRedirect("/index/page");
+//						resp.sendRedirect("/city/page/1");
 					}
 				} 
 				else {

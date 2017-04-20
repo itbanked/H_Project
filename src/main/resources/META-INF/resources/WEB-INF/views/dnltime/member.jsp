@@ -27,7 +27,6 @@
 	<c:set var="a6" value="0"/>
 	<c:set var="a7" value="0"/>
 
-
 <table class="table table-bordered">
 	<tr>
 <c:forEach var="member" items="${memberlist}">
@@ -59,9 +58,8 @@
   	<c:set var="a7" value="${a7 + 1}"/>
   </c:when>
 </c:choose>
-
-<%-- &nbsp; ${member.dnlCode}<br> --%>
 </c:forEach>
+
 <td> 출근</td><td> ${a0}</td>
 <td> 지각</td><td> ${a1}</td>
 <td> 외출</td><td> ${a2}</td>

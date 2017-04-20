@@ -28,7 +28,7 @@
 <body>
 <h1>Register Success !</h1>
 <div class="text-center table-responsive">
-	<table class="table table-bordered">
+	<table class="table">
 		<tr class="danger">
 			<td>sal_No</td>
 			<td>basic Salary</td>
@@ -41,9 +41,9 @@
 		<tr>
 			<td>${sal.salno}</td>
 			<td><fmt:formatNumber value="${sal.basicSal}" pattern="##,###,###"/></td>
-			<td><fmt:formatNumber value="${sal.overtimeSal}" pattern="##,###,###"/>${sal.overtimeSal == null ? 'null' : ''}</td>
-			<td><fmt:formatNumber value="${sal.comm}" pattern="##,###,###"/>${sal.comm == null ? 'null' : ''}</td>
-			<td><fmt:formatNumber value="${sal.aidSal}" pattern="##,###,###"/>${sal.aidSal == null ? 'null' : ''}</td>
+			<td><fmt:formatNumber value="${sal.overtimeSal}" pattern="##,###,###"/>${sal.overtimeSal == null ? '-' : ''}</td>
+			<td><fmt:formatNumber value="${sal.comm}" pattern="##,###,###"/>${sal.comm == null ? '-' : ''}</td>
+			<td><fmt:formatNumber value="${sal.aidSal}" pattern="##,###,###"/>${sal.aidSal == null ? '-' : ''}</td>
 			<td> <fmt:formatDate value="${sal.saldate}" pattern="yyyy-MM-dd"/> </td>
 			<td>${sal.membersrl}</td>
 		</tr>

@@ -28,9 +28,7 @@ public class SiteMeshConfig {
 				builder.addDecoratorPath("/players/*", "/WEB-INF/decorators/default.jsp");
 				builder.addDecoratorPath("/molecule/*", "/WEB-INF/decorators/default.jsp");
 				builder.addDecoratorPath("/Sign_in/*", "/WEB-INF/decorators/default.jsp");
-				builder.addExcludedPath("/manchester/unregister/*");
-				builder.addExcludedPath("/manchester/modify/*");
-				builder.addExcludedPath("/manchester/register");
+				builder.addDecoratorPath("/*", "/WEB-INF/decorators/default.jsp");
 				builder.addExcludedPath("/sal/GetMemberLists");
 			}
 		});
