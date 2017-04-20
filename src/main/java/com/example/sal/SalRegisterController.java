@@ -32,7 +32,7 @@ public class SalRegisterController {
 	@GetMapping("/register")
 	public String registerForm(SalForm salForm) {
 		log.info("registerForm()");
-		return "/sal/registerForm";
+		return "sal/registerForm";
 	}
 	
 	@PostMapping("/register")
@@ -42,12 +42,12 @@ public class SalRegisterController {
 		
 		if (errors.hasErrors()) {
 			System.out.println(errors);
-			return "/sal/registerForm";
+			return "sal/registerForm";
 		}
 		salRegisterService.register(salForm, errors);
 		if (errors.hasErrors()) {
 			System.out.println(errors);
-			return "/sal/registerForm";
+			return "sal/registerForm";
 		}
 		
 		return "redirect:/sal/registerSuccess/" + salForm.getSalno() + "?pageNo=" + pageNo;

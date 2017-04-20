@@ -185,8 +185,20 @@ offset 1 rows
 	   
 	   
 	   
-	   
-	   
+select me.mno		as memo_mno,
+	   me.mname		as memo_mname,
+	   me.mcontent	as memo_mcontent,
+	   me.mdate		as memo_mdate,
+       me.membersrl	as memo_membersrl,
+	   m.membersrl		as member_membersrl,
+	   m.userid			as member_userid,
+	   m.email			as member_email,
+	   m.username		as member_username,
+	   m.password		as member_password,
+	   m.isadmin		as member_isadmin
+  from memo me left outer join member m
+  	on me.membersrl = m.membersrl
+ order by me.mno;
 	   
 	   
 	   

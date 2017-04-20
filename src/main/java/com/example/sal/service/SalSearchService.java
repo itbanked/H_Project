@@ -87,12 +87,12 @@ public class SalSearchService {
 	}
 	
 	public Sal getSalBySalno(int salno) {
-		log.info("getCityById(" + salno + ")");		
+		log.info("getSalBySalno(" + salno + ")");		
 		return getSalBySalno(salno, false);
 	}
 	
 	public Sal getSalBySalno(int salno, boolean withMember) {
-		log.info("getCityById(" + salno + ", " + withMember + ")");
+		log.info("getSalBySalno(" + salno + ", " + withMember + ")");
 		Sal sal = null;
 		if (withMember)
 			sal = salMapper.selectBySalnoWithMember(salno);
