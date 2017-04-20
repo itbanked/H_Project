@@ -35,6 +35,14 @@ public class MemoModifyController {
 		log.info("modifyForm(" + mno + ")");
 		
 		Memo memo = memoSearchService.getMemoByMno(mno);
+		
+//		if(memo.getMcontent() != null) {
+//			String content = memoForm.getMcontent();
+//			content = content.replace("\u0020", "&nbsp");
+//			content = content.replace("\r\n", "<br>");
+//			memoForm.setMcontent(content);
+//		}
+		
 		memoForm.setMemo(memo);
 		
 		model.addAttribute("memo", memoForm);
@@ -46,10 +54,15 @@ public class MemoModifyController {
 	public String modify(@Valid MemoForm memoForm, BindingResult errors, Integer pageNo) {
 		log.info("modify(" + memoForm + ")");
 		System.out.println(memoForm);
+//		
+//		String content = memoForm.getMcontent();
+//		content = content.replace("\u0020", "&nbsp");
+//		content = content.replace("\r\n", "<br>");
+//		memoForm.setMcontent(content);
 		
 		if (errors.hasErrors()){
 			System.out.println(errors);
-			return "sal/modifyForm";
+			return "memo/modifyForm";
 		}
 		memoModifyService.modify(memoForm, errors);
 		if (errors.hasErrors()) {

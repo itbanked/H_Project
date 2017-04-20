@@ -46,20 +46,21 @@ public class MemoForm extends Memo{
 		// TODO Auto-generated method stub
 		super.setMcontent(mcontent);
 	}
-
+	
+	@NotNull
 	@Override
-	public Date getMdate() {
+	public java.util.Date getMdate() {
 		// TODO Auto-generated method stub
 		return super.getMdate();
 	}
 	
 	@DateTimeFormat(pattern="MM/dd/yyyy")
 	@Override
-	public void setMdate(Date mdate) {
+	public void setMdate(java.util.Date mdate) {
 		// TODO Auto-generated method stub
 		super.setMdate(mdate);
 	}
-	
+
 	@NotNull
 	@Override
 	public BigDecimal getMembersrl() {

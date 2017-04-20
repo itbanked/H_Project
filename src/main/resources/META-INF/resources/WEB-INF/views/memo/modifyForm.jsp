@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>registerForm.jsp</title>
+<title>modifyForm.jsp</title>
 
 
 <c:if test="false">
@@ -38,14 +38,21 @@
 </head>
 <body>
 <div class="container">
-<h1>Register Memo</h1>
+<h1>Modify Memo</h1>
 	<div class="preButton">
 		<a class="btn btn-sm" href="/memo/page/${param.pageNo}">
 		<span class="glyphicon glyphicon-arrow-left"></span> Memo Page</a>
 	</div>
 	<BR>
-<form:form action="/memo/register" method="post" modelAttribute="memoForm">
+<form:form action="/memo/modify?pageNo=${param.pageNo}" method="post" modelAttribute="memoForm">
 <table class="table table-bordered">
+	<tr>
+	<td valign="top"><label for="mno">번호 </label></td>
+	<td>
+	<form:input path="mno" size="100" readonly="true"/>
+	<form:errors path=""/></td>
+	</tr>
+
 	<tr>
 	<td><label for="mname">Title</label></td>
 	<td><form:input path="mname" size="100" autocomplete="off"/>
@@ -64,7 +71,7 @@
 	<td valign="top"><label for="membersrl">작성자 번호 </label></td>
 	<td>
 
-	<form:input path="membersrl" size="100"/>
+	<form:input path="membersrl" size="100" readonly="true"/>
 	<form:errors path=""/></td>
 	</tr>
 	
@@ -77,7 +84,7 @@
 		
 </table>
 <div class="registerButton">
-	<input type="submit" value="Memo Reigster">
+	<input type="submit" value="Memo Modify">
 </div>
 
 
