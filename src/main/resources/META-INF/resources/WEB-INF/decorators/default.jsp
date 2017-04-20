@@ -45,18 +45,17 @@
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="/index/page">Home</a></li>
 					<li class="dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Employee<span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="/sal/page/1">Salary</a></li>
-							<li><a href="/dnltime/page/1">Work Time</a></li>
-						</ul>
-					</li>
-					<li class="dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">World<span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="/country/page/1">Country</a></li>
 							<li><a href="/city/page/1">City</a></li>
 						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="/sal/page/1">Salary</a>
+					</li>
+					<li class="dropdown">
+						<a href="/dnltime/page/1">Work Time</a>
 					</li>
 				</ul>
 					

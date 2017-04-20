@@ -26,8 +26,8 @@
 </head>
 <body>
 <<<<<<< HEAD
-<c:redirect url="/city/page/1"/>
-<%-- <c:redirect url="/index/page"/> --%>
+<%-- <c:redirect url="/city/page/1"/> --%>
+<c:redirect url="/index/page"/>
 =======
 <c:redirect url="/Auth"/>
 >>>>>>> 0bee14335826c9383d6e78fa44e8d22c90891f8a
