@@ -30,11 +30,12 @@
 </script>
 </head>
 <body>
-<h1>Salary Register Form</h1>
+<h1>Register Salary</h1>
 	<div class="preButton">
 		<a class="btn btn-sm" href="/sal/page/${param.pageNo}">
-		<span class="glyphicon glyphicon-arrow-left"></span> Sal Page</a>
+		<span class="glyphicon glyphicon-arrow-left"></span> Salary Page</a>
 	</div>
+	<BR>
 
 <form:form action="/sal/register?pageNo=${param.pageNo}" method="post" modelAttribute="salForm">
 	<div class="registerBox">
@@ -89,15 +90,17 @@
 		</div>
 		<div>
 			<form:errors/>
-		</div> 
+		</div>
+		 
+		<BR>
 		<div class="registerButton">
-			<input class="btn btn-info" type="submit" value="Register Sal">	
+			<input type="submit" value="Salary Register">	
 		</div>
 		
 		<!-- Modal -->
-	<div id="myModal" class="modal fade" role="dialog">
-	  <div class="modal-dialog">
-		    <!-- Modal content-->
+		<div id="myModal" class="modal fade" role="dialog">
+	  		<div class="modal-dialog">
+		<!-- Modal content-->
 		    <div class="modal-content"> 
 		    </div>
 	  </div>

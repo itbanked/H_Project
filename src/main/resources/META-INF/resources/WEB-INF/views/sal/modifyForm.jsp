@@ -31,11 +31,12 @@
 
 </head>
 <body>
-<h1>Salary Modify Form</h1>
+<h1>Modify Salary</h1>
 	<div class="preButton">
 		<a class="btn btn-sm" href="/sal/page/${param.pageNo}">
-		<span class="glyphicon glyphicon-arrow-left"></span> Sal Page</a>
+		<span class="glyphicon glyphicon-arrow-left"></span> Salary Page</a>
 	</div>
+	<BR>
 <form:form action="/sal/modify?pageNo=${param.pageNo}" method="post" modelAttribute="salForm">
 	<div class="modifyBox">
 		<!-- salno -->
@@ -93,8 +94,9 @@
 			<form:input path="membersrl" readonly="true" class="Define-Input-Box"/>
 			<form:errors path="membersrl" class="Define-Error-Region"/>
 		</div>
+		<BR>
 		<div class="modifyButton">
-			<input class="btn btn-info" type="submit" value="Modify Sal">	
+			<input type="submit" value="Salary Modify">	
 		</div>
 	</div>
 </form:form>

@@ -32,12 +32,12 @@
 
 </head>
 <body>
-<h1>Salary Remove Form</h1>
+<h1>Remove Salary</h1>
 <div class="preButton">
 	<a class="btn btn-sm" href="/sal/page/${param.pageNo}">
-	<span class="glyphicon glyphicon-arrow-left"></span> Sal Page</a>
+	<span class="glyphicon glyphicon-arrow-left"></span> Salary Page</a>
 </div>
-
+<br>
 <form:form action="/sal/unregister/${salno}?pageNo=${param.pageNo}" method="post" modelAttribute="salForm">
 		<!-- salno -->
 		<div>
@@ -94,8 +94,10 @@
 			<form:input path="membersrl" readonly="true" class="Define-Input-Box"/>
 			<form:errors path="membersrl" class="Define-Error-Region"/>
 		</div>
+		<br>
+		
 		<div class="modifyButton">
-			<input class="btn btn-info" type="submit" value="Remove Sal">	
+			<input type="submit" value="Salary Remove">	
 		</div>
 </form:form>
 </body>

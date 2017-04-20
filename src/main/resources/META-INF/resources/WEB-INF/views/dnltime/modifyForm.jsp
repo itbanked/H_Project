@@ -34,7 +34,12 @@
 </style>
 </head>
 <body>
-	<h1>Dnltime Modify Service</h1>
+	<h1>Modify Worktime</h1>
+	<div class="preButton">
+		<a class="btn btn-sm" href="/dnltime/page/${param.pageNo}">
+		<span class="glyphicon glyphicon-arrow-left"></span> Worktime Page</a>
+	</div>
+	<BR>
 	
 	<form:form action="/dnltime/modifyReason?pageNo=${param.pageNo}" method="post" modelAttribute="dnltime">
 	<form:errors></form:errors>
@@ -72,7 +77,10 @@
 		<div>
 			<form:hidden path="membersrl"/>
 		</div>
-		<input type="submit" value="modify Dnltime">
+		<BR>
+		<div class="modifyButton">
+			<input type="submit" value="Worktime Modify">
+		</div>
 	</form:form>
 	
 	<div id="d1">

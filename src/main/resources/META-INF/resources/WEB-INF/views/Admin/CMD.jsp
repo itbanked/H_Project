@@ -30,7 +30,8 @@
 	<H1>Control Member Database Page</H1>
 	
 	<div class="registerBox">
-		<a class="btn btn-info" href="/Admin/CMD/Add">AddMember</a>
+		<a class="btn btn-info btn-sm" href="/Admin/CMD/Add">
+		<span class="glyphicon glyphicon-inbox"></span> Member Register</a>
 	</div><BR>
 	
 	<table class='table'>

@@ -19,12 +19,13 @@
 
 </head>
 <body>
-<h1>Modify city</h1>
+<h1>Modify City</h1>
 
 <div class="preButton">
 	<a class="btn btn-sm"href="/city/page/${param.pageNo}">
 	<span class="glyphicon glyphicon-arrow-left"></span> City Page</a>
 </div>
+<BR>
 
 <form:form action="/city/modify?pageNo=${param.pageNo}" method="post" modelAttribute="cityForm">
                             
@@ -68,6 +69,8 @@
 			<form:input path="population" class="Define-Input-Box"/>
 			<form:errors path="population" class="Define-Error-Region"/>
 		</div>
+		
+		<BR>
 		<!-- modify Button -->
 		<div class="modifyButton">
 			<input type="submit" value="City Modify">	

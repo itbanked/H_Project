@@ -59,8 +59,11 @@
 			<label for="isallowed" class="Define-Values">isallowed : </label>
 			<form:radiobutton path="isallowed" value="Y" label="True"/>
 			<form:radiobutton path="isallowed" value="N" label="False" checked="checked"/>
-		</div> 
-		<input type="submit" value="Register Member">
+		</div>
+		<br>
+		<div class="registerButton"> 
+			<input type="submit" value="Member Register">
+		</div>
 	</form:form>
 
 </body>

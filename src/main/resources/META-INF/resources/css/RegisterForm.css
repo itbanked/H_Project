@@ -11,3 +11,7 @@
 .Define-Error-Region {
 	color: red;
 }
+.preButton, .registerButton, .modifyButton {
+	width: 600px;
+	text-align: right;
+}

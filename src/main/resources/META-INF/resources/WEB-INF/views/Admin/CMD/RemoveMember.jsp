@@ -54,7 +54,10 @@
 			<form:radiobutton path="isallowed" value="Y" label="True"/>
 			<form:radiobutton path="isallowed" value="N" label="False" checked="checked"/>
 		</div> 
-		<input type="submit" value="Remove Member">
+		<br>
+		<div class="registerButton">
+			<input type="submit" value="Remove Member">
+		</div>
 	</form:form>
 
 </body>
