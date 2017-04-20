@@ -23,9 +23,9 @@
 </head>
 <body>
 
-	<h1>Dnltime List</h1>
+	<h1>Worktime List</h1>
 <div id="tableDiv" class="table-responsive">
-	<table class="table table-bordered table-striped container">
+	<table class="table table-bordered container">
 			<tr class="danger">
 				<th>member_srl</th>
 				<th>user_ID</th>
@@ -46,7 +46,7 @@
 	</table>
 </div>
 
-<a href="/dnltime/page/${param.pageNo}" class="btn btn-default">목록으로</a>
+<a href="/dnltime/page/${param.pageNo}" class="btn btn-default">Worktime Page</a>
 
 </body>
 </html>
