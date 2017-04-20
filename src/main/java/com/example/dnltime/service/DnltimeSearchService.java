@@ -26,12 +26,6 @@ public class DnltimeSearchService {
 	@Autowired
 	DnltimeMapper dnltimeMapper;
 	
-	@Autowired
-	HttpSession m_Session;
-	
-	@Autowired
-	MemberSearchService memberSearchService;
-	
 	public List<Dnltime> getListAll(){
 		log.info("getListAll()");
 		return getListAll(false);

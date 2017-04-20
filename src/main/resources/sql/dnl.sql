@@ -36,9 +36,9 @@ insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , 'Ãâ±Ù', 0
 insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 04 , 6);
 insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 05 , 2);
 insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , 'ÈÞÁ÷', 06 , 1);
-insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , 'ÈÞ°¡', 07 , 24);
+insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , 'ÈÞ°¡', 07 , 10);
 insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 05 , 1);
-insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , '°á±Ù', 04 , 25);
+insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , '°á±Ù', 04 , 11);
 insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 03 , 6);
 insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 01 , 2);
 

@@ -13,7 +13,7 @@ create table sal(
    	membersrl      	number(10)    	constraint fk_membersrl0 references member(membersrl) on delete set null
 );
 
-insert into sal values (sal_salno_seq.nextval, 800, null, 10, null, to_date('2016/07/20','YYYY/MM/DD'), 1);
-insert into sal values (sal_salno_seq.nextval, 300, null, null, null, to_date('2016/02/20','YYYY/MM/DD'), 2);
+insert into sal values (sal_salno_seq.nextval, 8000000, 50000, 400000, null, to_date('2016/07/20','YYYY/MM/DD'), 1);
+insert into sal values (sal_salno_seq.nextval, 3000000, null, null, 20000, to_date('2016/02/20','YYYY/MM/DD'), 2);
 
 commit;

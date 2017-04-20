@@ -28,7 +28,11 @@ public class SiteMeshConfig {
 				builder.addDecoratorPath("/players/*", "/WEB-INF/decorators/default.jsp");
 				builder.addDecoratorPath("/molecule/*", "/WEB-INF/decorators/default.jsp");
 				builder.addDecoratorPath("/Sign_in/*", "/WEB-INF/decorators/default.jsp");
+<<<<<<< HEAD
 				builder.addDecoratorPath("/memo/*", "/WEB-INF/decorators/default.jsp");
+=======
+				builder.addDecoratorPath("/*", "/WEB-INF/decorators/default.jsp");
+>>>>>>> e2f485496b6b003a57c9683ae5c7c49ae5e5e376
 				builder.addExcludedPath("/sal/GetMemberLists");
 			}
 		});
