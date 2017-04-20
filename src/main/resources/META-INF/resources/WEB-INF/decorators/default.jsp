@@ -57,6 +57,9 @@
 					<li class="dropdown">
 						<a href="/dnltime/page/1">Work Time</a>
 					</li>
+					<li class="dropdown">
+						<a href="/memo/page/1">Memo</a>
+					</li>
 				</ul>
 					
 				<ul class="nav navbar-nav navbar-right">

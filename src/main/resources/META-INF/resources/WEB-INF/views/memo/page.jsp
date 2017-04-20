@@ -59,17 +59,19 @@
 		<tr>
 		 	<td>memo_No</td>
 		 	<td>title</td>
+		 	<td>UserId</td>
 		 	<td>date</td>
 		 	<td>member_Srl</td>
 		 </tr>
 	<c:forEach var="memo" items="${memos}">
 		<tr>
 			<td>${memo.mno}</td>
-			<td>${memo.mname}</td>
-			<td> <fmt:formatDate value="${memo.mdate}" pattern="yyyy-MM-dd"/></td>
 			<td><a href="/memo/item/${memo.mno}?pageNo=${paging.pageNo}">
-			<span class="glyphicon glyphicon-hand-right"></span> 
-			${memo.membersrl}</a></td>
+			<span class="glyphicon glyphicon-hand-right"></span> ${memo.mname}
+			</a></td>
+			<td>${memo.member.userid}</td>
+			<td> <fmt:formatDate value="${memo.mdate}" pattern="yyyy-MM-dd"/></td>
+			<td>${memo.membersrl}</td>
 		</tr>
 	</c:forEach>
 	</table>
