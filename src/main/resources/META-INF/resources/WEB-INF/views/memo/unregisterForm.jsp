@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>registerForm.jsp</title>
+<title>unregisterForm.jsp</title>
 
 
 <c:if test="false">
@@ -29,7 +29,7 @@
 	
 </script>
 <style>
-	.preButton, .registerButton, .modifyButton {
+	.preButton, .registerButton, .modifyButton , .unregisterButton{
 		width: 1000px;
 		text-align: right;
 	}
@@ -38,17 +38,23 @@
 </head>
 <body>
 <div class="container">
-<h1>Register Memo</h1>
+<h1>Remove Memo</h1>
 	<div class="preButton">
 		<a class="btn btn-sm" href="/memo/page/${param.pageNo}">
 		<span class="glyphicon glyphicon-arrow-left"></span> Memo Page</a>
 	</div>
 	<BR>
-<form:form action="/memo/register" method="post" modelAttribute="memoForm">
+<form:form action="/memo/unregister/${mno}?pageNo=${param.pageNo}" method="post" modelAttribute="memoForm">
 <table class="table table-bordered">
 	<tr>
+	<td valign="top"><label for="mno">번호 </label></td>
+	<td>
+	<form:input path="mno" size="100" readonly="true"/>
+	<form:errors path=""/></td>
+	</tr>
+	<tr>
 	<td><label for="mname">Title</label></td>
-	<td><form:input path="mname" size="100" autocomplete="off"/>
+	<td><form:input path="mname" size="100" readonly="true" autocomplete="off"/>
 	<form:errors path="mname"/></td>
 	</tr>
 	
@@ -56,7 +62,7 @@
 	<td valign="top"><label for="mdate">등록일 </label></td>
 	<td>
 
-	<form:input path="mdate" size="100" id="datepicker"/>
+	<form:input path="mdate" size="100" id="datepicker" disabled="true"/>
 	<form:errors path="mdate"/></td>
 	</tr>
 	
@@ -64,20 +70,20 @@
 	<td valign="top"><label for="membersrl">작성자 번호 </label></td>
 	<td>
 
-	<form:input path="membersrl" size="100"/>
+	<form:input path="membersrl" readonly="true" size="100"/>
 	<form:errors path=""/></td>
 	</tr>
 	
 	<tr>
 	<td valign="top"><label for="mcontent">내용 </label></td>
-	<td><form:textarea path="mcontent" cols="101" rows="25"/>
+	<td><form:textarea path="mcontent" readonly="true" cols="101" rows="25"/>
 	<form:errors path="mcontent"/></td>
 	</tr>
 	
 		
 </table>
-<div class="registerButton">
-	<input type="submit" value="Memo Reigster">
+<div class="unregisterButton">
+	<input type="submit" value="Memo Remove">
 </div>
 
 

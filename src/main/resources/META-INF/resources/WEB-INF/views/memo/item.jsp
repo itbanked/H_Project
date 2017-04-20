@@ -15,13 +15,24 @@
 	<link rel="stylesheet" href="../code_assist/animate.css">
 	<link rel="stylesheet" href="../code_assist/bootstrap.css">
 </c:if>
+<style>
+	.preButton, .registerButton, .modifyButton {
+		width: 1100px;
+		text-align: right;
+	}
 
+</style>
 </head>
 <body>
 
 <div class="container">
 	<div>
 		<h1>Board</h1>
+		<div class="preButton">
+			<a class="btn btn-sm" href="/memo/page/${param.pageNo}">
+			<span class="glyphicon glyphicon-arrow-left"></span> Memo Page</a>
+		</div>
+		<BR>
 		<div>
 		<table class="table table-bordered">
 			<tbody>
@@ -37,8 +48,8 @@
 				<tr>
 					<td>
 					<div style="float:right" align="left">
-						<a href="/memo/modify/${memo.mno}?pageNo=${param.pageNo}" class="btn btn-warning" id="modifyMemo">수정</a>
-						<a href="/memo/page/${param.pageNo}" class="btn btn-info">목록</a>
+						<a href="/memo/unregister/${memo.mno}?pageNo=${param.pageNo}" class="btn btn-info btn-sm" id="modifyMemo">Memo Delete</a>
+						<a href="/memo/modify/${memo.mno}?pageNo=${param.pageNo}" class="btn btn-warning btn-sm" id="modifyMemo">Memo Modify</a>
 					</div>
 					</td>
 				</tr>

@@ -46,8 +46,10 @@ public class MemoRegisterController {
 	MemberSearchService memberSearchService;
 	
 	@GetMapping("/register")
-	public String registerForm( MemoForm memoForm) {
-		log.info("registerForm()");
+	public String registerForm(MemoForm memoForm) {
+		log.info("registerForm( " + memoForm + ")");
+		Member member = memberSearchService.getMemberById( (String)m_Session.getAttribute("ID") );
+		memoForm.setMembersrl(member.getMembersrl());	
 		return "/memo/registerForm";
 	}
 	
@@ -55,6 +57,11 @@ public class MemoRegisterController {
 	public String register(@Valid MemoForm memoForm, BindingResult errors, Integer pageNo) {
 		log.info("register("+ memoForm +")");
 		System.out.println(memoForm);
+		
+		String content = memoForm.getMcontent();
+		content = content.replace("\u0020", "&nbsp");
+		content = content.replace("\r\n", "<br>");
+		memoForm.setMcontent(content);
 		
 		if (errors.hasErrors()) {
 			System.out.println(errors);

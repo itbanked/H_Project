@@ -54,6 +54,6 @@ public class MemoUnregisterController {
 		log.info("unregisterSuccess(" + mno + ")");
 		Memo memo = memoSearchService.getMemoByMno(mno);
 		model.addAttribute("memo", memo);
-		return "sal/unregisterSuccess";
+		return "memo/unregisterSuccess";
 	}
 }

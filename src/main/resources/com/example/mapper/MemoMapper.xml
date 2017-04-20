@@ -73,9 +73,9 @@
 
 <insert id="insert">
 	<selectKey keyProperty="mno" keyColumn="mno" resultType="int" order="BEFORE">
-		select memo_salno_seq.next from dual
+		select memo_mno_seq.nextval from dual
 	</selectKey>
-	insert into meno
+	insert into memo
 	(
 		mno,
 		mname,
@@ -94,8 +94,9 @@
 </insert>
 
 <update id="updateByMno">
-	update meno
-	   set mname		= #{mname},
+	update memo
+	   set 
+	   	   mname		= #{mname},
 	   	   mcontent		= #{mcontent},
 	   	   mdate		= #{mdate},
 	   	   membersrl	= #{membersrl}

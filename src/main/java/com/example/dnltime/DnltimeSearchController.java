@@ -33,7 +33,8 @@ public class DnltimeSearchController {
 	
 	@Autowired
 	HttpSession m_Session;
-	
+
+
 	@Autowired
 	MemberSearchService memberSearchService;
 	
