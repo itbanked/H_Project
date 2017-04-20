@@ -179,7 +179,7 @@
 		<div style="text-align:center;" class="bg">
 			<a href="/dnltime/page/1" data-toggle="tooltip" title="신한나"><img class="img" src="/img/WorkList.png"></a>
 			<a href="/sal/page/1" data-toggle="tooltip" title="최혜진"><img class="img" src="/img/SalList.png"></a>		
-			<a href="/memo/page/1" data-toggle="tooltip" title="최혜진&신한나"><img class="img" src="/img/MemberList.png"></a>
+			<a href="/memo/page/1" data-toggle="tooltip" title="최혜진&신한나"><img class="img" src="/img/MemoList.png"></a>
 			<a href="/Admin/CMD" data-toggle="tooltip" title="권혁준"><img class="img" src="/img/MemberList.png"></a>
 		</div>
 	</div>
