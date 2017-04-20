@@ -4,6 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%> 
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <!DOCTYPE html> 
 <html>
 <head>
@@ -14,6 +15,18 @@
 	<link rel="stylesheet" href="../code_assist/animate.css">
 	<link rel="stylesheet" href="../code_assist/bootstrap.css">
 </c:if>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+	 $( function() {
+    	$( "#datepicker").datepicker({
+    		
+    	});
+  } );
+	
+</script>
 
 </head>
 <body>
@@ -28,11 +41,20 @@
 	</tr>
 	
 	<tr>
+	<td valign="top"><label for="mdate">등록일 </label></td>
+	<td>
+
+	<form:input path="mdate" size="100" id="datepicker"/>
+	<form:errors path="mdate"/></td>
+	</tr>
+	
+	<tr>
 	<td valign="top"><label for="mcontent">내용 </label></td>
 	<td><form:textarea path="mcontent" cols="101" rows="25"/>
 	<form:errors path="mcontent"/></td>
-	
 	</tr>
+	
+		
 </table>
 <input type="submit" value="Memo 등록">
 <a class="btn btn-info" href="/memo/page/1">목록</a>

@@ -1,5 +1,9 @@
 package com.example.memo;
 
+import java.math.BigDecimal;
+import java.util.Date;
+
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.apache.commons.logging.Log;
@@ -13,10 +17,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.example.Member.MemberSearchService;
+import com.example.domain.Member;
 import com.example.domain.Memo;
+import com.example.form.MemberForm;
 import com.example.form.MemoForm;
 import com.example.memo.service.MemoRegisterService;
 import com.example.memo.service.MemoSearchService;
+
+import scala.annotation.meta.setter;
 
 @Controller
 @RequestMapping("/memo")
@@ -30,8 +39,14 @@ public class MemoRegisterController {
 	@Autowired
 	MemoRegisterService memoRegisterService;
 	
+	@Autowired
+	HttpSession m_Session;
+	
+	@Autowired
+	MemberSearchService memberSearchService;
+	
 	@GetMapping("/register")
-	public String registerForm(MemoForm memoForm) {
+	public String registerForm( MemoForm memoForm) {
 		log.info("registerForm()");
 		return "/memo/registerForm";
 	}
