@@ -1,19 +1,21 @@
 drop table dnltime;
 drop table dnl;
 
+--worktime
+
 create table dnl(
 	dnl_code	number(3) constraint pk_dnl primary key,
 	dnl_type	varchar2(4 char) not null
 );
 
-insert into dnl values (00, 'Ãâ±Ù');
-insert into dnl values (01, 'Áö°¢');
-insert into dnl values (02, '¿ÜÃâ');
-insert into dnl values (03, 'Á¶Åð');
-insert into dnl values (04, '°á±Ù');
-insert into dnl values (05, 'ÃâÀå');
-insert into dnl values (06, 'ÈÞÁ÷');
-insert into dnl values (07, 'ÈÞ°¡');
+insert into dnl values (00, 'ï¿½ï¿½ï¿½');
+insert into dnl values (01, 'ï¿½ï¿½ï¿½ï¿½');
+insert into dnl values (02, 'ï¿½ï¿½ï¿½ï¿½');
+insert into dnl values (03, 'ï¿½ï¿½ï¿½ï¿½');
+insert into dnl values (04, 'ï¿½ï¿½ï¿½');
+insert into dnl values (05, 'ï¿½ï¿½ï¿½ï¿½');
+insert into dnl values (06, 'ï¿½ï¿½ï¿½ï¿½');
+insert into dnl values (07, 'ï¿½Þ°ï¿½');
 
 commit;
 
@@ -29,16 +31,16 @@ create table dnltime(
 	membersrl   number(10) constraint fk_membersrl1 references member(membersrl) on delete set null
 );
 
-insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , '¿ÜÃâ', 02 , 1);
-insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , 'Ãâ±Ù', 00 , 1);
+insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , 'ï¿½ï¿½ï¿½ï¿½', 02 , 1);
+insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , 'ï¿½ï¿½ï¿½', 00 , 1);
 insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 00 , 2);
-insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , 'Ãâ±Ù', 00 , 6);
+insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , 'ï¿½ï¿½ï¿½', 00 , 6);
 insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 04 , 6);
 insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 05 , 2);
-insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , 'ÈÞÁ÷', 06 , 1);
-insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , 'ÈÞ°¡', 07 , 10);
+insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , 'ï¿½ï¿½ï¿½ï¿½', 06 , 1);
+insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , 'ï¿½Þ°ï¿½', 07 , 10);
 insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 05 , 1);
-insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , '°á±Ù', 04 , 11);
+insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , 'ï¿½ï¿½ï¿½', 04 , 11);
 insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 03 , 6);
 insert into dnltime values (dnl_dnlno_seq.nextval , sysdate, sysdate , null, 01 , 2);
 
