@@ -35,7 +35,7 @@
 				<th>is_admin</th>
 			</tr>
 			<tr>
-				<td><a href="/dnltime/member/${dnltime.member.membersrl}">${dnltime.member.membersrl}</a></td>
+				<td><a href="/dnltime/member/${dnltime.member.membersrl}"><span class="glyphicon glyphicon-hand-right"></span>${dnltime.member.membersrl}</a></td>
 <%-- 				<td>${dnltime.member.membersrl}</td> --%>
 				<td>${dnltime.member.userid}</td>
 				<td>${dnltime.member.email}</td>

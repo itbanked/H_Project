@@ -73,8 +73,14 @@
   	<c:set var="a7" value="${a7 + 1}"/>
   	<c:set var="sum" value="${sum + 1}"/>
   </c:when>
-</c:choose>
+ </c:choose>
 </c:forEach>
+
+<%-- 	<c:forEach var="member" items="${memberlist}"> --%>
+<%-- 			<fmt:formatDate value="${member.attend}" pattern="yyyy-MM-dd"/> --%>
+<%-- 			~ <fmt:formatDate  value="${member.leave}" pattern="yyyy-MM-dd"/><br> --%>
+<%-- 	</c:forEach> --%>
+		
 <td colspan="16">총 ${sum} 일 </td>
 </tr>
 <tr>
